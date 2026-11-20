@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "wireframe-buku-tersedia": "#334155", "inverse-surface": "#2d3133", "tertiary-container": "#645efb", "outline": "#767586", "surface-container-low": "#f2f4f6", "wireframe-buku-dipinjam": "#64748B", "on-error": "#ffffff", "on-secondary-container": "#60646f", "on-surface-variant": "#464554", "on-primary-fixed": "#07006c", "on-background": "#191c1e", "on-secondary-fixed": "#171c25", "primary-fixed-dim": "#c0c1ff", "tertiary-fixed-dim": "#c3c0ff", "on-secondary-fixed-variant": "#424751", "surface-variant": "#e0e3e5", "error": "#ba1a1a", "on-tertiary-container": "#fffbff", "status-dipinjam-text": "#334155", "decision-open-text": "#9A3412", "on-secondary": "#ffffff", "status-terlambat-text": "#991B1B", "outline-variant": "#c7c4d7", "surface-card": "#FFFFFF", "on-tertiary-fixed": "#0f0069", "on-primary": "#ffffff", "background-canvas": "#F4F6F9", "on-tertiary": "#ffffff", "surface-tint": "#494bd6", "primary-fixed": "#e1e0ff", "status-tersedia-dot": "#10B981", "inverse-on-surface": "#eff1f3", "secondary-fixed": "#dee2ef", "text-subtle": "#94A3B8", "text-main": "#1E293B", "status-tersedia-text": "#065F46", "border-card": "#EEF2F6", "border-subtle": "#E2E8F0", "surface-dim": "#d8dadc", "surface-container": "#eceef0", "surface-container-highest": "#e0e3e5", "background": "#f7f9fb", "status-tersedia-bg": "#ECFDF5", "surface": "#f7f9fb", "tertiary-fixed": "#e2dfff", "surface-container-lowest": "#ffffff", "decision-open-bg": "#FFF7ED", "text-muted": "#64748B", "primary-container": "#6063ee", "on-primary-container": "#fffbff", "status-dipinjam-bg": "#F1F5F9", "secondary-container": "#dee2ef", "status-warning-dot": "#F59E0B", "status-warning-bg": "#FFFBEB", "primary": "#4648d4", "status-terlambat-bg": "#FEF2F2", "surface-bright": "#f7f9fb", "on-surface": "#191c1e", "wireframe-buku-terlambat": "#94A3B8", "on-primary-fixed-variant": "#2f2ebe", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#3323cc", "tertiary": "#4b41e1", "status-terlambat-dot": "#EF4444", "on-error-container": "#93000a", "secondary-fixed-dim": "#c2c6d3", "status-warning-text": "#92400E", "inverse-primary": "#c0c1ff", "secondary": "#5a5e69", "surface-container-high": "#e6e8ea", "decision-open-border": "#FDBA74" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-2xl": "2.5rem", "space-xs": "0.25rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter": "1.25rem", "space-xl": "2rem", "margin": "1.5rem" }, "fontFamily": { "body-lg": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "display-title": [ "Plus Jakarta Sans" ], "label-caps": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-lg": [ "1rem", { "lineHeight": "1.5rem", "fontWeight": "400" } ], "label-lg": [ "0.875rem", { "lineHeight": "1.25rem", "fontWeight": "600" } ], "body-sm": [ "0.8125rem", { "lineHeight": "1.25rem", "fontWeight": "400" } ], "headline-lg": [ "1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "display-title": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-caps": [ "0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.05em", "fontWeight": "700" } ], "body-md": [ "0.875rem", { "lineHeight": "1.375rem", "fontWeight": "400" } ], "headline-sm": [ "1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" } ], "headline-md": [ "1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-md": [ "0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.01em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-background-canvas font-body-md text-body-md text-text-main antialiased selection:bg-primary selection:text-on-primary"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-card z-50 flex flex-col justify-between p-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-y-auto"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm px-space-xs"><div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-[0_4px_12px_rgba(99,102,241,0.25)]"><span class="material-symbols-outlined text-on-primary text-[22px]">local_library</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-text-main leading-tight">Libro Space</span><span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Operasional</span></div></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary text-on-primary font-bold shadow-[0_4px_12px_rgba(99,102,241,0.25)]"><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="dashboard" href="#"><span>Dashboard</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="data-buku" href="#"><span>Data buku</span></a><a aria-current="page" class="flex items-center gap-3 px-space-md py-3 rounded-xl transition-all bg-primary text-on-primary font-bold shadow-[0_4px_12px_rgba(99,102,241,0.25)]" data-path="data-anggota" href="#"><span>Data anggota</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="peminjaman" href="#"><span>Peminjaman</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="pengembalian" href="#"><span>Pengembalian</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="pembayaran-denda" href="#"><span>Pembayaran denda</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="riwayat" href="#"><span>Riwayat</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="laporan-harian" href="#"><span>Laporan harian</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="persetujuan-registrasi" href="#"><span>Persetujuan registrasi</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="profil" href="#"><span>Profil</span></a></nav></div><div class="pt-space-md"><div class="bg-surface-container-low rounded-xl p-space-md flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-status-tersedia-dot"></span><span class="font-label-md text-label-md text-text-main font-semibold">Sistem Online v1.2</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-status-tersedia-bg text-status-tersedia-text font-bold">AKTIF</span></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-[72px] bg-surface-card/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-full max-w-md"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-subtle text-[20px]">search</span><input class="w-full pl-10 pr-4 py-2 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main placeholder:text-text-subtle border-none focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Cari kode buku, nama anggota, no. transaksi..." type="text"></div></div><div class="flex items-center gap-space-lg"><button aria-label="Notifikasi" class="relative p-2 rounded-xl text-text-muted hover:bg-surface-container-low hover:text-text-main transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span></button><div class="flex items-center gap-3"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-text-main leading-tight">Petugas Contoh 01</span><span class="font-label-md text-label-md text-text-muted leading-tight">Role: Petugas Operasional</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-[72px] bg-background-canvas min-h-screen"><div class="flex flex-col w-full p-space-lg gap-space-lg">
+<!-- Top System & Use Case Subheader Annotation -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-card px-space-md py-3 rounded-xl shadow-[0_1px_3px_rgba(15,23,42,0.04)]">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md bg-primary/10 text-primary font-label-caps text-label-caps uppercase font-bold tracking-wider">
+        USE CASE: S02 | PT05_DATA_ANGGOTA_DESKTOP (NORMAL)
+      </span>
+<span class="text-text-subtle font-label-md text-label-md">•</span>
+<span class="font-label-md text-label-md text-text-muted">Modul Direktori &amp; Keanggotaan</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-tersedia-dot animate-pulse"></span>
+<span class="font-label-md text-label-md text-status-tersedia-text font-semibold">Sinkronisasi Data Anggota Aktif</span>
+<span class="text-text-subtle font-body-sm text-body-sm">(Real-time Local DB)</span>
+</div>
+</div>
+<!-- Header Section with Title and Primary Top Action -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<h1 class="font-headline-lg text-headline-lg text-text-main">Kelola Data Anggota</h1>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-text-muted font-label-caps text-label-caps font-bold">1.420 ANGGOTA</span>
+</div>
+<p class="font-body-md text-body-md text-text-muted">
+        Daftar direktori anggota perpustakaan, penambahan profil anggota baru, dan pembaruan data kontak.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-[0_4px_12px_rgba(99,102,241,0.25)] hover:bg-tertiary transition-all active:scale-[0.98]" id="btnTambahAnggota" type="button">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>+ Tambah Anggota</span>
+</button>
+</div>
+</div>
+<!-- Filter & Search Toolbar Card -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex flex-col lg:flex-row lg:items-center gap-space-md justify-between">
+<div class="relative flex-1 min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-text-subtle text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main placeholder:text-text-subtle focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Cari nomor anggota, nama, kontak..." type="text">
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Dropdown Filter Status Pinjaman -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low pl-3.5 pr-8 py-2.5 rounded-xl font-label-md text-label-md text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option selected="">Semua Status Pinjaman</option>
+<option>Bebas Pinjaman</option>
+<option>Meminjam Aktif</option>
+<option>Ada Keterlambatan</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted text-[18px]">expand_more</span>
+</div>
+<!-- Dropdown Filter Kategori Keanggotaan -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low pl-3.5 pr-8 py-2.5 rounded-xl font-label-md text-label-md text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option selected="">Kategori Keanggotaan</option>
+<option>Mahasiswa</option>
+<option>Dosen / Peneliti</option>
+<option>Masyarakat Umum</option>
+<option>Staf Institusi</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted text-[18px]">expand_more</span>
+</div>
+<!-- Dropdown Filter Status Akun -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low pl-3.5 pr-8 py-2.5 rounded-xl font-label-md text-label-md text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option selected="">Status Akun (Aktif / Nonaktif)</option>
+<option>Aktif</option>
+<option>Nonaktif</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-text-muted text-[18px]">expand_more</span>
+</div>
+<!-- Reset Filter Button -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-surface-container-low text-text-muted hover:text-text-main hover:bg-surface-container transition-all font-label-md text-label-md" title="Kembalikan Filter Default" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span>Reset</span>
+</button>
+</div>
+</div>
+<!-- Main Work Area: Grid with Master Table (8 cols) and Edit Drawer Panel (4 cols) -->
+<div class="grid grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Master Table (8 cols) -->
+<div class="col-span-12 xl:col-span-8 flex flex-col gap-space-md">
+<div class="bg-surface-card rounded-xl shadow-[0_1px_3px_rgba(15,23,42,0.04)] overflow-hidden">
+<!-- Table Header Bar -->
+<div class="flex items-center justify-between px-space-md py-4 bg-surface-card">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-main">Direktori Anggota</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-text-muted font-label-md text-label-md font-semibold">6 dari 1.420</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-text-subtle uppercase tracking-wider">Halaman 1 dari 284</span>
+</div>
+</div>
+<!-- Table View -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-text-muted font-label-caps text-label-caps uppercase tracking-wider">
+<th class="py-3.5 px-space-md">Nomor Anggota</th>
+<th class="py-3.5 px-space-md">Nama Lengkap</th>
+<th class="py-3.5 px-space-md">Status Pinjaman</th>
+<th class="py-3.5 px-space-md text-center">Status Akun</th>
+<th class="py-3.5 px-space-md text-right">Aksi Operasional</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm"><tr class="bg-primary/5 hover:bg-primary/10 transition-colors"><td class="py-4 px-space-md whitespace-nowrap"><div class="flex items-center gap-2"><span class="w-1.5 h-6 rounded-full bg-primary"></span><div class="flex flex-col"><span class="font-label-md text-label-md text-primary font-bold">LS-2025-0142</span><span class="font-label-caps text-label-caps text-text-subtle">Denda: Rp 2.000</span></div></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="flex flex-col"><span class="font-label-lg text-label-lg text-text-main font-semibold">Rina Maharani</span><span class="font-body-sm text-body-sm text-text-muted">0812-3456-7890</span><span class="font-label-caps text-label-caps text-text-subtle">rina.maharani@email.com</span></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="flex flex-col gap-1"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-terlambat-bg text-status-terlambat-text font-label-md text-label-md w-fit"><span class="w-2 h-2 rounded-full bg-status-terlambat-dot"></span><span>Ada keterlambatan (3 buku - batas tercapai)</span></div></div></td><td class="py-4 px-space-md text-center whitespace-nowrap"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md font-bold"><span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span> Aktif</span></td><td class="py-4 px-space-md text-right whitespace-nowrap"><div class="flex flex-col items-end gap-1.5"><button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:bg-tertiary transition-all" type="button"><span class="material-symbols-outlined text-[16px]">edit</span><span>Ubah Data</span></button><div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-decision-open-bg text-decision-open-text opacity-70 pointer-events-none cursor-not-allowed text-[11px] font-semibold" title="Fitur penonaktifan akun dikunci oleh arsitektur SOP"><span class="material-symbols-outlined text-[13px]">lock</span><span>KEPUTUSAN TERBUKA: ubah status akun anggota</span></div></div></td></tr><tr class="hover:bg-surface-container-low/60 transition-colors"><td class="py-4 px-space-md whitespace-nowrap"><div class="flex items-center gap-2"><span class="w-1.5 h-6 rounded-full bg-transparent"></span><div class="flex flex-col"><span class="font-label-md text-label-md text-text-main font-bold">LS-2025-0087</span><span class="font-label-caps text-label-caps text-text-subtle">Denda: Rp 0</span></div></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="flex flex-col"><span class="font-label-lg text-label-lg text-text-main font-semibold">Dimas Pradana</span><span class="font-body-sm text-body-sm text-text-muted">0857-1100-2233</span><span class="font-label-caps text-label-caps text-text-subtle">dimas.pradana@email.com</span></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-dipinjam-bg text-status-dipinjam-text font-label-md text-label-md"><span class="w-2 h-2 rounded-full bg-wireframe-buku-dipinjam"></span><span>Ada pinjaman (1 buku)</span></div></td><td class="py-4 px-space-md text-center whitespace-nowrap"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md font-bold"><span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span> Aktif</span></td><td class="py-4 px-space-md text-right whitespace-nowrap"><div class="flex flex-col items-end gap-1.5"><button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-low text-text-main hover:bg-surface-container transition-all font-label-md text-label-md" type="button"><span class="material-symbols-outlined text-[16px]">edit</span><span>Ubah Data</span></button><div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-decision-open-bg text-decision-open-text opacity-70 pointer-events-none cursor-not-allowed text-[11px] font-semibold"><span class="material-symbols-outlined text-[13px]">lock</span><span>KEPUTUSAN TERBUKA: ubah status akun anggota</span></div></div></td></tr><tr class="hover:bg-surface-container-low/60 transition-colors"><td class="py-4 px-space-md whitespace-nowrap"><div class="flex items-center gap-2"><span class="w-1.5 h-6 rounded-full bg-transparent"></span><div class="flex flex-col"><span class="font-label-md text-label-md text-text-main font-bold">LS-2025-0113</span><span class="font-label-caps text-label-caps text-text-subtle">Denda: Rp 0</span></div></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="flex flex-col"><span class="font-label-lg text-label-lg text-text-main font-semibold">Sari Kusuma</span><span class="font-body-sm text-body-sm text-text-muted">0813-7788-4411</span><span class="font-label-caps text-label-caps text-text-subtle">sari.kusuma@email.com</span></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-dipinjam-bg text-status-dipinjam-text font-label-md text-label-md"><span class="w-2 h-2 rounded-full bg-wireframe-buku-dipinjam"></span><span>Ada pinjaman (1 buku)</span></div></td><td class="py-4 px-space-md text-center whitespace-nowrap"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md font-bold"><span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span> Aktif</span></td><td class="py-4 px-space-md text-right whitespace-nowrap"><div class="flex flex-col items-end gap-1.5"><button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-low text-text-main hover:bg-surface-container transition-all font-label-md text-label-md" type="button"><span class="material-symbols-outlined text-[16px]">edit</span><span>Ubah Data</span></button><div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-decision-open-bg text-decision-open-text opacity-70 pointer-events-none cursor-not-allowed text-[11px] font-semibold"><span class="material-symbols-outlined text-[13px]">lock</span><span>KEPUTUSAN TERBUKA: ubah status akun anggota</span></div></div></td></tr><tr class="hover:bg-surface-container-low/60 transition-colors"><td class="py-4 px-space-md whitespace-nowrap"><div class="flex items-center gap-2"><span class="w-1.5 h-6 rounded-full bg-transparent"></span><div class="flex flex-col"><span class="font-label-md text-label-md text-text-main font-bold">LS-2024-0456</span><span class="font-label-caps text-label-caps text-text-subtle">Denda: Rp 5.000</span></div></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="flex flex-col"><span class="font-label-lg text-label-lg text-text-main font-semibold">Lintang Pratama</span><span class="font-body-sm text-body-sm text-text-muted">0821-5566-9080</span><span class="font-label-caps text-label-caps text-text-subtle">lintang.pratama@email.com</span></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-terlambat-bg text-status-terlambat-text font-label-md text-label-md"><span class="w-2 h-2 rounded-full bg-status-terlambat-dot"></span><span>Ada keterlambatan (1 buku)</span></div></td><td class="py-4 px-space-md text-center whitespace-nowrap"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md font-bold"><span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span> Aktif</span></td><td class="py-4 px-space-md text-right whitespace-nowrap"><div class="flex flex-col items-end gap-1.5"><button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-low text-text-main hover:bg-surface-container transition-all font-label-md text-label-md" type="button"><span class="material-symbols-outlined text-[16px]">edit</span><span>Ubah Data</span></button><div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-decision-open-bg text-decision-open-text opacity-70 pointer-events-none cursor-not-allowed text-[11px] font-semibold"><span class="material-symbols-outlined text-[13px]">lock</span><span>KEPUTUSAN TERBUKA: ubah status akun anggota</span></div></div></td></tr><tr class="hover:bg-surface-container-low/60 transition-colors"><td class="py-4 px-space-md whitespace-nowrap"><div class="flex items-center gap-2"><span class="w-1.5 h-6 rounded-full bg-transparent"></span><div class="flex flex-col"><span class="font-label-md text-label-md text-text-main font-bold">LS-2026-0201</span><span class="font-label-caps text-label-caps text-text-subtle">Denda: Rp 0</span></div></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="flex flex-col"><span class="font-label-lg text-label-lg text-text-main font-semibold">Bella Anindita</span><span class="font-body-sm text-body-sm text-text-muted">0856-4433-2109</span><span class="font-label-caps text-label-caps text-text-subtle">bella.anindita@email.com</span></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-dipinjam-bg text-status-dipinjam-text font-label-md text-label-md"><span class="w-2 h-2 rounded-full bg-wireframe-buku-dipinjam"></span><span>Ada pinjaman (1 buku)</span></div></td><td class="py-4 px-space-md text-center whitespace-nowrap"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md font-bold"><span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span> Aktif</span></td><td class="py-4 px-space-md text-right whitespace-nowrap"><div class="flex flex-col items-end gap-1.5"><button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-low text-text-main hover:bg-surface-container transition-all font-label-md text-label-md" type="button"><span class="material-symbols-outlined text-[16px]">edit</span><span>Ubah Data</span></button><div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-decision-open-bg text-decision-open-text opacity-70 pointer-events-none cursor-not-allowed text-[11px] font-semibold"><span class="material-symbols-outlined text-[13px]">lock</span><span>KEPUTUSAN TERBUKA: ubah status akun anggota</span></div></div></td></tr><tr class="hover:bg-surface-container-low/60 transition-colors opacity-90"><td class="py-4 px-space-md whitespace-nowrap"><div class="flex items-center gap-2"><span class="w-1.5 h-6 rounded-full bg-transparent"></span><div class="flex flex-col"><span class="font-label-md text-label-md text-text-muted font-bold">LS-2024-0310</span><span class="font-label-caps text-label-caps text-text-subtle">Denda: Rp 0</span></div></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="flex flex-col"><span class="font-label-lg text-label-lg text-text-muted font-semibold">Yoga Saputra</span><span class="font-body-sm text-body-sm text-text-subtle">0878-2211-6655</span><span class="font-label-caps text-label-caps text-text-subtle">yoga.saputra@email.com</span></div></td><td class="py-4 px-space-md whitespace-nowrap"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md"><span class="w-2 h-2 rounded-full bg-status-tersedia-dot"></span><span>Tidak ada pinjaman (0 buku)</span></div></td><td class="py-4 px-space-md text-center whitespace-nowrap"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-text-muted font-label-md text-label-md font-bold"><span class="w-1.5 h-1.5 rounded-full bg-text-subtle"></span> Nonaktif</span></td><td class="py-4 px-space-md text-right whitespace-nowrap"><div class="flex flex-col items-end gap-1.5"><button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-low text-text-main hover:bg-surface-container transition-all font-label-md text-label-md" type="button"><span class="material-symbols-outlined text-[16px]">edit</span><span>Ubah Data</span></button><div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-decision-open-bg text-decision-open-text opacity-70 pointer-events-none cursor-not-allowed text-[11px] font-semibold"><span class="material-symbols-outlined text-[13px]">lock</span><span>KEPUTUSAN TERBUKA: ubah status akun anggota</span></div></div></td></tr></tbody>
+</table>
+</div>
+<!-- Pagination Controls -->
+<div class="flex items-center justify-between px-space-md py-3.5 bg-surface-container-lowest">
+<span class="font-body-sm text-body-sm text-text-muted">Menampilkan data 1 - 6 dari total 1.420 entitas</span>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-text-subtle bg-surface-container-low opacity-50 cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold">1</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-text-main font-label-md text-label-md hover:bg-surface-container">2</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-text-main font-label-md text-label-md hover:bg-surface-container">3</button>
+<span class="px-2 text-text-subtle font-label-md">...</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-text-main font-label-md text-label-md hover:bg-surface-container">284</button>
+<button class="p-2 rounded-lg text-text-main bg-surface-container-low hover:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Edit Data Anggota Panel (4 cols) -->
+<div class="col-span-12 xl:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-card rounded-xl p-space-lg shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex flex-col gap-space-md">
+<!-- Panel Header -->
+<div class="flex items-center justify-between pb-3 border-b-0">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-text-main">Formulir Ubah Data</h2>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-label-caps text-label-caps font-bold">PANEL AKTIF</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted">Perbarui data profil &amp; kontak anggota terpilih</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-text-muted">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+</div>
+<!-- Form Elements -->
+<form class="flex flex-col gap-space-md" onsubmit="event.preventDefault();">
+<!-- Field 1: Nomor Anggota (Read-only) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-muted uppercase tracking-wider">
+              Nomor Anggota (ID Sistem)
+            </label>
+<div class="relative">
+<input class="w-full px-3.5 py-2.5 bg-surface-container-low text-text-muted font-label-lg text-label-lg rounded-xl cursor-not-allowed select-none focus:outline-none" readonly="" type="text" value="LS-2025-0142">
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-text-subtle text-[18px]">lock</span>
+</div>
+<span class="font-label-caps text-label-caps text-text-subtle">Kunci identitas otomatis dari sistem registrasi</span>
+</div>
+<!-- Field 2: Nama Lengkap -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main font-semibold">
+              Nama Lengkap Anggota
+            </label>
+<input class="w-full px-3.5 py-2.5 bg-surface-card rounded-xl font-body-md text-body-md text-text-main shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" type="text" value="Rina Maharani">
+</div>
+<!-- Field 3: Identitas Resmi (NIK / NIM) -->
+<div class="flex flex-col gap-1.5"><label class="font-label-md text-label-md text-text-main font-semibold">Email Anggota</label><input class="w-full px-3.5 py-2.5 bg-surface-card rounded-xl font-body-md text-body-md text-text-main shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" type="email" value="rina.maharani@email.com"></div>
+<!-- Field 4: Kontak / WhatsApp -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main font-semibold">
+              Nomor Telepon / WhatsApp Aktif
+            </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-text-subtle text-[18px]">call</span>
+<input class="w-full pl-10 pr-3.5 py-2.5 bg-surface-card rounded-xl font-body-md text-body-md text-text-main shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" type="text" value="0812-3456-7890">
+</div>
+<span class="font-label-caps text-label-caps text-text-muted">Digunakan untuk notifikasi pengembalian &amp; denda otomatis</span>
+</div>
+<!-- Field 5: Alamat Domisili -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main font-semibold">
+              Alamat Domisili Sekarang
+            </label>
+<textarea class="w-full p-3.5 bg-surface-card rounded-xl font-body-md text-body-md text-text-main shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none transition-all" rows="3">Jl. Melati No. 12, Bandung</textarea>
+</div>
+<!-- Status Akun: OPEN DECISION WARNING & DISABLED CONTROLS -->
+<div class="p-3.5 rounded-xl bg-decision-open-bg flex flex-col gap-2">
+<div class="flex items-center gap-1.5 text-decision-open-text">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider">KEPUTUSAN TERBUKA: ubah status akun anggota</span>
+</div>
+<p class="font-body-sm text-body-sm text-decision-open-text/90 leading-relaxed">
+              Otoritas pengubahan status akun (Aktifkan / Nonaktifkan) masih ditangguhkan dalam kebijakan SOP operasional. Kontrol dinonaktifkan sementara bagi akun Petugas Perpustakaan.
+            </p>
+<div class="flex items-center gap-3 pt-1 opacity-50 pointer-events-none cursor-not-allowed">
+<label class="inline-flex items-center gap-2">
+<input checked="" class="accent-primary" disabled="" name="status_akun_disabled" type="radio">
+<span class="font-label-md text-label-md text-text-main">Aktif</span>
+</label>
+<label class="inline-flex items-center gap-2">
+<input class="accent-primary" disabled="" name="status_akun_disabled" type="radio">
+<span class="font-label-md text-label-md text-text-main">Nonaktif</span>
+</label>
+</div>
+</div>
+<!-- Panel Form Actions -->
+<div class="flex items-center gap-space-sm pt-2">
+<button class="flex-1 py-3 px-4 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-[0_4px_12px_rgba(99,102,241,0.25)] hover:bg-tertiary transition-all active:scale-[0.98] text-center" type="submit">
+              Simpan Perubahan
+            </button>
+<button class="py-3 px-5 rounded-xl bg-surface-container-low text-text-main font-label-lg text-label-lg hover:bg-surface-container transition-all" type="button">
+              Batal
+            </button>
+</div>
+</form>
+</div>
+<!-- Quick Helper Card for Librarian -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">verified_user</span>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-text-main font-bold">Validasi Nomor Telepon</span>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+            Pastikan nomor kontak anggota terhubung ke WhatsApp aktif guna menerima peringatan H-2 jatuh tempo secara otomatis.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Metric Counters and Governance SOP Policy Cards -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md pt-space-xs">
+<!-- Metric 1: Total Anggota -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Total Anggota Terdaftar</span>
+<span class="font-display-title text-display-title text-text-main">1.420</span>
+<span class="font-body-sm text-body-sm text-status-tersedia-text font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +14 minggu ini
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">groups</span>
+</div>
+</div>
+<!-- Metric 2: Anggota Aktif -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Anggota Status Aktif</span>
+<span class="font-display-title text-display-title text-text-main">1.380</span>
+<span class="font-body-sm text-body-sm text-text-muted font-medium">97,2% dari total direktori</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-status-tersedia-bg flex items-center justify-center text-status-tersedia-text">
+<span class="material-symbols-outlined text-[26px]">how_to_reg</span>
+</div>
+</div>
+<!-- Metric 3: Anggota Meminjam -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Anggota Meminjam</span>
+<span class="font-display-title text-display-title text-text-main">312</span>
+<span class="font-body-sm text-body-sm text-wireframe-buku-dipinjam font-medium">540 buku dalam sirkulasi</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-text-muted">
+<span class="material-symbols-outlined text-[26px]">book</span>
+</div>
+</div>
+<!-- SOP & Governance Policy Box -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-[0_1px_3px_rgba(15,23,42,0.04)] flex flex-col justify-between">
+<div class="flex items-center gap-2 text-text-main font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-primary text-[18px]">policy</span>
+<span>Catatan Kebijakan Operasional</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed my-1">
+        Petugas operasional berwenang menambah dan memperbarui kontak anggota. Penghapusan akun dan reset kredensial dikelola oleh Administrator Perpustakaan.
+      </p>
+<div class="flex items-center gap-1.5 text-text-subtle font-label-caps text-label-caps uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>SOP-LIB-02/2024</span>
+</div>
+</div>
+</div>
+</div></main></div>
+
+</body></html>
