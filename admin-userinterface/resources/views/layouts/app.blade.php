@@ -177,12 +177,12 @@
         <!-- Bottom Settings & Profile -->
         <div class="pt-6 space-y-1.5 border-t border-gray-100">
             <a href="{{ route('pengaturan.index') }}" 
-               class="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13.5px] font-medium text-[#64748b] hover:text-[#1e293b] hover:bg-[#f8fafc] transition-all">
+               class="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13.5px] font-medium transition-all {{ request()->routeIs('pengaturan.*') ? 'nav-item-active font-semibold' : 'text-[#64748b] hover:text-[#1e293b] hover:bg-[#f8fafc]' }}">
                 <i class="bi bi-gear text-lg"></i>
                 <span>Pengaturan Sistem</span>
             </a>
             <a href="{{ route('profil.index') }}" 
-               class="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13.5px] font-medium text-[#64748b] hover:text-[#1e293b] hover:bg-[#f8fafc] transition-all">
+               class="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl text-[13.5px] font-medium transition-all {{ request()->routeIs('profil.*') ? 'nav-item-active font-semibold' : 'text-[#64748b] hover:text-[#1e293b] hover:bg-[#f8fafc]' }}">
                 <i class="bi bi-person text-lg"></i>
                 <span>Profil</span>
             </a>
