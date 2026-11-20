@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "wireframe-buku-tersedia": "#334155", "inverse-surface": "#2d3133", "tertiary-container": "#645efb", "outline": "#767586", "surface-container-low": "#f2f4f6", "wireframe-buku-dipinjam": "#64748B", "on-error": "#ffffff", "on-secondary-container": "#60646f", "on-surface-variant": "#464554", "on-primary-fixed": "#07006c", "on-background": "#191c1e", "on-secondary-fixed": "#171c25", "primary-fixed-dim": "#c0c1ff", "tertiary-fixed-dim": "#c3c0ff", "on-secondary-fixed-variant": "#424751", "surface-variant": "#e0e3e5", "error": "#ba1a1a", "on-tertiary-container": "#fffbff", "status-dipinjam-text": "#334155", "decision-open-text": "#9A3412", "on-secondary": "#ffffff", "status-terlambat-text": "#991B1B", "outline-variant": "#c7c4d7", "surface-card": "#FFFFFF", "on-tertiary-fixed": "#0f0069", "on-primary": "#ffffff", "background-canvas": "#F4F6F9", "on-tertiary": "#ffffff", "surface-tint": "#494bd6", "primary-fixed": "#e1e0ff", "status-tersedia-dot": "#10B981", "inverse-on-surface": "#eff1f3", "secondary-fixed": "#dee2ef", "text-subtle": "#94A3B8", "text-main": "#1E293B", "status-tersedia-text": "#065F46", "border-card": "#EEF2F6", "border-subtle": "#E2E8F0", "surface-dim": "#d8dadc", "surface-container": "#eceef0", "surface-container-highest": "#e0e3e5", "background": "#f7f9fb", "status-tersedia-bg": "#ECFDF5", "surface": "#f7f9fb", "tertiary-fixed": "#e2dfff", "surface-container-lowest": "#ffffff", "decision-open-bg": "#FFF7ED", "text-muted": "#64748B", "primary-container": "#6063ee", "on-primary-container": "#fffbff", "status-dipinjam-bg": "#F1F5F9", "secondary-container": "#dee2ef", "status-warning-dot": "#F59E0B", "status-warning-bg": "#FFFBEB", "primary": "#4648d4", "status-terlambat-bg": "#FEF2F2", "surface-bright": "#f7f9fb", "on-surface": "#191c1e", "wireframe-buku-terlambat": "#94A3B8", "on-primary-fixed-variant": "#2f2ebe", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#3323cc", "tertiary": "#4b41e1", "status-terlambat-dot": "#EF4444", "on-error-container": "#93000a", "secondary-fixed-dim": "#c2c6d3", "status-warning-text": "#92400E", "inverse-primary": "#c0c1ff", "secondary": "#5a5e69", "surface-container-high": "#e6e8ea", "decision-open-border": "#FDBA74" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-2xl": "2.5rem", "space-xs": "0.25rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter": "1.25rem", "space-xl": "2rem", "margin": "1.5rem" }, "fontFamily": { "body-lg": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "display-title": [ "Plus Jakarta Sans" ], "label-caps": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-lg": [ "1rem", { "lineHeight": "1.5rem", "fontWeight": "400" } ], "label-lg": [ "0.875rem", { "lineHeight": "1.25rem", "fontWeight": "600" } ], "body-sm": [ "0.8125rem", { "lineHeight": "1.25rem", "fontWeight": "400" } ], "headline-lg": [ "1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "display-title": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-caps": [ "0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.05em", "fontWeight": "700" } ], "body-md": [ "0.875rem", { "lineHeight": "1.375rem", "fontWeight": "400" } ], "headline-sm": [ "1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" } ], "headline-md": [ "1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-md": [ "0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.01em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-background-canvas font-body-md text-body-md text-text-main antialiased selection:bg-primary selection:text-on-primary"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-card z-50 flex flex-col justify-between p-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-y-auto"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm px-space-xs"><div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-[0_4px_12px_rgba(99,102,241,0.25)]"><span class="material-symbols-outlined text-on-primary text-[22px]">local_library</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-text-main leading-tight">Libro Space</span><span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Operasional</span></div></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary text-on-primary font-bold shadow-[0_4px_12px_rgba(99,102,241,0.25)]"><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><a aria-current="page" class="flex items-center gap-3 px-space-md py-3 rounded-xl transition-all bg-primary text-on-primary font-bold shadow-[0_4px_12px_rgba(99,102,241,0.25)]" data-path="data-buku" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span>Data buku</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="data-anggota" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Data anggota</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="peminjaman" href="#"><span class="material-symbols-outlined text-[20px]">input</span><span>Peminjaman</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="pengembalian" href="#"><span class="material-symbols-outlined text-[20px]">assignment_return</span><span>Pengembalian</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="pembayaran-denda" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span>Pembayaran denda</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="riwayat" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span>Riwayat</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="laporan-harian" href="#"><span class="material-symbols-outlined text-[20px]">summarize</span><span>Laporan harian</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="persetujuan-registrasi" href="#"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span>Persetujuan registrasi</span></a><a class="flex items-center gap-3 px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="profil" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>Profil</span></a></nav></div><div class="pt-space-md"><div class="bg-surface-container-low rounded-xl p-space-md flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-status-tersedia-dot"></span><span class="font-label-md text-label-md text-text-main font-semibold">Sistem Online v1.2</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-status-tersedia-bg text-status-tersedia-text font-bold">AKTIF</span></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-[72px] bg-surface-card/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-full max-w-md"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-subtle text-[20px]">search</span><input class="w-full pl-10 pr-4 py-2 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main placeholder:text-text-subtle border-none focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Cari kode buku, nama anggota, no. transaksi..." type="text"></div></div><div class="flex items-center gap-space-lg"><button aria-label="Notifikasi" class="relative p-2 rounded-xl text-text-muted hover:bg-surface-container-low hover:text-text-main transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span></button><div class="flex items-center gap-3"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-text-main leading-tight">Petugas Contoh 01</span><span class="font-label-md text-label-md text-text-muted leading-tight">Role: Petugas Operasional</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-[72px] bg-background-canvas min-h-screen"><div class="flex flex-col w-full p-space-lg gap-space-lg">
+<!-- System Annotation & Sync Status -->
+<div class="flex items-center justify-between bg-surface-container-low px-space-md py-2.5 rounded-xl shadow-sm">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-text-muted">USE CASE: S01 | PT04_DATA_BUKU_DESKTOP (NORMAL)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-status-tersedia-dot animate-pulse"></span>
+<span class="font-label-md text-label-md font-semibold text-status-tersedia-text">Sinkronisasi Katalog Aktif</span>
+</div>
+</div>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<h1 class="font-display-title text-display-title text-text-main">Katalog &amp; Data Buku</h1>
+<p class="font-body-md text-body-md text-text-muted">Kelola ketersediaan koleksi pustaka, pencarian katalog, penambahan judul baru, dan pembaruan stok fisik buku.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 bg-primary text-on-primary rounded-xl font-label-lg text-label-lg shadow-[0_4px_12px_rgba(99,102,241,0.25)] hover:bg-primary-container transition-all" onclick="document.getElementById('modal-tambah-buku').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>+ Tambah Buku Baru</span>
+</button>
+</div>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col gap-space-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Search Input -->
+<div class="lg:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-text-subtle text-[20px]">search</span>
+<input class="w-full pl-11 pr-4 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main placeholder:text-text-subtle focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Cari judul buku, nomor ISBN, atau kata kunci..." type="text">
+</div>
+<!-- Filters -->
+<div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<!-- Filter Judul -->
+<div class="relative">
+<select class="w-full appearance-none pl-3 pr-8 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option>Semua Judul</option>
+<option>Abjad A - Z</option>
+<option>Abjad Z - A</option>
+<option>Terbaru Ditambahkan</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-text-subtle text-[18px] pointer-events-none">expand_more</span>
+</div>
+<!-- Filter Pengarang -->
+<div class="relative">
+<select class="w-full appearance-none pl-3 pr-8 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option>Semua Pengarang</option>
+<option>Pengarang Contoh A</option>
+<option>Pengarang Contoh B</option>
+<option>Pengarang Contoh C</option>
+<option>Pengarang Contoh D</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-text-subtle text-[18px] pointer-events-none">expand_more</span>
+</div>
+<!-- Filter Kategori -->
+<div class="relative">
+<select class="w-full appearance-none pl-3 pr-8 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option>Semua Kategori</option>
+<option>Fiksi Ilmiah</option>
+<option>Sejarah Nusantara</option>
+<option>Matematika Diskrit</option>
+<option>Pemrograman</option>
+<option>Biografi Tokoh</option>
+<option>Sains Terapan</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-text-subtle text-[18px] pointer-events-none">expand_more</span>
+</div>
+<!-- Filter Status -->
+<div class="relative">
+<select class="w-full appearance-none pl-3 pr-8 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option>Semua Status</option>
+<option>Tersedia</option>
+<option>Dipinjam</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-text-subtle text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Layout (Table & Side Drawer) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Books Table Container -->
+<div class="lg:col-span-8 bg-surface-card rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-text-muted font-label-caps text-label-caps uppercase tracking-wider"><tr><th class="py-3 px-space-md" scope="col">KODE</th><th class="py-3 px-space-md" scope="col">INFORMASI BUKU</th><th class="py-3 px-space-md" scope="col">KATEGORI</th><th class="py-3 px-space-md" scope="col">RAK</th><th class="py-3 px-space-md" scope="col">STOK</th><th class="py-3 px-space-md" scope="col">STATUS</th><th class="py-3 px-space-md text-right" scope="col">AKSI</th></tr></thead>
+<tbody class="divide-y divide-border-card text-text-main font-body-sm text-body-sm"><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B01</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Pagi di Kota Kecil</div><div class="text-text-muted font-body-sm">Dewi Anjani</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Fiksi</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak A-02</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-dipinjam-bg text-status-dipinjam-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-wireframe-buku-dipinjam"></span><span>Dipinjam</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B01', 'Pagi di Kota Kecil', 'Dewi Anjani', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B02</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Peta Rahasia</div><div class="text-text-muted font-body-sm">Raka Wijaya</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Petualangan</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak A-03</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-dipinjam-bg text-status-dipinjam-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-wireframe-buku-dipinjam"></span><span>Dipinjam</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B02', 'Peta Rahasia', 'Raka Wijaya', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B03</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Senja di Pelabuhan Lama</div><div class="text-text-muted font-body-sm">Eka Hartono</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Fiksi</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak A-02</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-terlambat-bg text-status-terlambat-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-status-terlambat-dot"></span><span>Terlambat</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B03', 'Senja di Pelabuhan Lama', 'Eka Hartono', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B04</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Ilmu Bintang Timur</div><div class="text-text-muted font-body-sm">Hartati Lubis</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Sains Populer</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak C-01</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-dipinjam-bg text-status-dipinjam-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-wireframe-buku-dipinjam"></span><span>Dipinjam</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B04', 'Ilmu Bintang Timur', 'Hartati Lubis', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B05</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Lentera Pesisir</div><div class="text-text-muted font-body-sm">Arman Sutisna</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Sejarah</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak B-04</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-dipinjam-bg text-status-dipinjam-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-wireframe-buku-dipinjam"></span><span>Dipinjam</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B05', 'Lentera Pesisir', 'Arman Sutisna', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B06</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Ombak di Teluk Biru</div><div class="text-text-muted font-body-sm">Nuraini Basri</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Petualangan</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak A-03</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-terlambat-bg text-status-terlambat-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-status-terlambat-dot"></span><span>Terlambat</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B06', 'Ombak di Teluk Biru', 'Nuraini Basri', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B07</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Kebun Kata</div><div class="text-text-muted font-body-sm">Yudha Permana</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Puisi</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak D-01</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span><span>Tersedia</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B07', 'Kebun Kata', 'Yudha Permana', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B08</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Bayang Tanah Merah</div><div class="text-text-muted font-body-sm">Ratna Ayu</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Misteri</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak A-05</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span><span>Tersedia</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B08', 'Bayang Tanah Merah', 'Ratna Ayu', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B09</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Jejak Langkah Malam</div><div class="text-text-muted font-body-sm">Bagas Ramadhan</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Misteri</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak A-05</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-dipinjam-bg text-status-dipinjam-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-wireframe-buku-dipinjam"></span><span>Dipinjam</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B09', 'Jejak Langkah Malam', 'Bagas Ramadhan', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B10</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Rumah Kaca Kecil</div><div class="text-text-muted font-body-sm">Citra Melati</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Anak-anak</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak E-01</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span><span>Tersedia</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B10', 'Rumah Kaca Kecil', 'Citra Melati', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B11</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Api di Bukit Sunyi</div><div class="text-text-muted font-body-sm">Gilang Prasetyo</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Sejarah</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak B-04</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span><span>Tersedia</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B11', 'Api di Bukit Sunyi', 'Gilang Prasetyo', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B12</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Samudra dalam Cangkir</div><div class="text-text-muted font-body-sm">Tania Wirawan</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Sains Populer</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak C-01</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span><span>Tersedia</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B12', 'Samudra dalam Cangkir', 'Tania Wirawan', 1, 1)" type="button">Ubah Stok</button></td></tr><tr class="hover:bg-surface-container-low/40 transition-colors"><td class="py-3 px-space-md whitespace-nowrap align-top"><span class="font-label-md text-label-md text-primary font-bold">B13</span></td><td class="py-3 px-space-md align-top min-w-[180px]"><div class="font-label-lg text-label-lg text-text-main font-semibold">Cahaya di Ujung Dermaga</div><div class="text-text-muted font-body-sm">Imam Syahputra</div></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="px-2 py-0.5 rounded-lg bg-surface-container font-label-md text-label-md text-text-main">Fiksi</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-muted">Rak A-02</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="font-label-md text-label-md font-semibold text-text-main">1 eks.</span></td><td class="py-3 px-space-md align-top whitespace-nowrap"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md"><span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span><span>Tersedia</span></span></td><td class="py-3 px-space-md align-top text-right whitespace-nowrap"><button class="px-2.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" onclick="pilihBukuStok('B13', 'Cahaya di Ujung Dermaga', 'Imam Syahputra', 1, 1)" type="button">Ubah Stok</button></td></tr></tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-space-md bg-surface-card border-t border-border-card flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-text-muted">Menampilkan 1 - 13 dari 13 buku terdaftar</span>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-xl text-text-subtle opacity-40 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center font-bold shadow-sm" type="button">1</button>
+<button class="w-8 h-8 rounded-xl hover:bg-surface-container-low text-text-main font-label-md text-label-md flex items-center justify-center transition-colors" type="button">2</button>
+<button class="w-8 h-8 rounded-xl hover:bg-surface-container-low text-text-main font-label-md text-label-md flex items-center justify-center transition-colors" type="button">3</button>
+<span class="px-1 text-text-subtle">...</span>
+<button class="w-8 h-8 rounded-xl hover:bg-surface-container-low text-text-main font-label-md text-label-md flex items-center justify-center transition-colors" type="button">248</button>
+<button class="p-2 rounded-xl text-text-main hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Side Panel: Inline Drawer "Ubah Stok Buku" -->
+<div class="lg:col-span-4 bg-surface-card rounded-xl p-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col gap-space-md" id="panel-ubah-stok">
+<div class="flex items-center justify-between pb-2 border-b border-border-card">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">inventory</span>
+<h2 class="font-headline-sm text-headline-sm text-text-main">Ubah Stok Buku</h2>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container text-text-muted">PANEL AKTIF</span>
+</div>
+<!-- Info Ringkas Buku Terpilih -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider" id="label-kode-buku">B01</span>
+<span class="font-headline-sm text-headline-sm text-text-main leading-tight" id="label-judul-buku">Pagi di Kota Kecil</span>
+<span class="font-body-sm text-body-sm text-text-muted" id="label-pengarang-buku">Pengarang: Dewi Anjani | Rak A-02</span>
+</div>
+<form class="flex flex-col gap-space-md" onsubmit="simpanStok(event)">
+<!-- Stok Fisik Saat Ini (Readonly) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-muted">Stok Fisik Saat Ini</label>
+<div class="flex items-center justify-between px-space-md py-2.5 bg-surface-container-low rounded-xl">
+<span class="font-body-sm text-body-sm text-text-muted">Jumlah saat ini di katalog</span>
+<span class="font-headline-sm text-headline-sm text-text-main font-bold" id="display-stok-sekarang">1</span>
+</div>
+</div>
+<!-- Penyesuaian (+ / -) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main">Penyesuaian Stok Fisik</label>
+<div class="flex items-center gap-3">
+<button class="w-11 h-11 rounded-xl bg-surface-container-low text-text-main hover:bg-surface-variant flex items-center justify-center transition-colors" onclick="ubahHitunganStok(-1)" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<input class="w-full text-center py-2.5 bg-surface-card border border-border-subtle rounded-xl font-headline-sm text-headline-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20" id="input-penyesuaian" type="number" value="0">
+<button class="w-11 h-11 rounded-xl bg-surface-container-low text-text-main hover:bg-surface-variant flex items-center justify-center transition-colors" onclick="ubahHitunganStok(1)" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+<div class="flex items-center justify-between px-1 text-[12px] text-text-subtle">
+<span>Stok akhir setelah penyesuaian:</span>
+<span class="font-bold text-text-main" id="display-stok-hasil">1 eksemplar</span>
+</div>
+</div>
+<!-- Alasan Pembaruan Stok -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main">Alasan Pembaruan Stok <span class="text-error">*</span></label>
+<select class="w-full pl-3 pr-8 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer" id="select-alasan" required="">
+<option value="Penambahan stok pengadaan baru">Penambahan stok pengadaan baru</option>
+<option value="Kerusakan fisik">Kerusakan fisik (Buku rusak / afkir)</option>
+<option value="Hilang / Tidak ditemukan saat audit fisik">Hilang / Tidak ditemukan saat audit fisik</option>
+<option value="Koreksi selisih pencatatan inventaris">Koreksi selisih pencatatan inventaris</option>
+</select>
+</div>
+<!-- Catatan Tambahan Petugas -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-muted">Catatan Petugas (Opsional)</label>
+<textarea class="w-full p-3 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main placeholder:text-text-subtle focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="Tuliskan nomor berita acara atau catatan kondisi..." rows="2"></textarea>
+</div>
+<!-- Aksi Form Stok -->
+<div class="flex flex-col gap-2 pt-2">
+<button class="w-full py-2.5 bg-primary text-on-primary rounded-xl font-label-lg text-label-lg shadow-[0_4px_12px_rgba(99,102,241,0.25)] hover:bg-primary-container transition-all text-center" type="submit">
+            Simpan Perubahan Stok
+          </button>
+<button class="w-full py-2.5 bg-surface-container-low text-text-main rounded-xl font-label-lg text-label-lg hover:bg-surface-variant transition-colors text-center" onclick="resetFormStok()" type="button">
+            Batal
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Bottom Fast Stock Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-space-md">
+<!-- Total Judul Aktif -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-muted">Total Judul Aktif</span>
+<span class="font-headline-lg text-headline-lg text-text-main font-bold mt-0.5">13</span>
+<span class="font-body-sm text-[11px] text-text-subtle">Katalog terdaftar resmi</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">menu_book</span>
+</div>
+</div>
+<!-- Total Eksemplar Fisik -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-muted">Total Eksemplar Fisik</span>
+<span class="font-headline-lg text-headline-lg text-text-main font-bold mt-0.5">13</span>
+<span class="font-body-sm text-[11px] text-text-subtle">Seluruh koleksi di rak</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-status-tersedia-text">
+<span class="material-symbols-outlined text-[26px]">inventory_2</span>
+</div>
+</div>
+<!-- Buku Sedang Dipinjam -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-muted">Buku Sedang Dipinjam</span>
+<span class="font-headline-lg text-headline-lg text-text-main font-bold mt-0.5">7</span>
+<span class="font-body-sm text-[11px] text-status-dipinjam-text">7 dipinjam (2 terlambat)</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-wireframe-buku-dipinjam">
+<span class="material-symbols-outlined text-[26px]">outbox</span>
+</div>
+</div>
+<!-- Catatan Kebijakan Operasional Petugas -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-start gap-3 md:col-span-3 lg:col-span-1 bg-surface-container-low/60">
+<span class="material-symbols-outlined text-text-muted text-[20px] mt-0.5 shrink-0">info</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md font-semibold text-text-main">Catatan Kebijakan</span>
+<p class="font-body-sm text-[12px] leading-relaxed text-text-muted">
+          Penghapusan katalog dan manajemen kategori hanya dapat dilakukan oleh <span class="font-semibold text-text-main">Administrator Perpustakaan</span>.
+        </p>
+</div>
+</div>
+</div>
+<!-- Modal Dialog: Tambah Buku Baru (Accessible via Header Button) -->
+<div class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden flex items-center justify-center p-space-md" id="modal-tambah-buku">
+<div class="bg-surface-card rounded-2xl w-full max-w-xl shadow-[0_12px_32px_rgba(15,23,42,0.12)] p-space-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between pb-3 border-b border-border-card">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">add_box</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-main">Tambah Judul Buku Baru</h3>
+</div>
+<button class="p-1 rounded-lg text-text-muted hover:bg-surface-container-low" onclick="document.getElementById('modal-tambah-buku').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-md" onsubmit="tambahBukuBaru(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main">Kode Buku <span class="text-error">*</span></label>
+<input class="px-3.5 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="BK-2025-006" required="" type="text">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main">Nomor ISBN <span class="text-error">*</span></label>
+<input class="px-3.5 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="978-602-..." required="" type="text">
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main">Judul Buku <span class="text-error">*</span></label>
+<input class="px-3.5 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="Masukkan judul lengkap buku..." required="" type="text">
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main">Pengarang <span class="text-error">*</span></label>
+<input class="px-3.5 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="Nama penulis/pengarang..." required="" type="text">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main">Kategori <span class="text-error">*</span></label>
+<select class="w-full px-3 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20" required="">
+<option value="">Pilih Kategori</option>
+<option value="Fiksi Ilmiah">Fiksi Ilmiah</option>
+<option value="Sejarah Nusantara">Sejarah Nusantara</option>
+<option value="Matematika Diskrit">Matematika Diskrit</option>
+<option value="Pemrograman">Pemrograman</option>
+<option value="Biografi Tokoh">Biografi Tokoh</option>
+<option value="Sains Terapan">Sains Terapan</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main">Penerbit &amp; Tahun</label>
+<input class="px-3.5 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="Contoh: Balai Pustaka, 2024" type="text">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-main">Jumlah Eksemplar Awal <span class="text-error">*</span></label>
+<input class="px-3.5 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main focus:outline-none focus:ring-2 focus:ring-primary/20" min="1" required="" type="number" value="1">
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 pt-4 border-t border-border-card">
+<button class="px-space-md py-2.5 bg-surface-container-low text-text-main rounded-xl font-label-lg text-label-lg hover:bg-surface-variant transition-colors" onclick="document.getElementById('modal-tambah-buku').classList.add('hidden')" type="button">Batal</button>
+<button class="px-space-lg py-2.5 bg-primary text-on-primary rounded-xl font-label-lg text-label-lg shadow-[0_4px_12px_rgba(99,102,241,0.25)] hover:bg-primary-container transition-all" type="submit">Simpan Buku Baru</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script>
+  let stokSekarangAktif = 8;
+
+  function pilihBukuStok(kode, judul, pengarang, stokSaatIni, total) {
+    stokSekarangAktif = stokSaatIni;
+    document.getElementById('label-kode-buku').innerText = kode;
+    document.getElementById('label-judul-buku').innerText = judul;
+    document.getElementById('label-pengarang-buku').innerText = 'Pengarang: ' + pengarang;
+    document.getElementById('display-stok-sekarang').innerText = stokSaatIni;
+    document.getElementById('input-penyesuaian').value = 0;
+    hitungHasilStok();
+    
+    // Smooth scroll to panel on smaller viewports
+    if (window.innerWidth < 1024) {
+      document.getElementById('panel-ubah-stok').scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function ubahHitunganStok(delta) {
+    const input = document.getElementById('input-penyesuaian');
+    let val = parseInt(input.value || '0', 10);
+    val += delta;
+    
+    // Cegah stok akhir negatif
+    if (stokSekarangAktif + val < 0) {
+      val = -stokSekarangAktif;
+    }
+    
+    input.value = val;
+    hitungHasilStok();
+  }
+
+  function hitungHasilStok() {
+    const input = document.getElementById('input-penyesuaian');
+    let val = parseInt(input.value || '0', 10);
+    const hasil = stokSekarangAktif + val;
+    document.getElementById('display-stok-hasil').innerText = hasil + ' eksemplar';
+  }
+
+  document.getElementById('input-penyesuaian')?.addEventListener('input', hitungHasilStok);
+
+  function resetFormStok() {
+    document.getElementById('input-penyesuaian').value = 0;
+    hitungHasilStok();
+  }
+
+  function simpanStok(e) {
+    e.preventDefault();
+    const val = parseInt(document.getElementById('input-penyesuaian').value || '0', 10);
+    const alasan = document.getElementById('select-alasan').value;
+    alert('Perubahan stok fisik berhasil disimpan! Selisih: ' + (val >= 0 ? '+' : '') + val + ' eksemplar. Alasan: ' + alasan);
+    stokSekarangAktif += val;
+    document.getElementById('display-stok-sekarang').innerText = stokSekarangAktif;
+    resetFormStok();
+  }
+
+  function tambahBukuBaru(e) {
+    e.preventDefault();
+    alert('Buku baru berhasil ditambahkan ke katalog perpustakaan!');
+    document.getElementById('modal-tambah-buku').classList.add('hidden');
+  }
+</script></main></div>
+
+</body></html>

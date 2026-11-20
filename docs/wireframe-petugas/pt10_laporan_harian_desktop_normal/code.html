@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "status-terlambat-text": "#991B1B", "on-secondary-fixed-variant": "#424751", "on-tertiary-container": "#fffbff", "on-primary": "#ffffff", "primary-fixed": "#e1e0ff", "wireframe-buku-terlambat": "#94A3B8", "primary": "#4648d4", "status-terlambat-dot": "#EF4444", "on-tertiary": "#ffffff", "surface-tint": "#494bd6", "text-main": "#1E293B", "primary-fixed-dim": "#c0c1ff", "tertiary-fixed-dim": "#c3c0ff", "background-canvas": "#F4F6F9", "error": "#ba1a1a", "outline": "#767586", "surface-container-low": "#f2f4f6", "on-secondary": "#ffffff", "on-primary-container": "#fffbff", "primary-container": "#6063ee", "status-terlambat-bg": "#FEF2F2", "surface-card": "#FFFFFF", "status-tersedia-bg": "#ECFDF5", "status-tersedia-dot": "#10B981", "surface-container-high": "#e6e8ea", "on-error": "#ffffff", "tertiary-container": "#645efb", "secondary-fixed-dim": "#c2c6d3", "surface-variant": "#e0e3e5", "on-secondary-fixed": "#171c25", "tertiary-fixed": "#e2dfff", "on-error-container": "#93000a", "wireframe-buku-dipinjam": "#64748B", "on-surface": "#191c1e", "secondary-container": "#dee2ef", "on-tertiary-fixed-variant": "#3323cc", "status-dipinjam-text": "#334155", "error-container": "#ffdad6", "background": "#f7f9fb", "inverse-primary": "#c0c1ff", "outline-variant": "#c7c4d7", "on-secondary-container": "#60646f", "on-primary-fixed-variant": "#2f2ebe", "tertiary": "#4b41e1", "on-primary-fixed": "#07006c", "inverse-on-surface": "#eff1f3", "border-subtle": "#E2E8F0", "status-dipinjam-bg": "#F1F5F9", "surface": "#f7f9fb", "decision-open-border": "#FDBA74", "on-tertiary-fixed": "#0f0069", "surface-container-lowest": "#ffffff", "inverse-surface": "#2d3133", "surface-container": "#eceef0", "decision-open-text": "#9A3412", "text-subtle": "#94A3B8", "status-tersedia-text": "#065F46", "wireframe-buku-tersedia": "#334155", "surface-bright": "#f7f9fb", "decision-open-bg": "#FFF7ED", "status-warning-bg": "#FFFBEB", "status-warning-dot": "#F59E0B", "secondary-fixed": "#dee2ef", "on-background": "#191c1e", "on-surface-variant": "#464554", "surface-container-highest": "#e0e3e5", "status-warning-text": "#92400E", "surface-dim": "#d8dadc", "text-muted": "#64748B", "secondary": "#5a5e69", "border-card": "#EEF2F6" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1.5rem", "space-2xl": "2.5rem", "space-lg": "1.5rem", "space-xl": "2rem", "gutter": "1.25rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem" }, "fontFamily": { "body-md": [ "Plus Jakarta Sans" ], "label-caps": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "display-title": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-md": [ "0.875rem", { "lineHeight": "1.375rem", "fontWeight": "400" } ], "label-caps": [ "0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.05em", "fontWeight": "700" } ], "label-lg": [ "0.875rem", { "lineHeight": "1.25rem", "fontWeight": "600" } ], "headline-md": [ "1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "1rem", { "lineHeight": "1.5rem", "fontWeight": "400" } ], "headline-sm": [ "1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" } ], "display-title": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-lg": [ "1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "body-sm": [ "0.8125rem", { "lineHeight": "1.25rem", "fontWeight": "400" } ], "label-md": [ "0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.01em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-background-canvas font-body-md text-body-md text-text-main antialiased selection:bg-primary selection:text-on-primary"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-card z-50 flex flex-col justify-between p-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-y-auto"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm px-space-xs"><div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-[0_4px_12px_rgba(99,102,241,0.25)]"><span class="material-symbols-outlined text-on-primary text-[22px]">local_library</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-text-main leading-tight font-bold">Libro Space</span><span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider font-bold">OPERASIONAL</span></div></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary text-on-primary font-bold shadow-[0_4px_12px_rgba(99,102,241,0.25)]"><a class="flex items-center px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="dashboard" href="#"><span>Dashboard</span></a><a class="flex items-center px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="data-buku" href="#"><span>Data buku</span></a><a class="flex items-center px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="data-anggota" href="#"><span>Data anggota</span></a><a class="flex items-center px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="peminjaman" href="#"><span>Peminjaman</span></a><a class="flex items-center px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="pengembalian" href="#"><span>Pengembalian</span></a><a class="flex items-center px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="pembayaran-denda" href="#"><span>Pembayaran denda</span></a><a class="flex items-center px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="riwayat" href="#"><span>Riwayat</span></a><a class="flex items-center px-space-md py-3 rounded-xl font-label-lg text-label-lg bg-primary text-on-primary font-bold shadow-[0_4px_12px_rgba(99,102,241,0.25)] transition-all" data-path="laporan-harian" href="#"><span>Laporan harian</span></a><a class="flex items-center px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="persetujuan-registrasi" href="#"><span>Persetujuan registrasi</span></a><a class="flex items-center px-space-md py-3 rounded-xl font-label-lg text-label-lg text-text-muted hover:bg-surface-container-low hover:text-text-main transition-all" data-path="profil" href="#"><span>Profil</span></a></nav></div><div class="pt-space-md"><div class="bg-surface-container-low rounded-xl p-space-md flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-status-tersedia-dot"></span><span class="font-label-md text-label-md text-text-main font-semibold">Sistem Online v1.2</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-status-tersedia-bg text-status-tersedia-text font-bold">AKTIF</span></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-[72px] bg-surface-card/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center w-full max-w-md"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-subtle text-[20px]">search</span><input class="w-full pl-10 pr-4 py-2 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-text-main placeholder:text-text-subtle border-none focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Pencarian cepat loket (kode buku, ID anggota)..." type="text"/></div></div><div class="flex items-center gap-space-lg"><button aria-label="Notifikasi" class="relative p-2 rounded-xl text-text-muted hover:bg-surface-container-low hover:text-text-main transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span></button><div class="flex items-center gap-3"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-text-main leading-tight">Petugas Contoh 01</span><span class="font-label-md text-label-md text-text-muted leading-tight">Role: Petugas Operasional</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-[72px] bg-background-canvas min-h-screen"><div class="flex flex-col w-full p-space-lg gap-space-lg">
+<!-- System Annotation & Global Notice Banner -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-high text-text-muted font-bold tracking-wider">
+          USE CASE: P04 | PT10_LAPORAN_HARIAN_DESKTOP (NORMAL)
+        </span>
+<span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span>
+<span class="font-body-sm text-body-sm text-text-muted">Status Sinkronisasi Loket: Terverifikasi Lengkap</span>
+</div>
+<span class="font-label-md text-label-md text-text-subtle">Sirkulasi Loket Terbuka • Shift Pagi &amp; Siang</span>
+</div>
+<!-- Alert / Banner Notifikasi Ringkas -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-status-tersedia-bg text-status-tersedia-text shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-status-tersedia-dot">verified</span>
+<p class="font-body-sm text-body-sm">
+          Seluruh <strong>1 transaksi sirkulasi</strong> tanggal 8 November 2026 telah terekonsiliasi dengan kas fisik loket. Siap dicetak untuk lembar serah terima shift operasional.
+        </p>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-white text-status-tersedia-text font-bold">REKONSILIASI OK</span>
+</div>
+</div>
+<!-- Header Panel: Control Periode & Tombol Cetak Saja -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-space-md p-space-lg rounded-xl bg-surface-card shadow-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider">Laporan Operasional Loket</span>
+<span class="text-text-subtle">•</span>
+<span class="font-label-md text-label-md text-text-muted">Arsip Harian Petugas</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-main">Rekapitulasi Layanan Sirkulasi</h1>
+<p class="font-body-sm text-body-sm text-text-muted">
+        Pencatatan mutasi fisik eksemplar, pengesahan anggota baru, dan perolehan kas denda tunai loket perpustakaan.
+      </p>
+</div>
+<!-- Controls: Filter Periode & Cetak Button -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Periode Switcher (Harian & Mingguan) -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl">
+<button class="px-4 py-2 rounded-lg font-label-md text-label-md bg-surface-card text-primary font-bold shadow-sm transition-all flex items-center gap-1.5" id="tab-harian" type="button">
+<span class="material-symbols-outlined text-[16px]">today</span>
+<span>Harian (8 Nov 2026)</span>
+</button>
+<button class="px-4 py-2 rounded-lg font-label-md text-label-md text-text-muted hover:text-text-main transition-all flex items-center gap-1.5" id="tab-mingguan" type="button">
+<span class="material-symbols-outlined text-[16px]">date_range</span>
+<span>Mingguan (2 sampai 8 Nov 2026)</span>
+</button>
+</div>
+<!-- Date Badge Aktif -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-low text-text-main">
+<span class="material-symbols-outlined text-[18px] text-text-muted">calendar_month</span>
+<span class="font-label-md text-label-md font-semibold">8 November 2026</span>
+</div>
+<!-- Tombol Aksi: Cetak Laporan (HANYA CETAK SESUAI ATURAN KETAT) -->
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container shadow-[0_4px_12px_rgba(99,102,241,0.25)] transition-all cursor-pointer" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Cetak Laporan</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Metrik Harian Loket Operasional -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<!-- Metrik 1: Total Peminjaman Hari Ini -->
+<div class="p-space-lg rounded-xl bg-surface-card shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider font-bold">Layanan Sirkulasi</span>
+<span class="font-label-lg text-label-lg text-text-main font-semibold mt-0.5">Peminjaman Hari Ini</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">book</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col">
+<div class="flex items-baseline gap-2">
+<span class="font-display-title text-display-title text-text-main font-bold">1</span>
+<span class="font-label-md text-label-md text-text-muted">Transaksi</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-status-tersedia-bg text-status-tersedia-text font-bold">
+            1 Eksemplar
+          </span>
+<span class="font-body-sm text-body-sm text-text-muted">dibawa keluar</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-primary"></div>
+</div>
+<!-- Metrik 2: Total Pengembalian Hari Ini -->
+<div class="p-space-lg rounded-xl bg-surface-card shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider font-bold">Layanan Sirkulasi</span>
+<span class="font-label-lg text-label-lg text-text-main font-semibold mt-0.5">Pengembalian Hari Ini</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-status-tersedia-bg text-status-tersedia-text flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">assignment_turned_in</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col">
+<div class="flex items-baseline gap-2">
+<span class="font-display-title text-display-title text-text-main font-bold">0</span>
+<span class="font-label-md text-label-md text-text-muted">Transaksi</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-high text-text-muted font-bold">
+            0 Eksemplar
+          </span>
+<span class="font-body-sm text-body-sm text-text-muted">masuk ke rak</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-status-tersedia-dot"></div>
+</div>
+<!-- Metrik 3: Denda Terkumpul Hari Ini -->
+<div class="p-space-lg rounded-xl bg-surface-card shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider font-bold">Kas Fisik Loket</span>
+<span class="font-label-lg text-label-lg text-text-main font-semibold mt-0.5">Denda Terkumpul</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-status-warning-bg text-status-warning-text flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-text-muted font-bold">Rp</span>
+<span class="font-display-title text-display-title text-text-main font-bold">0</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-high text-text-muted font-bold">
+            0 Transaksi
+          </span>
+<span class="font-body-sm text-body-sm text-text-muted">tidak ada pelunasan denda</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-status-warning-dot"></div>
+</div>
+</div>
+<!-- Ringkasan Angka Tabel Laporan Resmi -->
+<div class="flex flex-col rounded-xl bg-surface-card shadow-sm overflow-hidden">
+<div class="p-space-md px-space-lg border-b border-border-card flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">analytics</span>
+<h2 class="font-headline-sm text-headline-sm text-text-main font-semibold">Ringkasan Laporan Resmi</h2>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted">DATA TEREKONSILIASI RESMI</span>
+</div>
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low font-label-caps text-label-caps text-text-muted uppercase tracking-wider">
+<th class="py-3 px-space-lg">Periode</th>
+<th class="py-3 px-space-lg text-center">Peminjaman</th>
+<th class="py-3 px-space-lg text-center">Pengembalian</th>
+<th class="py-3 px-space-lg text-right">Denda Dibayar</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-card">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-lg font-label-md text-label-md text-text-main font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Harian, 8 Nov 2026</span>
+<span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-bold">TERPILIH</span>
+</td>
+<td class="py-3.5 px-space-lg text-center font-body-sm text-body-sm text-text-main font-medium">1</td>
+<td class="py-3.5 px-space-lg text-center font-body-sm text-body-sm text-text-muted">0</td>
+<td class="py-3.5 px-space-lg text-right font-label-md text-label-md text-text-main font-semibold">Rp 0</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-lg font-label-md text-label-md text-text-muted flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+<span>Mingguan, 2 sampai 8 Nov 2026</span>
+</td>
+<td class="py-3.5 px-space-lg text-center font-body-sm text-body-sm text-text-main font-medium">1</td>
+<td class="py-3.5 px-space-lg text-center font-body-sm text-body-sm text-text-muted">0</td>
+<td class="py-3.5 px-space-lg text-right font-label-md text-label-md text-text-main font-semibold">Rp 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Detail Rincian Transaksi Periode Terpilih -->
+<div class="flex flex-col rounded-xl bg-surface-card shadow-sm overflow-hidden">
+<!-- Header Tabel & Info Filter Internal Loket -->
+<div class="p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-card">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-text-main">Rincian Transaksi Periode Terpilih (Harian, 8 Nov 2026)</h2>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-surface-container-low text-text-muted font-bold">1 ENTRI HARI INI</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">
+          Daftar seluruh aktivitas transaksi meja loket yang diproses oleh petugas operasional pada shift aktif tanggal 8 November 2026.
+        </p>
+</div>
+<!-- Quick Micro-Legend Status Loket -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 font-label-md text-label-md text-text-muted">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Peminjaman (1)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-md text-label-md text-text-muted">
+<span class="w-2 h-2 rounded-full bg-status-tersedia-dot"></span>
+<span>Pengembalian (0)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-md text-label-md text-text-muted">
+<span class="w-2 h-2 rounded-full bg-status-warning-dot"></span>
+<span>Denda Dibayar (Rp 0)</span>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low font-label-caps text-label-caps text-text-muted uppercase tracking-wider">
+<th class="py-3 px-space-md">Tanggal &amp; Waktu</th>
+<th class="py-3 px-space-md">Jenis Layanan</th>
+<th class="py-3 px-space-md">Kode Buku</th>
+<th class="py-3 px-space-md">Judul Buku</th>
+<th class="py-3 px-space-md">No. Anggota</th>
+<th class="py-3 px-space-md">Nama Anggota</th>
+<th class="py-3 px-space-md text-right">Nominal Denda</th>
+<th class="py-3 px-space-md text-center">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1: Peminjaman Bella Anindita -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-text-muted">
+              8 Nov 2026 • 09:30 WIB
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-status-dipinjam-bg text-status-dipinjam-text font-label-md text-label-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Peminjaman
+              </span>
+</td>
+<td class="py-3.5 px-space-md font-label-md text-label-md text-primary font-bold">
+              B09
+            </td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-text-main font-semibold">
+              Jejak Langkah Malam
+            </td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-text-main font-medium">
+              LS-2026-0201
+            </td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-text-main">
+              Bella Anindita
+            </td>
+<td class="py-3.5 px-space-md text-right font-body-sm text-body-sm text-text-subtle">
+              Rp 0
+            </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-tersedia-bg text-status-tersedia-text font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-tersedia-dot"></span>
+                Tersimpan
+              </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Kas Summary Bar -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-text-muted">receipt_long</span>
+<span class="font-body-sm text-body-sm text-text-muted">Menampilkan 1 transaksi peminjaman (pengembalian: 0 transaksi, pelunasan denda: Rp 0)</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-md text-label-md text-text-main font-bold">Akumulasi Kas Denda Tunai Hari Ini:</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Rp 0</span>
+</div>
+</div>
+</div>
+<!-- Lembar Pengesahan / Tanda Tangan Petugas Loket Selesai Shift -->
+<div class="p-space-lg rounded-xl bg-surface-card shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">draw</span>
+<span class="font-label-lg text-label-lg text-text-main font-bold">Lembar Verifikasi &amp; Pengesahan Loket Selesai Shift</span>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted">DOKUMEN FISIK BERKAS SERAH TERIMA SHIFT</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-xl pt-2">
+<!-- Info Ringkasan Dokumen -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container-low gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-text-main font-bold">Catatan Penutupan Shift:</span>
+<p class="font-body-sm text-body-sm text-text-muted">
+            Semua transaksi peminjaman fisik (1 buku: Bella Anindita - Jejak Langkah Malam) dan pengembalian (0 buku) telah dicatat ke sistem. Fisik kas denda sebesar <strong>Rp 0</strong> telah diverifikasi bersama pada penutupan loket operasional.
+          </p>
+</div>
+<div class="flex flex-col gap-1 pt-2 border-t border-border-card text-text-muted font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-text-subtle">call</span>
+<span>Kontak Perpustakaan: <strong>(021) 555-0123</strong></span>
+</div>
+<div class="flex items-center gap-3 pt-1 text-text-subtle font-label-caps text-label-caps">
+<span>KODE DOKUMEN: LOP-20261108-01</span>
+<span>•</span>
+<span>DICETAK: 8 NOVEMBER 2026, 17:00 WIB</span>
+</div>
+</div>
+</div>
+<!-- Area Tanda Tangan Petugas -->
+<div class="flex flex-col items-end text-right justify-between pr-4">
+<div class="flex flex-col items-end">
+<span class="font-body-sm text-body-sm text-text-muted">Kabupaten / Kota Lokasi Loket</span>
+<span class="font-label-md text-label-md text-text-main font-semibold">Minggu, 8 November 2026</span>
+<span class="font-body-sm text-body-sm text-text-subtle mt-0.5">Petugas Pelapor Loket Operasional,</span>
+</div>
+<!-- Kolom Tanda Tangan Fisik -->
+<div class="w-56 h-20 my-2 flex items-center justify-center">
+<!-- Ruang tanda tangan basah -->
+<span class="font-label-caps text-label-caps text-text-subtle tracking-widest">[ TANDA TANGAN BASAH ]</span>
+</div>
+<div class="flex flex-col items-end border-t border-text-subtle/30 pt-1.5 w-56">
+<span class="font-label-lg text-label-lg text-text-main font-bold">Petugas Contoh 01</span>
+<span class="font-body-sm text-body-sm text-text-muted">NIP. 19940812 202203 1 001</span>
+<span class="font-label-caps text-label-caps text-primary font-bold mt-0.5">LOKET SIRKULASI UTAMA</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple vanilla micro-interaction toggle for Period Switcher
+  const btnHarian = document.getElementById('tab-harian');
+  const btnMingguan = document.getElementById('tab-mingguan');
+
+  if (btnHarian && btnMingguan) {
+    btnMingguan.addEventListener('click', () => {
+      btnMingguan.className = "px-4 py-2 rounded-lg font-label-md text-label-md bg-surface-card text-primary font-bold shadow-sm transition-all flex items-center gap-1.5";
+      btnHarian.className = "px-4 py-2 rounded-lg font-label-md text-label-md text-text-muted hover:text-text-main transition-all flex items-center gap-1.5";
+    });
+
+    btnHarian.addEventListener('click', () => {
+      btnHarian.className = "px-4 py-2 rounded-lg font-label-md text-label-md bg-surface-card text-primary font-bold shadow-sm transition-all flex items-center gap-1.5";
+      btnMingguan.className = "px-4 py-2 rounded-lg font-label-md text-label-md text-text-muted hover:text-text-main transition-all flex items-center gap-1.5";
+    });
+  }
+</script></main></div></body></html>
