@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_blank" name="shell-type"/>
+<title>S09 – Reservasi Buku (Desktop)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              DEFAULT: '#3949AB',
+              hover: '#303F9F',
+              dark: '#1A237E',
+              light: '#E8EAF6'
+            },
+            surface: {
+              panel: '#FFFFFF',
+              canvas: '#F7F8FA',
+              subtle: '#F1F3F9'
+            },
+            text: {
+              primary: '#1F2430',
+              secondary: '#5F6675',
+              muted: '#8F95A3'
+            },
+            border: {
+              structural: '#E0E3E8',
+              light: '#EDF0F4'
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-[#F7F8FA] text-text-primary antialiased min-h-screen relative overflow-hidden font-sans">
+<!-- S08 Detail Buku Background (Desktop View max-w-1200px) -->
+<div class="w-full min-h-screen px-6 py-8 flex flex-col items-center justify-start pointer-events-none select-none filter blur-[2px] opacity-60">
+<div class="w-full max-w-[1200px] flex flex-col gap-6">
+<!-- Top Navigation & Breadcrumbs -->
+<header class="flex items-center justify-between pb-4 border-b border-border-structural">
+<div class="flex items-center gap-2 text-sm text-text-secondary">
+<span class="hover:text-text-primary">KATALOG UTAMA</span>
+<span class="material-symbols-outlined text-base">chevron_right</span>
+<span>NON-FIKSI &amp; SEJARAH</span>
+<span class="material-symbols-outlined text-base">chevron_right</span>
+<span class="font-semibold text-text-primary">REF-HIST-092</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-text-secondary font-medium">
+<span class="px-2.5 py-1 bg-surface-subtle rounded text-text-secondary font-mono">TERMINAL: KSK-LIB-04</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+            Lantai 2 - Rak H-12
+          </span>
+</div>
+</header>
+<!-- Main Book View Grid -->
+<div class="grid grid-cols-12 gap-8 items-start mt-2">
+<!-- Book Cover Left Column -->
+<div class="col-span-4 flex flex-col gap-4">
+<div class="w-full aspect-[2/3] bg-surface-subtle rounded-xl overflow-hidden shadow-md relative border border-border-structural">
+<img alt="Cover Sapiens" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCatmFP946HUje0Q7-PxurLO_06P5gMsZxwJ_M1d_JYrn4NRVzx7Vjg2t4qta44Cpe-Sn8oqSBjsNmPOnTCSMevF38xyboqGs2XCdmsYhowGlgTnuQ8KC1WoZ0dua6myp34Phv3KdH1_kSfm0v7T5xelIkrQ1FTmN-bOFRBl0QyyDOziSHENKXcT0P5XYXnIoLdFfBBktaGBJaCnIjv6YuXyjtzFk3B7Hf2l4qy7Nul"/>
+<span class="absolute top-3 left-3 px-3 py-1 bg-amber-50 text-amber-700 text-xs font-semibold rounded-md border border-amber-200">
+              SEDANG DIPINJAM
+            </span>
+</div>
+<div class="bg-surface-panel p-4 rounded-xl border border-border-structural shadow-sm flex flex-col gap-1">
+<span class="text-xs text-text-secondary font-medium">ESTIMASI KEMBALI</span>
+<span class="text-lg font-bold text-text-primary">24 Oktober 2024</span>
+<span class="text-xs text-text-muted mt-1">Peminjam: Anggota Terdaftar (A-8841)</span>
+</div>
+</div>
+<!-- Book Detail Right Column -->
+<div class="col-span-8 flex flex-col gap-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-brand-light text-brand">EDISI REVISI INDONESIA</span>
+<span class="text-xs text-text-muted font-mono">ISBN: 978-602-424-416-3</span>
+</div>
+<h1 class="text-3xl font-bold text-text-primary tracking-tight">Sapiens: Riwayat Singkat Umat Manusia</h1>
+<p class="text-base text-text-secondary mt-1">Yuval Noah Harari • Diterbitkan oleh Kepustakaan Populer Gramedia</p>
+</div>
+<!-- Availability Metrics -->
+<div class="grid grid-cols-3 gap-4 p-5 bg-surface-panel rounded-xl border border-border-structural shadow-sm">
+<div>
+<span class="text-xs text-text-secondary font-medium block mb-1">TOTAL EKSEMPLAR</span>
+<span class="text-2xl font-bold text-text-primary">3 Unit</span>
+</div>
+<div>
+<span class="text-xs text-text-secondary font-medium block mb-1">TERSEDIA DI RAK</span>
+<span class="text-2xl font-bold text-red-600">0 Unit</span>
+</div>
+<div>
+<span class="text-xs text-text-secondary font-medium block mb-1">ANTREAN AKTIF</span>
+<span class="text-2xl font-bold text-brand">1 Orang</span>
+</div>
+</div>
+<!-- Synopsis Section -->
+<div class="flex flex-col gap-2">
+<h2 class="text-base font-semibold text-text-primary">Sinopsis Singkat</h2>
+<p class="text-sm text-text-secondary leading-relaxed">
+              Selama 100.000 tahun terakhir, setidaknya ada enam spesies manusia yang mendiami bumi. Hari ini hanya tersisa satu: Homo sapiens. Apa yang terjadi pada yang lain? Dan apa yang mungkin terjadi pada kita?
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Elegant Scrim/Backdrop (rgba(0,0,0,0.5) blur) -->
+<div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4" id="modal-container">
+<!-- Center Modal Dialog (width ~560px, rounded corners 16px, background #FFFFFF, shadow-2xl, border #E0E3E8) -->
+<div class="relative w-full max-w-[560px] bg-white rounded-2xl border border-border-structural shadow-2xl overflow-hidden flex flex-col transition-all transform scale-100 animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="flex items-center justify-between px-6 py-5 border-b border-border-light bg-white">
+<div class="flex items-center gap-2.5">
+<div class="w-2 h-5 bg-brand rounded-full"></div>
+<h2 class="text-lg font-bold text-text-primary tracking-tight">Konfirmasi Reservasi Buku</h2>
+</div>
+<button aria-label="Tutup Modal" class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-canvas transition-colors focus:outline-none" id="btn-close" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body Content -->
+<div class="p-6 flex flex-col gap-5 bg-white">
+<!-- Book Summary Item -->
+<div class="p-3.5 bg-surface-canvas rounded-xl border border-border-structural flex items-center gap-4">
+<div class="w-16 h-22 shrink-0 bg-surface-subtle rounded-lg overflow-hidden border border-border-structural shadow-sm aspect-[2/3]">
+<img alt="Thumbnail Sapiens" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKlC2pysSKHIaio_7vbtBDJBkTT63B0VUXB1YJRvR_RgCM1NMAU__D4qnhkWAAPHsr_lcli07Crje07QDlmRPc8PhQ0eUIeRRaoDN6y_YSJqbvlqXddyGjbD6T9wFDSsMLA0fax1hEEUUpbWPTZWuh9jLnkmeuJZacOebHlnT-3Ku1i-_vuOZitdrvl1NxPHiahAgOjuKJNqeH1GMOcxuySfU1PMYE9F0yJEOs6BfG"/>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[11px] font-semibold text-text-muted font-mono tracking-wider">REF-HIST-092</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                Dipinjam
+              </span>
+</div>
+<h3 class="text-sm font-semibold text-text-primary truncate" title="Sapiens: Riwayat Singkat Umat Manusia">
+              Sapiens: Riwayat Singkat Umat Manusia
+            </h3>
+<p class="text-xs text-text-secondary mt-0.5">Yuval Noah Harari</p>
+</div>
+</div>
+<!-- Antrean Information Box -->
+<div class="p-4 rounded-xl bg-blue-50/70 border border-blue-200/80 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-100 text-brand font-semibold text-xs tracking-tight">
+<span class="material-symbols-outlined text-[15px]">format_list_numbered</span>
+<span>Nomor Antrean: Ke-2</span>
+</div>
+<span class="text-xs font-medium text-blue-700">Slot Reservasi Tersedia</span>
+</div>
+<p class="text-xs text-text-secondary leading-relaxed pt-1">
+            Anda akan masuk ke dalam antrean ke-2 untuk buku ini. Sistem akan mengirimkan notifikasi dan menahan buku di meja sirkulasi selama <strong class="font-semibold text-text-primary">1x24 jam</strong> saat buku dikembalikan oleh peminjam sebelumnya.
+          </p>
+</div>
+<!-- Notification Checkbox -->
+<label class="flex items-start gap-3 p-1 cursor-pointer select-none group">
+<input checked="" class="mt-0.5 h-4 w-4 rounded border-border-structural text-brand focus:ring-brand focus:ring-offset-0 cursor-pointer transition-colors" id="checkbox-sms" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-text-primary group-hover:text-brand transition-colors">
+              Kirim pemberitahuan otomatis via SMS / Notifikasi Akun
+            </span>
+<span class="text-xs text-text-secondary mt-0.5">
+              Nomor terdaftar: +62 812-****-4491
+            </span>
+</div>
+</label>
+<!-- Policy Summary -->
+<div class="flex items-center justify-between px-3 py-2.5 bg-surface-canvas rounded-lg border border-border-light text-xs text-text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-text-muted">bookmark</span>
+<span>Limit Reservasi: <strong class="text-text-primary font-semibold">1/2 Buku Aktif</strong></span>
+</div>
+<div class="w-px h-3.5 bg-border-structural"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-text-muted">schedule</span>
+<span>Masa Tahan: <strong class="text-text-primary font-semibold">24 Jam setelah ready</strong></span>
+</div>
+</div>
+</div>
+<!-- Modal Footer with Actions -->
+<div class="px-6 py-4 bg-surface-canvas border-t border-border-structural flex items-center justify-end gap-3">
+<button class="h-12 px-5 rounded-xl font-medium text-sm text-text-secondary hover:text-text-primary hover:bg-surface-subtle transition-colors focus:outline-none" id="btn-batal" type="button">
+          Batal &amp; Kembali
+        </button>
+<button class="h-12 px-6 rounded-xl font-semibold text-sm text-white bg-[#3949AB] hover:bg-[#303F9F] active:bg-[#1A237E] shadow-sm hover:shadow transition-all flex items-center gap-2 focus:outline-none" id="btn-konfirmasi" type="button">
+<span class="material-symbols-outlined text-[19px]">bookmark_add</span>
+<span>Konfirmasi Reservasi</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+    (function initModalControls() {
+      const modal = document.getElementById('modal-container');
+      const btnClose = document.getElementById('btn-close');
+      const btnBatal = document.getElementById('btn-batal');
+      const btnKonfirmasi = document.getElementById('btn-konfirmasi');
+
+      function hideModal() {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.style.transition = 'opacity 180ms ease';
+        setTimeout(() => {
+          modal.style.display = 'none';
+        }, 180);
+      }
+
+      if (btnClose) btnClose.addEventListener('click', hideModal);
+      if (btnBatal) btnBatal.addEventListener('click', hideModal);
+
+      if (btnKonfirmasi) {
+        btnKonfirmasi.addEventListener('click', function() {
+          btnKonfirmasi.disabled = true;
+          btnKonfirmasi.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Memproses...</span>';
+          btnKonfirmasi.classList.add('opacity-90', 'cursor-not-allowed');
+
+          setTimeout(() => {
+            btnKonfirmasi.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Reservasi Berhasil</span>';
+            btnKonfirmasi.classList.remove('bg-[#3949AB]', 'hover:bg-[#303F9F]');
+            btnKonfirmasi.classList.add('bg-emerald-600');
+            setTimeout(hideModal, 700);
+          }, 600);
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display !== 'none') {
+          hideModal();
+        }
+      });
+    })();
+  </script>
+</body></html>
