@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>S07 – Katalog Buku (Desktop)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#142588",
+            "primary-container": "#E8EAF6",
+            "on-primary": "#ffffff",
+            "surface-panel": "#FFFFFF",
+            "surface-canvas": "#F8FAFC",
+            "text-primary": "#0F172A",
+            "text-secondary": "#64748B",
+            "border-structural": "#E2E8F0",
+            "status-success-bg": "#DCFCE7",
+            "status-success-text": "#15803D",
+            "status-warning-bg": "#FEF3C7",
+            "status-warning-text": "#B45309",
+            "error": "#DC2626",
+            "on-error": "#ffffff"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-surface-canvas text-text-primary min-h-screen flex flex-col antialiased">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 left-0 right-0 h-16 bg-surface-panel border-b border-border-structural z-50">
+<div class="max-w-[1200px] h-full mx-auto px-4 sm:px-6 flex items-center justify-between">
+<!-- Logo & App Name -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">local_library</span>
+</div>
+<div>
+<span class="font-bold text-lg tracking-tight text-primary leading-tight block">Libro Space</span>
+<span class="text-[11px] font-medium text-text-secondary tracking-wider uppercase block">Perpustakaan Digital</span>
+</div>
+</div>
+<!-- Nav Links -->
+<nav class="hidden md:flex items-center gap-1">
+<a class="px-3.5 py-2 rounded-md text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-slate-50 transition-colors" href="#">Beranda</a>
+<a class="px-3.5 py-2 rounded-md text-sm font-semibold bg-primary-container text-primary" href="#">Katalog Buku</a>
+<a class="px-3.5 py-2 rounded-md text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-slate-50 transition-colors" href="#">Pinjaman</a>
+<a class="px-3.5 py-2 rounded-md text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-slate-50 transition-colors flex items-center gap-1.5" href="#">
+          Notifikasi
+          <span class="px-1.5 py-0.5 rounded-full text-[11px] font-bold bg-error text-on-error leading-none">2</span>
+</a>
+<a class="px-3.5 py-2 rounded-md text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-slate-50 transition-colors" href="#">Profil</a>
+</nav>
+<!-- Right User Profile -->
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-semibold text-xs tracking-wide shadow-sm">
+          RM
+        </div>
+<div class="hidden sm:flex flex-col text-left">
+<span class="text-sm font-semibold text-text-primary leading-tight">Rina Maharani</span>
+<span class="text-xs text-text-secondary">Anggota Reguler</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 w-full max-w-[1200px] mx-auto px-4 sm:px-6 py-8 flex flex-col gap-6">
+<!-- 1. Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2">
+<div>
+<h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary">Katalog Buku</h1>
+<p class="text-sm sm:text-base text-text-secondary mt-1">Jelajahi dan temukan koleksi pustaka fisik &amp; digital</p>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Koleksi Terhubung
+        </span>
+</div>
+</div>
+<!-- Search & Filter Card -->
+<div class="bg-surface-panel p-5 rounded-xl border border-border-structural shadow-sm flex flex-col gap-4">
+<!-- 2. Search Bar -->
+<div class="flex flex-col sm:flex-row items-stretch gap-2.5">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-text-secondary text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-slate-50 border border-border-structural rounded-lg text-sm text-text-primary placeholder:text-text-secondary focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" id="search-input" placeholder="Cari judul, pengarang, atau kategori..." type="text"/>
+</div>
+<button class="h-11 px-6 bg-primary hover:bg-blue-900 text-on-primary text-sm font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors shrink-0 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">search</span>
+<span>Cari</span>
+</button>
+</div>
+<!-- 3. Search Scope Chips -->
+<div class="flex flex-wrap items-center gap-2 pt-1 border-t border-slate-100">
+<span class="text-xs font-medium text-text-secondary mr-1">Cari di:</span>
+<button class="scope-btn px-3 py-1 rounded-full text-xs font-semibold bg-primary text-on-primary transition-colors" type="button">Judul</button>
+<button class="scope-btn px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-text-secondary hover:bg-slate-200 hover:text-text-primary transition-colors" type="button">Pengarang</button>
+<button class="scope-btn px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-text-secondary hover:bg-slate-200 hover:text-text-primary transition-colors" type="button">Kategori</button>
+</div>
+<!-- 4. Category Filter Chips -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 pt-1">
+<span class="text-xs font-medium text-text-secondary mr-1 shrink-0">Kategori:</span>
+<div class="flex items-center gap-1.5 flex-nowrap">
+<button class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-primary-container text-primary shrink-0 transition-colors" type="button">Semua</button>
+<button class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-text-secondary hover:bg-slate-200 hover:text-text-primary shrink-0 transition-colors" type="button">Fiksi</button>
+<button class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-text-secondary hover:bg-slate-200 hover:text-text-primary shrink-0 transition-colors" type="button">Non-fiksi</button>
+<button class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-text-secondary hover:bg-slate-200 hover:text-text-primary shrink-0 transition-colors" type="button">Teknologi</button>
+<button class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-text-secondary hover:bg-slate-200 hover:text-text-primary shrink-0 transition-colors" type="button">Sains</button>
+<button class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-text-secondary hover:bg-slate-200 hover:text-text-primary shrink-0 transition-colors" type="button">Sejarah</button>
+<button class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-text-secondary hover:bg-slate-200 hover:text-text-primary shrink-0 transition-colors" type="button">Sastra</button>
+</div>
+</div>
+</div>
+<!-- 5. Counter & Sorter Bar -->
+<div class="flex items-center justify-between text-sm px-1">
+<div class="text-text-secondary font-medium">
+<span class="text-text-primary font-bold">6 buku ditemukan</span>
+</div>
+<div class="flex items-center gap-2">
+<label class="text-xs font-medium text-text-secondary uppercase tracking-wider" for="sort-select">Urutan:</label>
+<div class="relative">
+<select class="h-8 pl-2.5 pr-7 py-0 bg-surface-panel border border-border-structural rounded-md text-xs font-medium text-text-primary appearance-none focus:outline-none focus:ring-1 focus:ring-primary" id="sort-select">
+<option value="popular">Terpopuler</option>
+<option value="newest">Terbaru</option>
+<option value="title">Judul (A-Z)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-1.5 top-1/2 -translate-y-1/2 text-text-secondary text-[16px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- 6. 4-Column Clean Grid of 6 Book Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+<!-- Card 1: Laskar Pelangi -->
+<article class="bg-surface-panel rounded-xl border border-border-structural shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden group">
+<div class="relative w-full aspect-[2/3] bg-slate-100 overflow-hidden">
+<img alt="Laskar Pelangi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApBy65E4JC27bsX7oITzYI52haYjPVxK4PRHTq5lFbCXfWQFwWl5xH4rRahhWY2AivId3Ac_I-uLelMBLeIvOBmyxp2gem7kmWoN9Uw-3Ix3fJuqVy7u9QYtICjsXFIl81Iw1wA_AmUbXuX2w_QVbIEwmONisvGqE6frG_0LceJWCJ0EqS5YNo95yIIhwypuiQgcmG1WlxsaH9CEpy4cvq2VbTTnt4Xzo3mMSeYNj9"/>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-status-success-bg text-status-success-text shadow-sm">
+              Tersedia
+            </span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between gap-3">
+<div>
+<span class="text-[11px] font-semibold tracking-wider uppercase text-primary block mb-1">Fiksi</span>
+<h2 class="font-bold text-base text-text-primary tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-1">
+              Laskar Pelangi
+            </h2>
+<p class="text-xs text-text-secondary mt-0.5">Andrea Hirata</p>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-[14px]">shelves</span>
+                Rak A-04, Lantai 1
+              </span>
+</div>
+</div>
+<a class="w-full py-2 px-3 rounded-lg bg-slate-100 hover:bg-primary hover:text-on-primary text-text-primary text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+            Lihat Detail Buku
+          </a>
+</div>
+</article>
+<!-- Card 2: Filosofi Teras -->
+<article class="bg-surface-panel rounded-xl border border-border-structural shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden group">
+<div class="relative w-full aspect-[2/3] bg-slate-100 overflow-hidden">
+<img alt="Filosofi Teras" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5leBLSD4RImU4bCwl89CvDVRLRuYkdui_TQUX9852flowQjk_NDju6Ro3tsF9xgYzGop2OhQ8g3Hhd2yGhBVTyeli-1ivw3mGeNgJbh83Alxb50phLFFGjcPZNjcnrwopW2Yqp01oH6mdolQ1YmMfckCZz4HYo3KdYxGKSMN7Xd0jQf2Qd3ZdvQADL-rIzjJHCZV4hVP-nhrhqV3QhM_dxP5r5ADTbBMu-YPVXWZ7"/>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-status-success-bg text-status-success-text shadow-sm">
+              Tersedia
+            </span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between gap-3">
+<div>
+<span class="text-[11px] font-semibold tracking-wider uppercase text-primary block mb-1">Non-fiksi</span>
+<h2 class="font-bold text-base text-text-primary tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-1">
+              Filosofi Teras
+            </h2>
+<p class="text-xs text-text-secondary mt-0.5">Henry Manampiring</p>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-[14px]">shelves</span>
+                Rak B-12, Lantai 1
+              </span>
+</div>
+</div>
+<a class="w-full py-2 px-3 rounded-lg bg-slate-100 hover:bg-primary hover:text-on-primary text-text-primary text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+            Lihat Detail Buku
+          </a>
+</div>
+</article>
+<!-- Card 3: Cantik Itu Luka -->
+<article class="bg-surface-panel rounded-xl border border-border-structural shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden group">
+<div class="relative w-full aspect-[2/3] bg-slate-100 overflow-hidden">
+<img alt="Cantik Itu Luka" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqsQcNrB_7al_6x4Et3OJ_xCRnUDFzvOQzVj_HYftB9MrHhGc43oOduvewHvRMIxoV_uEheiHIVongFM0_38Kx6LpB1Arr8wVEYbPYKRm2t-W6I6Dj4X_cRDTapUUJunhz7kr7NuOXb7aGJ5T3wL2k-pxh18cOHKjegoB7khkv5_4mH1mCzLjSKZYXq9Fv8-m1TCBYy4L3i_6WcTarPlye-EA7I6Ns2pt8euN7IUn6"/>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-status-success-bg text-status-success-text shadow-sm">
+              Tersedia
+            </span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between gap-3">
+<div>
+<span class="text-[11px] font-semibold tracking-wider uppercase text-primary block mb-1">Sastra</span>
+<h2 class="font-bold text-base text-text-primary tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-1">
+              Cantik Itu Luka
+            </h2>
+<p class="text-xs text-text-secondary mt-0.5">Eka Kurniawan</p>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-[14px]">shelves</span>
+                Rak A-09, Lantai 1
+              </span>
+</div>
+</div>
+<a class="w-full py-2 px-3 rounded-lg bg-slate-100 hover:bg-primary hover:text-on-primary text-text-primary text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+            Lihat Detail Buku
+          </a>
+</div>
+</article>
+<!-- Card 4: Atomic Habits -->
+<article class="bg-surface-panel rounded-xl border border-border-structural shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden group">
+<div class="relative w-full aspect-[2/3] bg-slate-100 overflow-hidden">
+<img alt="Atomic Habits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp6HnT05FGd16M99iWi7ejytuI7sorWuPjuMu4U77BjeLdTk18YCkUMVP7JehP8joMBUxY9rLP3G9J8amVwRPu6qDD0kYjibUYxCa-jLdJtGYYVfvecWuNxBECI_-EShfE11WSNczJwrF5oB4q6hTCQrq6f7_H32wx_aGCBMj2lGnxa5Z4dxvG3vEcIzACRSc5-cGcDtQqm3C8nV2PemgR9E0hTP0SP110CYAYHlzY"/>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-status-warning-bg text-status-warning-text shadow-sm">
+              Dipinjam
+            </span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between gap-3">
+<div>
+<span class="text-[11px] font-semibold tracking-wider uppercase text-primary block mb-1">Non-fiksi</span>
+<h2 class="font-bold text-base text-text-primary tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-1">
+              Atomic Habits
+            </h2>
+<p class="text-xs text-text-secondary mt-0.5">James Clear</p>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-[14px]">shelves</span>
+                Rak C-2, Lantai 1
+              </span>
+</div>
+</div>
+<a class="w-full py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 text-text-primary text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+            Lihat Detail Buku
+          </a>
+</div>
+</article>
+<!-- Card 5: Sapiens -->
+<article class="bg-surface-panel rounded-xl border border-border-structural shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden group">
+<div class="relative w-full aspect-[2/3] bg-slate-100 overflow-hidden">
+<img alt="Sapiens" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi6Qr-o13n2Vk0p0rrB2act3XWR4DSPOUCnNs3H5MrgfkQnX6B4uSVjoQ_K_SvOrgGW_puLsur40hXANnxY9IFJdBCPE1Qru85GdCN8y_QNFdXMQmP44IiGXZR791bd7aLtoWsbalsDxFLB8mDK7AX9ayE1Ks0HT6wI_2onIAB0h7rID4-RAHwddw0H_vF6TUD7Wo6fTXepxm2bt9beO-ds8rlp-uwBOdx7JHfLKVB"/>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-status-warning-bg text-status-warning-text shadow-sm">
+              Dipinjam
+            </span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between gap-3">
+<div>
+<span class="text-[11px] font-semibold tracking-wider uppercase text-primary block mb-1">Sejarah</span>
+<h2 class="font-bold text-base text-text-primary tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-1">
+              Sapiens
+            </h2>
+<p class="text-xs text-text-secondary mt-0.5">Yuval Noah Harari</p>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-[14px]">shelves</span>
+                Rak C-2, Lantai 1
+              </span>
+</div>
+</div>
+<a class="w-full py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 text-text-primary text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+            Lihat Detail Buku
+          </a>
+</div>
+</article>
+<!-- Card 6: Negeri 5 Menara -->
+<article class="bg-surface-panel rounded-xl border border-border-structural shadow-sm hover:shadow-md transition-all flex flex-col overflow-hidden group">
+<div class="relative w-full aspect-[2/3] bg-slate-100 overflow-hidden">
+<img alt="Negeri 5 Menara" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCON3sFjDGUz2vQaIsYwILlvjClufb1FgP9MJOZ8c3LLI80R-408z6ePV_wKoP0vT_lUqdApi8nQBXRoT1_vaLBlYMXDRYdfTxwx7Toj0kx6xaCiDbUl2NkM4doX1s0oNFuaiI9tcwch0UP_JhYBkHgro6JgUwaKP7ZIlVJYWo6tHCQJ-Xmq0-ZNZjZ4CeuL0ww8GNrsG90xnshPbk5_zDMLu2Cz0wfHH3S11kVPrkS"/>
+<div class="absolute top-2.5 left-2.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-status-warning-bg text-status-warning-text shadow-sm">
+              Dipinjam
+            </span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between gap-3">
+<div>
+<span class="text-[11px] font-semibold tracking-wider uppercase text-primary block mb-1">Fiksi</span>
+<h2 class="font-bold text-base text-text-primary tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-1">
+              Negeri 5 Menara
+            </h2>
+<p class="text-xs text-text-secondary mt-0.5">A. Fuadi</p>
+<div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs text-text-secondary">
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-[14px]">shelves</span>
+                Rak C-2, Lantai 1
+              </span>
+</div>
+</div>
+<a class="w-full py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 text-text-primary text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+            Lihat Detail Buku
+          </a>
+</div>
+</article>
+</div>
+<!-- 7. Clean Pagination at Bottom -->
+<div class="mt-4 bg-surface-panel p-4 rounded-xl border border-border-structural shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-xs sm:text-sm text-text-secondary">
+        Menampilkan <span class="font-semibold text-text-primary">1 - 6</span> dari <span class="font-semibold text-text-primary">6</span> buku
+      </div>
+<div class="flex items-center gap-1.5">
+<button class="h-9 px-3 rounded-lg border border-border-structural bg-slate-50 text-slate-300 text-xs font-medium flex items-center gap-1 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Sebelumnya</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-primary text-on-primary text-xs font-semibold flex items-center justify-center shadow-sm" type="button">
+          1
+        </button>
+<button class="h-9 px-3 rounded-lg border border-border-structural bg-slate-50 text-slate-300 text-xs font-medium flex items-center gap-1 cursor-not-allowed" disabled="" type="button">
+<span>Selanjutnya</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-panel border-t border-border-structural py-4 mt-8">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-text-secondary">
+<span>© 2026 Libro Space. Seluruh hak cipta dilindungi.</span>
+<div class="flex items-center gap-4">
+<a class="hover:underline" href="#">Panduan Pengguna</a>
+<a class="hover:underline" href="#">Bantuan Teknis</a>
+</div>
+</div>
+</footer>
+<!-- Interactivity -->
+<script>
+    // Search scope selector
+    const scopeButtons = document.querySelectorAll('.scope-btn');
+    scopeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        scopeButtons.forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+          b.classList.add('bg-slate-100', 'text-text-secondary', 'font-medium');
+        });
+        btn.classList.remove('bg-slate-100', 'text-text-secondary', 'font-medium');
+        btn.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+      });
+    });
+
+    // Category filter selector
+    const catButtons = document.querySelectorAll('.category-btn');
+    catButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-primary', 'font-semibold');
+          b.classList.add('bg-slate-100', 'text-text-secondary', 'font-medium');
+        });
+        btn.classList.remove('bg-slate-100', 'text-text-secondary', 'font-medium');
+        btn.classList.add('bg-primary-container', 'text-primary', 'font-semibold');
+      });
+    });
+  </script>
+</body></html>

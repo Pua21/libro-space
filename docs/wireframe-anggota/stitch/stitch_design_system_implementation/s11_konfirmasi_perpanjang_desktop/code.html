@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Libro Space - Circulation System</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-tertiary-container":"#91b9ff","on-primary-fixed-variant":"#2d3c9c","inverse-on-surface":"#edf0ff","on-secondary-fixed-variant":"#404755","tertiary-fixed":"#d6e3ff","status-danger-bg":"#FFEBEE","surface-container-high":"#e4e8f8","surface-container-highest":"#dee2f3","status-danger-text":"#C62828","surface-bright":"#faf9ff","primary-container":"#303f9f","error":"#ba1a1a","surface-panel":"#FFFFFF","error-container":"#ffdad6","on-primary":"#ffffff","on-secondary":"#ffffff","tertiary-fixed-dim":"#a9c7ff","on-error-container":"#93000a","status-warning-text":"#B26A00","text-primary":"#1F2430","on-primary-fixed":"#000d5f","secondary-fixed-dim":"#c0c6d8","on-tertiary":"#ffffff","secondary-container":"#d9e0f1","text-secondary":"#5F6675","surface-dim":"#d5d9ea","status-info-text":"#1565C0","status-success-text":"#2E7D32","surface":"#faf9ff","background":"#faf9ff","secondary":"#575e6d","on-surface-variant":"#454652","status-warning-bg":"#FFF3E0","tertiary":"#003267","primary-fixed-dim":"#bbc3ff","outline":"#767683","primary":"#142588","surface-variant":"#dee2f3","on-tertiary-fixed-variant":"#00468c","surface-container":"#e9edfe","inverse-surface":"#2b303d","status-success-bg":"#E8F5E9","border-structural":"#E0E3E8","tertiary-container":"#004890","primary-fixed":"#dfe0ff","on-primary-container":"#aab4ff","outline-variant":"#c6c5d4","surface-canvas":"#F7F8FA","on-secondary-container":"#5c6372","secondary-fixed":"#dce2f4","on-secondary-fixed":"#151c28","status-info-bg":"#E3F2FD","on-error":"#ffffff","surface-container-lowest":"#ffffff","inverse-primary":"#bbc3ff","on-surface":"#161b27","on-background":"#161b27","on-tertiary-fixed":"#001b3d","surface-tint":"#4755b6","surface-container-low":"#f1f3ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-mobile":"0.5rem","space-xl":"2rem","space-md":"1rem","space-lg":"1.5rem","space-xs":"0.25rem","gutter":"1rem","margin-desktop":"5rem","space-sm":"0.5rem","margin":"1rem"},"fontFamily":{"title-md":["Space Grotesk"],"headline-md":["Space Grotesk"],"headline-lg":["Space Grotesk"],"label-sm":["Geist"],"label-lg":["Geist"],"body-lg":["Geist"],"label-md":["Geist"],"body-sm":["Geist"],"body-md":["Geist"],"headline-xl-mobile":["Space Grotesk"],"headline-xl":["Space Grotesk"]},"fontSize":{"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl-mobile":["26px",{"lineHeight":"32px","fontWeight":"700"}],"headline-xl":["32px",{"lineHeight":"40px","fontWeight":"700"}]}}}};</script></head><body class="bg-surface-canvas font-body-md text-text-primary min-h-screen flex flex-col antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 w-full z-50 bg-surface-panel border-b border-border-structural"><div class="h-14 max-w-7xl mx-auto px-gutter flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm select-none"><div class="w-8 h-8 bg-primary text-on-primary flex items-center justify-center font-headline-md text-headline-md tracking-tighter">LS</div><div class="flex flex-col"><span class="font-title-md text-title-md tracking-tight uppercase text-text-primary leading-none">Libro Space</span><span class="font-label-sm text-label-sm text-text-secondary tracking-widest uppercase">Circulation System</span></div></div><div class="h-6 w-[1px] bg-border-structural hidden md:block"></div><nav class="hidden md:flex items-center gap-space-xs text-label-lg font-label-lg" data-active-classes="bg-primary-container text-on-primary border-primary-container font-label-lg"><a class="px-space-md py-space-xs border border-transparent text-text-secondary hover:text-text-primary hover:bg-surface-canvas transition-colors" data-path="beranda" href="#">Beranda</a><a class="px-space-md py-space-xs border border-transparent text-text-secondary hover:text-text-primary hover:bg-surface-canvas transition-colors" data-path="katalog-buku" href="#">Katalog Buku</a><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-primary-container text-on-primary border-primary-container font-label-lg" data-path="pinjaman" href="#">Pinjaman</a><a class="px-space-md py-space-xs border border-transparent text-text-secondary hover:text-text-primary hover:bg-surface-canvas transition-colors flex items-center gap-space-xs" data-path="notifikasi" href="#">Notifikasi<span class="px-1.5 py-0.5 font-label-sm text-label-sm bg-status-danger-bg text-status-danger-text border border-status-danger-text/20 leading-none">2</span></a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-sm py-1 px-space-sm border border-border-structural bg-surface-canvas"><span class="w-2 h-2 bg-status-success-text"></span><span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Kiosk Terminal 04 • Online</span></div><div class="h-6 w-[1px] bg-border-structural hidden sm:block"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden lg:block"><div class="font-label-lg text-label-lg text-text-primary leading-none">Rina Maharani</div><div class="font-label-sm text-label-sm text-text-secondary leading-none mt-1 font-mono">LS-2025-0142</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-14 bg-surface-canvas flex-1"><div class="flex flex-col w-full relative min-h-[calc(100vh-3.5rem)]">
+<!-- S10 BACKGROUND LOANS DASHBOARD (DIMMED CONTEXT) -->
+<div class="w-full max-w-7xl mx-auto px-gutter py-space-lg select-none opacity-40 pointer-events-none filter blur-[0.5px]">
+<!-- Subheader Stats Bar -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg pb-space-md bg-surface-panel p-space-lg shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 bg-primary"></span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-widest font-mono">CIRCULATION REGISTRY // TERMINAL-04</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Peminjaman Aktif Saya</h1>
+<p class="font-body-md text-text-secondary text-body-md">Daftar pustaka fisik yang sedang Anda pinjam melalui akun anggota LS-2025-0142.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col bg-surface-canvas p-space-sm px-space-md">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase">Total Buku</span>
+<span class="font-headline-md text-headline-md text-text-primary font-mono">03 <span class="font-body-sm text-body-sm text-text-secondary font-normal">/ 05 Slot</span></span>
+</div>
+<div class="flex flex-col bg-status-warning-bg p-space-sm px-space-md">
+<span class="font-label-sm text-label-sm text-status-warning-text uppercase">Perlu Perhatian</span>
+<span class="font-headline-md text-headline-md text-status-warning-text font-mono">01 <span class="font-body-sm text-body-sm text-status-warning-text font-normal">Segera Tempo</span></span>
+</div>
+</div>
+</div>
+<!-- Background Mock Data Grid -->
+<div class="grid grid-cols-1 gap-space-md">
+<!-- Item 1 (Target: Filosofi Teras) -->
+<div class="bg-surface-panel p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-16 h-24 bg-surface-container flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Cover of Filosofi Teras book by Henry Manampiring with minimalist deep blue typography and Greek statue motif on white and ultramarine background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0jMENDnvnIUlmUQFkfowlmwYYKZOzci4fPhVpaDACACX5yG8Eb5p9ccgXkEkZQaDPhFQ2FqQMqd6AwNDgGzzQ_qeASHjxIWAsJu-zUl6_Y8667v2taero8t5ugpqJ-VnKtuL_2Rpp6OttiM_28dxVhcj6UeXWn952JXuQXqDYVT6RS-kWVvS5zptNK5u176rdhzuw6pkyx_nha5fBLky6nUySQ-vAe92PFs9pTgRL"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs font-mono font-label-sm text-label-sm text-text-secondary">
+<span>REF-FIL-014</span>
+<span>•</span>
+<span>RAK 3B-09</span>
+</div>
+<h3 class="font-title-md text-title-md text-text-primary truncate mt-0.5">Filosofi Teras</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Henry Manampiring • Penerbit Buku Kompas (2019)</p>
+<div class="flex items-center gap-space-sm mt-space-xs">
+<span class="px-space-xs py-0.5 font-label-sm text-label-sm bg-status-warning-bg text-status-warning-text">Jatuh Tempo: 12 Nov 2026 (4 hari lagi)</span>
+<span class="font-label-sm text-label-sm text-text-secondary font-mono">Quota: 1/2</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<button class="h-10 px-space-md bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">update</span>
+            Perpanjang
+          </button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-panel p-space-md flex flex-col md:flex-row items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-16 h-24 bg-surface-container flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Technical handbook cover with bold grid graphic design in deep navy and cobalt blue geometric shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBu1l5ICJDv68CfZ9muAMkMzBTahfdDDK1c67EOIMigs4ee__8SYcPRl61aZXqO04fnM_vbwUON4XvwocQhLMZmW3o9Css_bTNH3yLC9SD7ewNPxbhoE6wvO9_3KliwzcmoxON7gtzwH71WbCWuJc22gKfnQgWRmGgHPhQk-l3yd3caFnFE46IT3fRBIuYTTRn2QR3EBoCpSkFi261lnIXwFev_iopcZXpP6idXMSA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs font-mono font-label-sm text-label-sm text-text-secondary">
+<span>REF-DES-088</span>
+<span>•</span>
+<span>RAK 1A-02</span>
+</div>
+<h3 class="font-title-md text-title-md text-text-primary truncate mt-0.5">Sistem Sirkulasi Modern</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Prof. Anton Suryadi • ITB Press (2023)</p>
+<div class="flex items-center gap-space-sm mt-space-xs">
+<span class="px-space-xs py-0.5 font-label-sm text-label-sm bg-status-success-bg text-status-success-text">Jatuh Tempo: 28 Nov 2026 (20 hari lagi)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-10 px-space-md bg-surface-container text-text-primary font-label-lg text-label-lg">Detail</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-panel p-space-md flex flex-col md:flex-row items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-16 h-24 bg-surface-container flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Architectural book cover with stark brutalist typography in monochrome ink black and stone grey" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRj0F3gH5H-UaZcdeVsDocaSlALDws65Hyywu2suoX707A6gz9EiznkMfzwNL2i9yJBVyERu2VUMOazQAI6Rkrw3QFrueByq6w7rmU-NAXnXNgxrS0r4ruNXgyPsK8CgAxgtoD5Bp7-QfWjvG8x39Ci60qY3IIl7lwdlXx-ZNH0bLmfFEFsQ_HlxzmGnpJ1luMRl0CeKzDMD7uss-VK8bHx7RJr-b9DdaDu_EAqAGF"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs font-mono font-label-sm text-label-sm text-text-secondary">
+<span>REF-ARC-401</span>
+<span>•</span>
+<span>RAK 4F-11</span>
+</div>
+<h3 class="font-title-md text-title-md text-text-primary truncate mt-0.5">Struktur Monolitik Tropis</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Baskoro Tejo • Gramedia (2021)</p>
+<div class="flex items-center gap-space-sm mt-space-xs">
+<span class="px-space-xs py-0.5 font-label-sm text-label-sm bg-status-success-bg text-status-success-text">Jatuh Tempo: 04 Des 2026 (26 hari lagi)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-10 px-space-md bg-surface-container text-text-primary font-label-lg text-label-lg">Detail</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL OVERLAY BACKDROP (50% SCRIM) -->
+<div class="fixed inset-0 top-14 z-40 bg-black/50 flex items-center justify-center p-space-md backdrop-blur-[1px] transition-opacity" id="modal-container">
+<!-- S11 MODAL DIALOG (STRICT BRUTALIST TECHNICAL GEOMETRY: 540px) -->
+<div class="w-full max-w-[540px] bg-surface-panel shadow-2xl flex flex-col relative animate-in fade-in zoom-in-95 duration-150">
+<!-- Top Accent Functional Bar -->
+<div class="w-full h-1 bg-primary-container"></div>
+<!-- MODAL HEADER -->
+<div class="p-space-lg pb-space-md bg-surface-panel flex items-start justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-1.5 h-1.5 bg-primary"></span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-widest font-mono">TRANSAKSI SIRKULASI MANDIRI</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-text-primary tracking-tight">Konfirmasi Perpanjangan Pinjaman</h2>
+</div>
+<button aria-label="Tutup jendela modal" class="w-9 h-9 flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-canvas transition-colors" id="close-modal-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- MODAL BODY -->
+<div class="p-space-lg pt-space-xs flex flex-col gap-space-md">
+<!-- BOOK ITEM SUMMARY CARD -->
+<div class="p-space-md bg-surface-canvas flex items-start gap-space-md">
+<!-- Book Thumbnail -->
+<div class="w-[72px] h-[104px] flex-shrink-0 bg-surface-panel relative overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Cover of Filosofi Teras book by Henry Manampiring featuring classical marble bust and minimalist layout with navy and ivory tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1HNOcqQx-_IWd-OefbduGmjle_-AmlrBVWrqu-AxRC97cPuGodHEZuiKYYGhgg8xaniEHN1luGt1cSzmHEx1cs01HlPI2B2PbdLGMyhB5FhG2amY-6naNmz1sPJD1hb6A-6tZ4KrHMJwiAQ4wjG4DPmNr3KUMbCBVvDfT-_RBcXwV1JecQ_WrtizLJ6pAwtXXkYYEUXXj5E2ttw9xQ7nGr5AuEcUkl8NbJautxFwb"/>
+<div class="absolute bottom-0 inset-x-0 bg-text-primary/80 py-0.5 text-center">
+<span class="font-mono text-[9px] text-surface font-semibold tracking-wider">RFID-OK</span>
+</div>
+</div>
+<!-- Metadata -->
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs mb-1 flex-wrap">
+<span class="font-mono font-label-sm text-label-sm text-text-secondary bg-surface-panel px-1.5 py-0.5">REF-FIL-014</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-status-warning-bg text-status-warning-text font-mono font-semibold">Sedang Dipinjam (4 hari lagi)</span>
+</div>
+<h4 class="font-title-md text-title-md text-text-primary truncate">Filosofi Teras</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Henry Manampiring • Penerbit Buku Kompas</p>
+<!-- Monospace bar details -->
+<div class="mt-space-sm pt-space-xs flex items-center gap-space-md font-mono text-[11px] text-text-secondary">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">qr_code_scanner</span>
+<span>BARCODE: 9786024125189</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">meeting_room</span>
+<span>LOKASI: 3B-09</span>
+</div>
+</div>
+</div>
+</div>
+<!-- EXTENSION COMPARISON MATRIX / BOX -->
+<div class="bg-surface-panel flex flex-col">
+<!-- Row 1: Current Due Date -->
+<div class="flex items-center justify-between py-space-sm px-space-md bg-surface-bright">
+<span class="font-body-md text-body-md text-text-secondary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">calendar_today</span>
+              Jatuh tempo saat ini
+            </span>
+<span class="font-title-md text-title-md text-text-primary font-mono line-through decoration-text-secondary/50">12 Nov 2026</span>
+</div>
+<!-- Row 2: New Extended Due Date (Highlighted in Indigo / Bold) -->
+<div class="flex items-center justify-between py-space-md px-space-md bg-primary-fixed/30">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">event_repeat</span>
+                Jatuh tempo baru
+              </span>
+<span class="font-label-sm text-label-sm text-primary/80 font-mono pl-6">+7 hari kalender otomatis</span>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary font-mono tracking-tight">19 Nov 2026</span>
+<span class="block font-mono text-[10px] text-primary uppercase font-bold tracking-wider">Terkonfirmasi Baru</span>
+</div>
+</div>
+<!-- Row 3: Extension Quota Tracker -->
+<div class="flex items-center justify-between py-space-sm px-space-md bg-surface-canvas">
+<span class="font-body-md text-body-md text-text-secondary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">history</span>
+              Kuota perpanjangan
+            </span>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-text-primary font-mono">Perpanjangan ke-1</span>
+<span class="font-body-sm text-body-sm text-text-secondary">dari 2 kali yang diizinkan</span>
+<div class="flex items-center gap-1 ml-1.5">
+<span class="w-2.5 h-2.5 bg-primary"></span>
+<span class="w-2.5 h-2.5 bg-border-structural"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- INFO NOTE BOX (Light Blue #E3F2FD) -->
+<div class="bg-status-info-bg p-space-md flex items-start gap-space-md">
+<span class="material-symbols-outlined text-status-info-text text-[20px] flex-shrink-0 mt-0.5">info</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-status-info-text tracking-wide uppercase font-mono">SINKRONISASI REAL-TIME</span>
+<p class="font-body-sm text-body-sm text-status-info-text/90 mt-0.5 leading-relaxed">
+              Perpanjangan berhasil akan langsung memperbarui tenggat waktu di sistem sirkulasi mandiri dan RFID perpustakaan.
+            </p>
+</div>
+</div>
+<!-- System Policy Micro-metadata -->
+<div class="flex items-center justify-between px-space-xs font-mono font-label-sm text-label-sm text-text-secondary">
+<span>POLICY: LIBRO-CIRC-V4 §12</span>
+<span>LATENCY: ~18ms RFID SYNC</span>
+</div>
+</div>
+<!-- MODAL ACTION FOOTER -->
+<div class="p-space-lg pt-space-md bg-surface-panel flex items-center justify-end gap-space-md">
+<!-- Cancel Action Button -->
+<button class="h-12 px-space-lg bg-surface-canvas text-text-primary hover:bg-surface-container-high transition-colors font-label-lg text-label-lg flex items-center justify-center" id="cancel-action-btn">
+          Batal & Kembali
+        </button>
+<!-- Primary Confirm Action Button (Blue #3949AB) -->
+<button class="h-12 px-space-xl bg-primary-container text-on-primary hover:bg-primary transition-all font-label-lg text-label-lg flex items-center gap-space-xs shadow-md active:translate-y-0.5" id="confirm-extend-btn">
+<span class="material-symbols-outlined text-[20px]">event_repeat</span>
+<span>Konfirmasi Perpanjang</span>
+</button>
+</div>
+<!-- Live Success Feedback Ribbon (Hidden initially) -->
+<div class="hidden p-space-md bg-status-success-bg text-status-success-text items-center justify-between gap-space-sm font-label-md text-label-md" id="success-banner">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Perpanjangan Berhasil! Jatuh tempo baru: 19 Nov 2026. Sinkronisasi RFID selesai.</span>
+</div>
+<span class="font-mono text-label-sm text-status-success-text">STATUS: 200 OK</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initCirculationModal() {
+    const cancelBtn = document.getElementById('cancel-action-btn');
+    const closeBtn = document.getElementById('close-modal-btn');
+    const confirmBtn = document.getElementById('confirm-extend-btn');
+    const modalContainer = document.getElementById('modal-container');
+    const successBanner = document.getElementById('success-banner');
+
+    // Ensure Shell Pinjaman tab reflects active state
+    try {
+      const pinjamanNav = document.querySelector('nav a[data-path="pinjaman"]');
+      if (pinjamanNav) {
+        document.querySelectorAll('nav a').forEach(el => {
+          el.className = 'px-space-md py-space-xs border border-transparent text-text-secondary hover:text-text-primary hover:bg-surface-canvas transition-colors';
+        });
+        pinjamanNav.className = 'px-space-md py-space-xs bg-primary-container text-on-primary font-label-lg';
+      }
+    } catch (e) {
+      // Fallback silent
+    }
+
+    // Dismissal interactions
+    function dismissModal() {
+      modalContainer.style.opacity = '0';
+      setTimeout(() => {
+        modalContainer.classList.add('hidden');
+        const bgDashboard = document.querySelector('.opacity-40');
+        if (bgDashboard) {
+          bgDashboard.classList.remove('opacity-40', 'pointer-events-none', 'blur-[0.5px]');
+        }
+      }, 150);
+    }
+
+    if (cancelBtn) cancelBtn.addEventListener('click', dismissModal);
+    if (closeBtn) closeBtn.addEventListener('click', dismissModal);
+
+    // Confirmation Action
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', function() {
+        confirmBtn.disabled = true;
+        confirmBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Memproses RFID...</span>';
+        
+        setTimeout(() => {
+          if (successBanner) {
+            successBanner.classList.remove('hidden');
+            successBanner.classList.add('flex');
+          }
+          confirmBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done</span><span>Telah Diperpanjang</span>';
+          confirmBtn.classList.remove('bg-primary-container');
+          confirmBtn.classList.add('bg-status-success-text');
+          
+          setTimeout(() => {
+            dismissModal();
+          }, 1800);
+        }, 800);
+      });
+    }
+
+    // Escape Key support
+    document.addEventListener('keydown', function(evt) {
+      if (evt.key === 'Escape' && !modalContainer.classList.contains('hidden')) {
+        dismissModal();
+      }
+    });
+  })();
+</script></main><footer class="w-full bg-surface-panel border-t border-border-structural"><div class="max-w-7xl mx-auto px-gutter py-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm text-body-sm font-body-sm text-text-secondary"><div class="flex items-center gap-space-md flex-wrap"><span class="font-headline-md text-title-md uppercase tracking-tight text-text-primary">Libro Space</span><span>v4.2.1-prod</span><span class="hidden md:inline">•</span><span>Sistem Sirkulasi Mandiri Otomatis</span></div><div class="flex items-center gap-space-lg flex-wrap"><div class="flex items-center gap-space-xs"><span class="font-label-md text-label-md text-text-primary">Bantuan Hotline:</span><span class="font-mono font-label-md text-label-md text-primary">(021) 555-0123</span></div><div class="flex items-center gap-space-xs"><span class="w-1.5 h-1.5 bg-status-success-text"></span><span class="font-label-sm text-label-sm uppercase tracking-wider">Sync Stabil (28ms)</span></div></div></div></footer></body></html>
