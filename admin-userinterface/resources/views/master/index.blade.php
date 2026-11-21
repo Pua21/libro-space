@@ -16,6 +16,8 @@
     <div class="relative flex-1 max-w-md hidden md:block">
         <i class="bi bi-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
         <input type="text" 
+               id="globalMasterSearch"
+               onkeyup="filterMasterTable(this.value)"
                placeholder="Pencarian umum sistem..." 
                class="w-full bg-[#f8fafc] border border-gray-100 rounded-full pl-11 pr-4 py-2 text-xs text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#554fed]/20 focus:border-[#554fed] transition-all">
     </div>
@@ -90,17 +92,19 @@
             <div class="relative w-full sm:w-64">
                 <i class="bi bi-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
                 <input type="text" 
+                       id="masterSearchInput"
+                       onkeyup="filterMasterTable(this.value)"
                        placeholder="Cari {{ $tab }}..." 
                        class="w-full bg-[#f8fafc] border border-gray-100 rounded-full pl-10 pr-4 py-2 text-xs text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#554fed]/20">
             </div>
             <div class="text-xs text-[#64748b]">
-                Total: <span class="font-bold text-[#1e293b]">{{ $totalItems }} {{ ucfirst($tab) }} Terdaftar</span>
+                Total: <span id="masterTotalLabel" class="font-bold text-[#1e293b]">{{ $totalItems }} {{ ucfirst($tab) }} Terdaftar</span>
             </div>
         </div>
 
         <!-- Table -->
         <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse">
+            <table id="masterDataTable" class="w-full text-left border-collapse">
                 <thead>
                     <tr class="border-b border-gray-100 text-[11px] font-bold text-[#94a3b8] uppercase tracking-wider">
                         <th class="pb-3 px-3 w-16">No</th>
@@ -120,9 +124,9 @@
                     @endphp
 
                     @foreach ($list as $item)
-                    <tr class="hover:bg-slate-50/60 transition-colors">
+                    <tr class="master-row hover:bg-slate-50/60 transition-colors" data-name="{{ $item['nama'] }}">
                         <!-- No -->
-                        <td class="py-4 px-3 text-[#64748b] font-medium">
+                        <td class="py-4 px-3 text-[#64748b] font-medium item-no-cell">
                             {{ $item['no'] }}
                         </td>
 
@@ -130,7 +134,7 @@
                         <td class="py-4 px-3">
                             <div class="flex items-center gap-2.5">
                                 <span class="w-2 h-2 rounded-full bg-[#554fed]"></span>
-                                <span class="font-bold text-[#1e293b]">{{ $item['nama'] }}</span>
+                                <span class="font-bold text-[#1e293b] item-name-text">{{ $item['nama'] }}</span>
                             </div>
                         </td>
 
@@ -145,10 +149,10 @@
                         <!-- Aksi -->
                         <td class="py-4 px-3 text-center">
                             <div class="inline-flex items-center gap-2">
-                                <button title="Edit" class="w-8 h-8 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 flex items-center justify-center transition-colors">
+                                <button onclick="editMasterRow(this)" title="Edit" class="w-8 h-8 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 flex items-center justify-center transition-colors">
                                     <i class="bi bi-pencil text-xs"></i>
                                 </button>
-                                <button title="Hapus" class="w-8 h-8 rounded-full bg-red-50 text-[#ef4444] hover:bg-red-100 flex items-center justify-center transition-colors">
+                                <button onclick="deleteMasterRow(this)" title="Hapus" class="w-8 h-8 rounded-full bg-red-50 text-[#ef4444] hover:bg-red-100 flex items-center justify-center transition-colors">
                                     <i class="bi bi-trash text-xs"></i>
                                 </button>
                             </div>
@@ -169,15 +173,15 @@
 
         <!-- Table Pagination Footer -->
         <div class="flex flex-wrap items-center justify-between gap-4 pt-5 mt-4 border-t border-gray-100 text-xs">
-            <p class="text-[#64748b]">Menampilkan <span class="font-bold text-[#1e293b]">1–6</span> dari <span class="font-bold text-[#1e293b]">{{ $totalItems }}</span> {{ $tab }}</p>
+            <p class="text-[#64748b]">Menampilkan <span class="font-bold text-[#1e293b]" id="masterVisibleCount">1–6</span> dari <span class="font-bold text-[#1e293b]" id="masterTotalNum">{{ $totalItems }}</span> {{ $tab }}</p>
             <div class="flex items-center gap-1.5">
-                <button class="w-7 h-7 rounded-lg text-gray-400 hover:bg-gray-100 flex items-center justify-center font-bold">
+                <button onclick="showToast('Halaman sebelumnya.');" class="w-7 h-7 rounded-lg text-gray-400 hover:bg-gray-100 flex items-center justify-center font-bold">
                     <i class="bi bi-chevron-left text-[10px]"></i>
                 </button>
                 <button class="w-7 h-7 rounded-lg bg-[#554fed] text-white font-bold flex items-center justify-center shadow-sm">1</button>
-                <button class="w-7 h-7 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center justify-center font-bold">2</button>
-                <button class="w-7 h-7 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center justify-center font-bold">3</button>
-                <button class="w-7 h-7 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center justify-center font-bold">
+                <button onclick="showToast('Membuka halaman 2...');" class="w-7 h-7 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center justify-center font-bold">2</button>
+                <button onclick="showToast('Membuka halaman 3...');" class="w-7 h-7 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center justify-center font-bold">3</button>
+                <button onclick="showToast('Halaman berikutnya.');" class="w-7 h-7 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center justify-center font-bold">
                     <i class="bi bi-chevron-right text-[10px]"></i>
                 </button>
             </div>
@@ -192,16 +196,17 @@
                 <i class="bi bi-plus-circle"></i>
             </div>
             <div>
-                <h3 class="font-bold text-base text-[#1e293b]">Tambah {{ ucfirst($tab) }}</h3>
-                <p class="text-xs text-[#64748b] mt-0.5">Tambahkan {{ $tab }} buku baru ke sistem.</p>
+                <h3 id="masterFormHeading" class="font-bold text-base text-[#1e293b]">Tambah {{ ucfirst($tab) }}</h3>
+                <p id="masterFormSubtext" class="text-xs text-[#64748b] mt-0.5">Tambahkan {{ $tab }} buku baru ke sistem.</p>
             </div>
         </div>
 
         <!-- Form Body -->
-        <form onsubmit="event.preventDefault(); alert('Data {{ $tab }} berhasil ditambahkan!');" class="space-y-5 text-xs">
+        <form id="masterDataForm" onsubmit="handleMasterFormSubmit(event)" class="space-y-5 text-xs">
             <div>
                 <label class="block font-bold text-[#1e293b] mb-2">Nama {{ ucfirst($tab) }}</label>
                 <input type="text" 
+                       id="inputMasterName"
                        placeholder="Contoh: {{ $tab == 'kategori' ? 'Ensiklopedia' : ($tab == 'pengarang' ? 'Tere Liye' : ($tab == 'penerbit' ? 'Erlangga' : 'Rak D1')) }}" 
                        required
                        class="w-full bg-[#f8fafc] border border-gray-100 rounded-2xl px-4 py-3 text-xs text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#554fed]/20 focus:border-[#554fed] transition-all">
@@ -209,7 +214,8 @@
 
             <div>
                 <label class="block font-bold text-[#1e293b] mb-2">Deskripsi {{ ucfirst($tab) }} (Opsional)</label>
-                <textarea rows="4" 
+                <textarea id="inputMasterDesc"
+                          rows="4" 
                           placeholder="Tulis keterangan singkat {{ $tab }}..." 
                           class="w-full bg-[#f8fafc] border border-gray-100 rounded-2xl p-4 text-xs text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#554fed]/20 focus:border-[#554fed] transition-all"></textarea>
             </div>
@@ -225,11 +231,13 @@
             <!-- Action Buttons -->
             <div class="flex items-center gap-3 pt-2">
                 <button type="submit" 
+                        id="btnSubmitMaster"
                         class="flex-1 bg-[#554fed] hover:bg-[#4338ca] text-white font-bold py-3 px-5 rounded-full shadow-md shadow-indigo-500/20 flex items-center justify-center gap-1.5 transition-all">
                     <i class="bi bi-check-circle"></i>
-                    <span>Simpan {{ ucfirst($tab) }}</span>
+                    <span id="btnSubmitMasterText">Simpan {{ ucfirst($tab) }}</span>
                 </button>
-                <button type="reset" 
+                <button type="button" 
+                        onclick="resetMasterForm()"
                         class="bg-white hover:bg-gray-50 border border-gray-200 text-gray-600 font-semibold py-3 px-6 rounded-full transition-all">
                     Batal
                 </button>
@@ -238,3 +246,108 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    let activeEditingMasterRow = null;
+    const currentTab = "{{ $tab }}";
+
+    function filterMasterTable(query) {
+        const q = (query || '').toLowerCase();
+        const rows = document.querySelectorAll('.master-row');
+        let count = 0;
+        rows.forEach(row => {
+            const name = (row.getAttribute('data-name') || '').toLowerCase();
+            if (name.includes(q)) {
+                row.style.display = '';
+                count++;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+        document.getElementById('masterVisibleCount').textContent = `1–${count}`;
+    }
+
+    function editMasterRow(btn) {
+        activeEditingMasterRow = btn.closest('tr');
+        const name = activeEditingMasterRow.querySelector('.item-name-text').textContent.trim();
+        document.getElementById('inputMasterName').value = name;
+        document.getElementById('masterFormHeading').textContent = `Edit ${currentTab.charAt(0).toUpperCase() + currentTab.slice(1)}`;
+        document.getElementById('masterFormSubtext').textContent = `Perbarui data ${currentTab} terpilih.`;
+        document.getElementById('btnSubmitMasterText').textContent = `Perbarui ${currentTab.charAt(0).toUpperCase() + currentTab.slice(1)}`;
+        document.getElementById('inputMasterName').focus();
+        showToast(`Memuat data "${name}" ke formulir editor.`);
+    }
+
+    function deleteMasterRow(btn) {
+        const row = btn.closest('tr');
+        const name = row.querySelector('.item-name-text').textContent.trim();
+        if (confirm(`Apakah Anda yakin ingin menghapus data master "${name}"?`)) {
+            row.style.opacity = '0';
+            setTimeout(() => {
+                row.remove();
+                showToast(`Data "${name}" berhasil dihapus!`, 'warning');
+            }, 200);
+        }
+    }
+
+    function handleMasterFormSubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById('inputMasterName').value.trim();
+        if (!name) return;
+
+        if (activeEditingMasterRow) {
+            // Update existing
+            activeEditingMasterRow.querySelector('.item-name-text').textContent = name;
+            activeEditingMasterRow.setAttribute('data-name', name);
+            showToast(`Data ${currentTab} "${name}" berhasil diperbarui!`);
+            resetMasterForm();
+        } else {
+            // Add new
+            const tbody = document.querySelector('#masterDataTable tbody');
+            const rowCount = tbody.querySelectorAll('tr').length + 1;
+            const noStr = rowCount < 10 ? '0' + rowCount : rowCount;
+
+            const tr = document.createElement('tr');
+            tr.className = 'master-row hover:bg-slate-50/60 transition-colors animate-in fade-in';
+            tr.setAttribute('data-name', name);
+            tr.innerHTML = `
+                <td class="py-4 px-3 text-[#64748b] font-medium item-no-cell">${noStr}</td>
+                <td class="py-4 px-3">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-2 h-2 rounded-full bg-[#554fed]"></span>
+                        <span class="font-bold text-[#1e293b] item-name-text">${name}</span>
+                    </div>
+                </td>
+                <td class="py-4 px-3">
+                    <div class="inline-flex items-center gap-2 text-[#554fed] font-semibold bg-indigo-50/60 px-3 py-1 rounded-full">
+                        <i class="bi bi-book"></i>
+                        <span>0 Buku</span>
+                    </div>
+                </td>
+                <td class="py-4 px-3 text-center">
+                    <div class="inline-flex items-center gap-2">
+                        <button onclick="editMasterRow(this)" title="Edit" class="w-8 h-8 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 flex items-center justify-center transition-colors">
+                            <i class="bi bi-pencil text-xs"></i>
+                        </button>
+                        <button onclick="deleteMasterRow(this)" title="Hapus" class="w-8 h-8 rounded-full bg-red-50 text-[#ef4444] hover:bg-red-100 flex items-center justify-center transition-colors">
+                            <i class="bi bi-trash text-xs"></i>
+                        </button>
+                    </div>
+                </td>
+            `;
+            tbody.appendChild(tr);
+            showToast(`${currentTab.charAt(0).toUpperCase() + currentTab.slice(1)} "${name}" berhasil ditambahkan!`);
+            resetMasterForm();
+        }
+    }
+
+    function resetMasterForm() {
+        activeEditingMasterRow = null;
+        document.getElementById('masterDataForm').reset();
+        document.getElementById('masterFormHeading').textContent = `Tambah ${currentTab.charAt(0).toUpperCase() + currentTab.slice(1)}`;
+        document.getElementById('masterFormSubtext').textContent = `Tambahkan ${currentTab} buku baru ke sistem.`;
+        document.getElementById('btnSubmitMasterText').textContent = `Simpan ${currentTab.charAt(0).toUpperCase() + currentTab.slice(1)}`;
+    }
+</script>
+@endpush
