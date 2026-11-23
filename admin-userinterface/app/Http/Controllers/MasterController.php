@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kategori;
+use App\Models\Pengarang;
+use App\Models\Penerbit;
+use App\Models\Rak;
 
 class MasterController extends Controller
 {
@@ -10,43 +14,47 @@ class MasterController extends Controller
     {
         $tab = $request->query('tab', 'kategori');
 
-        $kategori = [
-            ['no' => '01', 'nama' => 'Novel', 'jumlah' => '320 Buku'],
-            ['no' => '02', 'nama' => 'Sastra', 'jumlah' => '145 Buku'],
-            ['no' => '03', 'nama' => 'Sains & Teknologi', 'jumlah' => '98 Buku'],
-            ['no' => '04', 'nama' => 'Pengembangan Diri', 'jumlah' => '110 Buku'],
-            ['no' => '05', 'nama' => 'Sejarah & Budaya', 'jumlah' => '76 Buku'],
-            ['no' => '06', 'nama' => 'Filsafat', 'jumlah' => '42 Buku'],
-        ];
+        // Fetch categories with book counts
+        $kategori = Kategori::withCount('buku')->get()->map(function ($k, $idx) {
+            return [
+                'id' => $k->id,
+                'no' => str_pad($idx + 1, 2, '0', STR_PAD_LEFT),
+                'nama' => $k->nama_kategori,
+                'jumlah' => $k->buku_count . ' Buku',
+            ];
+        })->toArray();
 
-        $pengarang = [
-            ['no' => '01', 'nama' => 'Andrea Hirata', 'jumlah' => '12 Buku'],
-            ['no' => '02', 'nama' => 'Pramoedya Ananta Toer', 'jumlah' => '18 Buku'],
-            ['no' => '03', 'nama' => 'Henry Manampiring', 'jumlah' => '5 Buku'],
-            ['no' => '04', 'nama' => 'Leila S. Chudori', 'jumlah' => '7 Buku'],
-            ['no' => '05', 'nama' => 'Yuval Noah Harari', 'jumlah' => '4 Buku'],
-            ['no' => '06', 'nama' => 'James Clear', 'jumlah' => '3 Buku'],
-        ];
+        // Fetch authors with book counts
+        $pengarang = Pengarang::withCount('buku')->get()->map(function ($p, $idx) {
+            return [
+                'id' => $p->id,
+                'no' => str_pad($idx + 1, 2, '0', STR_PAD_LEFT),
+                'nama' => $p->nama_pengarang,
+                'jumlah' => $p->buku_count . ' Buku',
+            ];
+        })->toArray();
 
-        $penerbit = [
-            ['no' => '01', 'nama' => 'Gramedia Pustaka Utama', 'jumlah' => '420 Buku'],
-            ['no' => '02', 'nama' => 'Bentang Pustaka', 'jumlah' => '210 Buku'],
-            ['no' => '03', 'nama' => 'Mizan Media Utama', 'jumlah' => '180 Buku'],
-            ['no' => '04', 'nama' => 'Kepustakaan Populer Gramedia', 'jumlah' => '150 Buku'],
-            ['no' => '05', 'nama' => 'Informatika Bandung', 'jumlah' => '95 Buku'],
-            ['no' => '06', 'nama' => 'Andi Offset', 'jumlah' => '85 Buku'],
-        ];
+        // Fetch publishers with book counts
+        $penerbit = Penerbit::withCount('buku')->get()->map(function ($pb, $idx) {
+            return [
+                'id' => $pb->id,
+                'no' => str_pad($idx + 1, 2, '0', STR_PAD_LEFT),
+                'nama' => $pb->nama_penerbit,
+                'jumlah' => $pb->buku_count . ' Buku',
+            ];
+        })->toArray();
 
-        $rak = [
-            ['no' => '01', 'nama' => 'Rak A1 - Sastra & Fiksi', 'jumlah' => '85 Buku'],
-            ['no' => '02', 'nama' => 'Rak A2 - Sastra Klasik', 'jumlah' => '60 Buku'],
-            ['no' => '03', 'nama' => 'Rak B1 - Self Development', 'jumlah' => '75 Buku'],
-            ['no' => '04', 'nama' => 'Rak B2 - Motivasi & Karir', 'jumlah' => '65 Buku'],
-            ['no' => '05', 'nama' => 'Rak C1 - Penelitian & Ilmiah', 'jumlah' => '90 Buku'],
-            ['no' => '06', 'nama' => 'Rak C2 - Sains & Sejarah', 'jumlah' => '70 Buku'],
-        ];
+        // Fetch shelves with book counts
+        $rak = Rak::withCount('buku')->get()->map(function ($r, $idx) {
+            return [
+                'id' => $r->id,
+                'no' => str_pad($idx + 1, 2, '0', STR_PAD_LEFT),
+                'nama' => $r->nama_rak,
+                'jumlah' => $r->buku_count . ' Buku',
+            ];
+        })->toArray();
 
-        $totalItems = 18;
+        $totalItems = count($kategori) + count($pengarang) + count($penerbit) + count($rak);
 
         return view('master.index', compact('tab', 'kategori', 'pengarang', 'penerbit', 'rak', 'totalItems'));
     }

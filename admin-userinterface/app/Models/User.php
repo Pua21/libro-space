@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,33 +11,73 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
+        'role',
+        'avatar',
+        'status',
+        'two_factor_secret',
+        'last_login_at',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
+        'two_factor_secret',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'last_login_at' => 'datetime',
     ];
+
+    // Relations
+    public function petugas()
+    {
+        return $this->hasOne(Petugas::class, 'user_id');
+    }
+
+    public function anggota()
+    {
+        return $this->hasOne(Anggota::class, 'user_id');
+    }
+
+    public function peminjamanDilayani()
+    {
+        return $this->hasMany(Peminjaman::class, 'petugas_id');
+    }
+
+    public function pengembalianDiperiksa()
+    {
+        return $this->hasMany(Pengembalian::class, 'petugas_id');
+    }
+
+    public function dendaDiterima()
+    {
+        return $this->hasMany(DendaPembayaran::class, 'petugas_id');
+    }
+
+    public function logAktivitas()
+    {
+        return $this->hasMany(LogAktivitas::class, 'user_id');
+    }
+
+    // Role helper
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isPetugas(): bool
+    {
+        return $this->role === 'petugas';
+    }
+
+    public function isAnggota(): bool
+    {
+        return $this->role === 'anggota';
+    }
 }

@@ -16,9 +16,15 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('username', 50)->unique();
+            $table->string('email', 100)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('role', ['admin', 'petugas', 'anggota'])->default('anggota');
+            $table->string('avatar')->nullable();
+            $table->enum('status', ['aktif', 'nonaktif', 'suspend'])->default('aktif');
+            $table->string('two_factor_secret')->nullable();
+            $table->timestamp('last_login_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\LogAktivitas;
 
 class LogAktivitasController extends Controller
 {
     public function index(Request $request)
     {
+        $logs = LogAktivitas::with('user')->orderBy('created_at', 'desc')->get();
+
         $timeline = [
             'HARI INI (31 OKT 2026)' => [
                 [
