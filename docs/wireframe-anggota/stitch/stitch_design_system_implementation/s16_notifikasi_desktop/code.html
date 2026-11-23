@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>Libro Space Terminal</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-fixed-variant":"#404755","status-warning-bg":"#FFF3E0","status-success-bg":"#E8F5E9","primary-container":"#303f9f","outline":"#767683","surface-container-low":"#f1f3ff","outline-variant":"#c6c5d4","error-container":"#ffdad6","on-surface":"#161b27","text-secondary":"#5F6675","border-structural":"#E0E3E8","primary":"#142588","surface":"#faf9ff","secondary-fixed-dim":"#c0c6d8","status-danger-bg":"#FFEBEE","on-tertiary":"#ffffff","surface-container":"#e9edfe","tertiary":"#003267","inverse-surface":"#2b303d","surface-canvas":"#F7F8FA","status-info-bg":"#E3F2FD","surface-bright":"#faf9ff","on-primary":"#ffffff","on-surface-variant":"#454652","on-secondary":"#ffffff","on-primary-container":"#aab4ff","surface-container-highest":"#dee2f3","on-tertiary-container":"#91b9ff","surface-tint":"#4755b6","surface-container-high":"#e4e8f8","on-tertiary-fixed-variant":"#00468c","inverse-primary":"#bbc3ff","on-error":"#ffffff","surface-dim":"#d5d9ea","surface-container-lowest":"#ffffff","tertiary-fixed":"#d6e3ff","on-background":"#161b27","surface-variant":"#dee2f3","secondary-container":"#d9e0f1","on-primary-fixed-variant":"#2d3c9c","text-primary":"#1F2430","on-error-container":"#93000a","tertiary-container":"#004890","background":"#faf9ff","status-danger-text":"#C62828","secondary":"#575e6d","status-info-text":"#1565C0","on-tertiary-fixed":"#001b3d","on-secondary-container":"#5c6372","primary-fixed-dim":"#bbc3ff","error":"#ba1a1a","tertiary-fixed-dim":"#a9c7ff","status-success-text":"#2E7D32","primary-fixed":"#dfe0ff","on-secondary-fixed":"#151c28","on-primary-fixed":"#000d5f","status-warning-text":"#B26A00","surface-panel":"#FFFFFF","secondary-fixed":"#dce2f4","inverse-on-surface":"#edf0ff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin-desktop":"5rem","gutter":"1rem","space-md":"1rem","space-xl":"2rem","gutter-mobile":"0.5rem","space-lg":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","margin":"1rem"},fontFamily:{"title-md":["Space Grotesk"],"headline-md":["Space Grotesk"],"label-md":["Geist"],"body-md":["Geist"],"headline-xl":["Space Grotesk"],"label-lg":["Geist"],"headline-xl-mobile":["Space Grotesk"],"body-lg":["Geist"],"headline-lg":["Space Grotesk"],"body-sm":["Geist"],"label-sm":["Geist"]},fontSize:{"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl":["32px",{"lineHeight":"40px","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"headline-xl-mobile":["26px",{"lineHeight":"32px","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-panel border-b border-border-structural"><div class="h-16 max-w-[1200px] mx-auto px-space-md flex items-center justify-between"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">terminal</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-tight uppercase text-primary leading-none">Libro Space</span><span class="font-label-sm text-label-sm text-text-secondary tracking-widest uppercase">Sirkulasi Mandiri</span></div></div><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-primary text-on-primary font-label-lg"><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="beranda" href="#">Beranda</a><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="katalog-buku" href="#">Katalog Buku</a><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pinjaman" href="#">Pinjaman</a><a aria-current="page" class="px-space-md py-space-sm font-label-lg text-label-lg bg-primary text-on-primary flex items-center gap-1.5" data-path="notifikasi" href="#">Notifikasi<span class="notif-badge ml-1 px-1.5 py-0.2 bg-status-danger-text text-white text-[10px] font-mono leading-none rounded-none">2</span></a><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="profil" href="#">Profil</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex flex-col text-right"><span class="font-label-lg text-label-lg text-text-primary leading-tight">Rina Maharani</span><span class="font-label-sm text-label-sm text-text-secondary font-mono leading-none">LS-2025-0142</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-160px)]"><div class="flex flex-col w-full">
+<!-- Desktop Canvas Container (1440 baseline max-w 1200px) -->
+<div class="max-w-[1200px] w-full mx-auto px-space-md py-space-lg flex flex-col gap-space-lg">
+<!-- Top Command Ribbon / Breadcrumb & Terminal System Meta -->
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-sm border-b border-border-structural gap-space-xs">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-text-secondary">
+<span class="hover:text-primary transition-colors cursor-pointer">Beranda</span>
+<span>/</span>
+<span class="text-text-primary font-mono uppercase tracking-wider">Notifikasi &amp; Sirkulasi</span>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm font-mono text-text-secondary">
+<span class="inline-flex items-center gap-1.5">
+<span class="w-2 h-2 bg-status-success-text"></span>
+          STREAM: LIVE_FEED_ACTV
+        </span>
+<span class="hidden sm:inline">|</span>
+<span class="hidden sm:inline">TERMINAL ID: T-04-JKT</span>
+</div>
+</div>
+<!-- Page Title & Brutalist Action Header -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md pb-space-md border-b-2 border-text-primary">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-space-xs">
+<span class="bg-primary text-on-primary font-mono font-label-sm text-label-sm px-1.5 py-0.5">MSG_BOX</span>
+<span class="text-text-secondary font-label-sm text-label-sm uppercase tracking-widest">Sirkulasi Real-Time</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-text-primary uppercase tracking-tight">Pusat Notifikasi &amp; Sirkulasi</h1>
+<p class="font-body-md text-body-md text-text-secondary">Pantau pengingat batas waktu pengembalian, status reservasi, dan aktivitas akun secara mandiri.</p>
+</div>
+<!-- Mark All As Read & Batch Counter -->
+<div class="flex items-center gap-space-sm self-start lg:self-end">
+<button class="h-10 px-space-md bg-surface-panel hover:bg-surface-container-high text-text-primary border border-border-structural font-label-lg text-label-lg inline-flex items-center gap-space-xs transition-colors focus:outline-none focus:ring-2 focus:ring-primary" id="markAllBtn">
+<span class="material-symbols-outlined text-[18px] text-primary">done_all</span>
+<span>Tandai Semua Dibaca</span>
+</button>
+<div class="h-10 px-space-sm bg-surface-container-high border border-border-structural font-mono text-label-sm flex items-center gap-1.5 text-text-primary">
+<span class="w-2 h-2 bg-status-danger-text animate-pulse"></span>
+<span>2 BARU</span>
+</div>
+</div>
+</div>
+<!-- 2-Column Industrial Layout (8 Cols Main + 4 Cols Sidebar) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- ================= LEFT COLUMN: FEED LIST (8 COLS) ================= -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- GROUP 1: HARI INI -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-border-structural pb-space-xs">
+<div class="flex items-center gap-space-xs font-mono font-label-sm text-label-sm uppercase tracking-wider text-text-primary">
+<span class="w-2.5 h-2.5 bg-primary"></span>
+<span>Grup: Hari Ini (9 Nov 2026)</span>
+</div>
+<span class="font-mono text-label-sm text-text-secondary">2 Transaksi Aktif</span>
+</div>
+<!-- Card 1: Peringatan Jatuh Tempo (Kuning/Oranye) -->
+<article class="bg-surface-panel border-l-4 border-l-status-warning-text border-y border-r border-border-structural p-space-md relative flex flex-col gap-space-sm hover:border-r-primary transition-colors">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 bg-status-warning-bg text-status-warning-text flex items-center justify-center shrink-0 border border-status-warning-text/20">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-status-warning-bg text-status-warning-text border border-status-warning-text/30 font-mono text-[10px] uppercase font-bold px-1.5 py-0.5">Jatuh Tempo Besok</span>
+<span class="text-text-secondary font-mono text-label-sm">REF: BRW-2026-9901</span>
+</div>
+<h2 class="font-title-md text-title-md text-text-primary tracking-tight mt-0.5">Atomic Habits jatuh tempo besok (9 Nov 2026)</h2>
+</div>
+</div>
+<!-- Unread Accent Dot -->
+<span class="w-2.5 h-2.5 bg-primary shrink-0 ring-4 ring-primary/10" title="Belum Dibaca"></span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary pl-12">
+              Masa pinjaman eksemplar buku Anda berakhir besok pukul <span class="font-mono text-text-primary font-semibold">21:00 WIB</span>. Segera lakukan perpanjangan mandiri jika kuota masih tersedia atau serahkan buku ke petugas sirkulasi.
+            </p>
+<div class="pl-12 pt-space-xs flex flex-wrap items-center justify-between gap-space-sm">
+<a class="h-9 px-space-md bg-primary hover:bg-tertiary text-on-primary font-label-lg text-label-lg inline-flex items-center gap-space-xs transition-colors" data-path="pinjaman" href="#">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Lihat di Pinjaman Saya</span>
+<span class="font-mono text-[11px] text-on-primary/70">→ S10</span>
+</a>
+<span class="font-mono text-label-sm text-text-secondary">Pukul 08:30 WIB</span>
+</div>
+</article>
+<!-- Card 2: Denda & Terlambat (Merah / Bahaya) -->
+<article class="bg-surface-panel border-l-4 border-l-status-danger-text border-y border-r border-border-structural p-space-md relative flex flex-col gap-space-sm hover:border-r-primary transition-colors">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 bg-status-danger-bg text-status-danger-text flex items-center justify-center shrink-0 border border-status-danger-text/20">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-status-danger-bg text-status-danger-text border border-status-danger-text/30 font-mono text-[10px] uppercase font-bold px-1.5 py-0.5">Terlambat + Denda Berjalan</span>
+<span class="text-text-secondary font-mono text-label-sm">KODE: BRW-2026-8742</span>
+</div>
+<h2 class="font-title-md text-title-md text-text-primary tracking-tight mt-0.5">Bumi Manusia terlambat 2 hari!</h2>
+</div>
+</div>
+<!-- Unread Accent Dot -->
+<span class="w-2.5 h-2.5 bg-primary shrink-0 ring-4 ring-primary/10" title="Belum Dibaca"></span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary pl-12">Buku telah melewati batas pengembalian sejak <span class="font-mono text-text-primary font-semibold">6 Nov 2026</span>. Denda berjalan saat ini <span class="font-mono text-status-danger-text font-bold">Rp 2.000</span> (Tarif: Rp 1.000/hari). Pembayaran denda wajib diselesaikan langsung melalui petugas di Meja Sirkulasi fisik (layanan peminjaman dibatasi sementara).</p>
+<div class="pl-12 pt-space-xs flex flex-wrap items-center justify-between gap-space-sm">
+<button class="h-9 px-space-md bg-status-danger-bg hover:bg-status-danger-text hover:text-white text-status-danger-text border border-status-danger-text/40 font-label-lg text-label-lg inline-flex items-center gap-space-xs transition-colors" onclick="document.getElementById('guideModal').classList.remove('hidden')"><span class="material-symbols-outlined text-[16px]">desk</span><span>Bayar via Petugas di Loket</span></button>
+<span class="font-mono text-label-sm text-text-secondary">Pukul 07:00 WIB</span>
+</div>
+</article>
+</section>
+<!-- GROUP 2: KEMARIN -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-border-structural pb-space-xs">
+<div class="flex items-center gap-space-xs font-mono font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">
+<span class="w-2.5 h-2.5 bg-outline-variant"></span>
+<span>Grup: Kemarin (7 Nov 2026)</span>
+</div>
+<span class="font-mono text-label-sm text-text-secondary">1 Riwayat</span>
+</div>
+<!-- Card 3: Reservasi Buku (Biru / Terbaca) -->
+<article class="bg-surface-panel border-l-4 border-l-primary border-y border-r border-border-structural p-space-md flex flex-col gap-space-sm opacity-90 hover:opacity-100 transition-opacity">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 bg-surface-container-high text-primary flex items-center justify-center shrink-0 border border-border-structural">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-surface-container-high text-primary font-mono text-[10px] uppercase font-bold px-1.5 py-0.5 border border-primary/20">Reservasi Aktif</span>
+<span class="text-text-secondary font-mono text-label-sm">SLOT: #2</span>
+</div>
+<h2 class="font-title-md text-title-md text-text-primary tracking-tight mt-0.5">Reservasi Negeri 5 Menara berhasil</h2>
+</div>
+</div>
+<span class="font-mono text-label-sm text-text-secondary">Dibaca</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary pl-12">
+              Anda berada di antrean nomor ke-2. Sistem akan mengirimkan notifikasi instan dan menahan buku selama 24 jam saat eksemplar telah siap diambil di meja sirkulasi utama.
+            </p>
+<div class="pl-12 pt-space-xs flex items-center justify-between">
+<div class="font-mono text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">access_time</span>
+<span>7 Nov 2026, 14:15 WIB</span>
+</div>
+<span class="font-mono text-label-sm text-primary">STATUS: DALAM_ANTREAN</span>
+</div>
+</article>
+</section>
+<!-- GROUP 3: MINGGU LALU -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-border-structural pb-space-xs">
+<div class="flex items-center gap-space-xs font-mono font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">
+<span class="w-2.5 h-2.5 bg-outline-variant"></span>
+<span>Grup: Minggu Lalu (1 Nov 2026)</span>
+</div>
+<span class="font-mono text-label-sm text-text-secondary">1 Log Otentikasi</span>
+</div>
+<!-- Card 4: Pendaftaran Akun (Hijau / Sukses Terbaca) -->
+<article class="bg-surface-panel border-l-4 border-l-status-success-text border-y border-r border-border-structural p-space-md flex flex-col gap-space-sm opacity-90 hover:opacity-100 transition-opacity">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 bg-status-success-bg text-status-success-text flex items-center justify-center shrink-0 border border-status-success-text/20">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-status-success-bg text-status-success-text font-mono text-[10px] uppercase font-bold px-1.5 py-0.5 border border-status-success-text/30">Registrasi Terverifikasi</span>
+<span class="text-text-secondary font-mono text-label-sm">NODE-ID: JKT-04</span>
+</div>
+<h2 class="font-title-md text-title-md text-text-primary tracking-tight mt-0.5">Pendaftaran Akun Anggota Disetujui</h2>
+</div>
+</div>
+<span class="font-mono text-label-sm text-text-secondary">Dibaca</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary pl-12">
+              Selamat datang di Libro Space! Nomor keanggotaan resmi Anda adalah <span class="font-mono font-semibold text-text-primary">LS-2025-0142</span>. Kartu anggota digital Anda kini telah aktif dan dapat langsung digunakan pada scanner kiosk.
+            </p>
+<div class="pl-12 pt-space-xs flex items-center justify-between">
+<div class="font-mono text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">access_time</span>
+<span>1 Nov 2026, 09:30 WIB</span>
+</div>
+<span class="font-mono text-label-sm text-status-success-text font-bold">AKUN_VALID</span>
+</div>
+</article>
+</section>
+</div>
+<!-- ================= RIGHT COLUMN: SIDEBAR CONTROLS (4 COLS) ================= -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- PANEL 1: FILTER KATEGORI -->
+<div class="bg-surface-panel border border-border-structural flex flex-col">
+<div class="p-space-md border-b border-border-structural bg-surface-container-low flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-text-primary uppercase tracking-wider font-mono">Filter Kategori</span>
+<span class="material-symbols-outlined text-[18px] text-text-secondary">filter_alt</span>
+</div>
+<div class="flex flex-col divide-y divide-border-structural font-label-md text-label-md">
+<button class="flex items-center justify-between p-space-md hover:bg-surface-container-high transition-colors text-left bg-surface-container text-primary font-semibold">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">inbox</span>
+                Semua Notifikasi
+              </span>
+<span class="px-2 py-0.5 bg-primary text-on-primary font-mono text-label-sm">4</span>
+</button>
+<button class="flex items-center justify-between p-space-md hover:bg-surface-container-high transition-colors text-left text-text-primary">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-status-danger-text">mark_email_unread</span>
+                Belum Dibaca
+              </span>
+<span class="px-2 py-0.5 bg-status-danger-bg text-status-danger-text font-mono text-label-sm font-bold">2</span>
+</button>
+<button class="flex items-center justify-between p-space-md hover:bg-surface-container-high transition-colors text-left text-text-primary">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-status-warning-text">hourglass_bottom</span>
+                Jatuh Tempo &amp; Denda
+              </span>
+<span class="px-2 py-0.5 bg-surface-container-high text-text-primary font-mono text-label-sm">2</span>
+</button>
+<button class="flex items-center justify-between p-space-md hover:bg-surface-container-high transition-colors text-left text-text-primary">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">bookmark_added</span>
+                Reservasi
+              </span>
+<span class="px-2 py-0.5 bg-surface-container-high text-text-primary font-mono text-label-sm">1</span>
+</button>
+<button class="flex items-center justify-between p-space-md hover:bg-surface-container-high transition-colors text-left text-text-primary">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">badge</span>
+                Akun &amp; Kemitraan
+              </span>
+<span class="px-2 py-0.5 bg-surface-container-high text-text-primary font-mono text-label-sm">1</span>
+</button>
+</div>
+</div>
+<!-- PANEL 2: PREFERENSI NOTIFIKASI -->
+<div class="bg-surface-panel border border-border-structural flex flex-col">
+<div class="p-space-md border-b border-border-structural bg-surface-container-low flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-text-primary uppercase tracking-wider font-mono">Preferensi Kanal</span>
+<span class="material-symbols-outlined text-[18px] text-text-secondary">tune</span>
+</div>
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Checkbox 1: Email -->
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded-none accent-primary border border-border-structural" type="checkbox">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-primary">Notifikasi Email</span>
+<span class="font-body-sm text-body-sm text-text-secondary">rina.maharani@universitas.ac.id</span>
+</div>
+</label>
+<!-- Checkbox 2: WhatsApp / SMS -->
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded-none accent-primary border border-border-structural" type="checkbox">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-primary">SMS &amp; WhatsApp Alert</span>
+<span class="font-body-sm text-body-sm text-text-secondary font-mono">0812-3456-7890 (Aktif)</span>
+</div>
+</label>
+<!-- Checkbox 3: Pengingat H-1 -->
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded-none accent-primary border border-border-structural" type="checkbox">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-text-primary">Pengingat Jatuh Tempo (H-1)</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Peringatan otomatis pukul 08:00 WIB</span>
+</div>
+</label>
+<button class="w-full mt-space-xs h-10 border border-border-structural hover:border-primary bg-surface-container-low hover:bg-surface-panel text-text-primary font-label-md text-label-md font-mono transition-colors">
+              SIMPAN PREFERENSI
+            </button>
+</div>
+</div>
+<!-- PANEL 3: BANTUAN & MEJA SIRKULASI -->
+<div class="bg-surface-panel border-2 border-text-primary p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between border-b border-border-structural pb-space-xs">
+<span class="font-mono text-label-sm uppercase font-bold text-text-primary">Bantuan Sirkulasi</span>
+<span class="material-symbols-outlined text-primary text-[20px]">desk</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+            Ada kendala status denda, perpanjangan mandiri, atau penyerahan fisik buku? Kunjungi petugas di Lantai 1 atau hubungi kontak terpadu.
+          </p>
+<div class="bg-surface-container p-space-sm border border-border-structural flex flex-col gap-1">
+<span class="font-mono text-[11px] text-text-secondary uppercase">Meja Sirkulasi Terbuka</span>
+<span class="font-title-md text-title-md text-primary font-mono font-bold tracking-tight">(021) 555-0123</span>
+<span class="font-body-sm text-[12px] text-text-secondary">Ekstensi Sirkulasi: #204</span>
+</div>
+<div class="flex items-center justify-between pt-1 font-mono text-label-sm text-text-secondary">
+<span>OPERATOR: AKTIF</span>
+<span>08:00 - 20:00 WIB</span>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<!-- Hard Brutalist Dialog / Modal: Panduan Pengembalian Buku Terlambat -->
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center p-space-md bg-black/40 backdrop-blur-[1px]" id="guideModal">
+<div class="w-full max-w-[480px] bg-surface-panel border-2 border-text-primary [box-shadow:4px_4px_0px_0px_#1F2430] p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start justify-between border-b border-border-structural pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 bg-status-danger-text"></span>
+<span class="font-title-md text-title-md text-text-primary uppercase tracking-tight">SOP Pengembalian Terlambat</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-surface-container-high border border-border-structural text-text-primary" onclick="document.getElementById('guideModal').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm font-body-md text-body-md text-text-secondary">
+<div class="flex items-start gap-space-xs">
+<span class="font-mono font-bold text-text-primary">1.</span>
+<p>Bawa eksemplar fisik <strong class="text-text-primary">Bumi Manusia</strong> langsung ke Meja Sirkulasi (Drop-box mandiri terkunci otomatis untuk buku terlambat).</p>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="font-mono font-bold text-text-primary">2.</span>
+<p>Scan barcode kartu digital anggota <strong class="font-mono text-text-primary">LS-2025-0142</strong> di terminal petugas.</p>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="font-mono font-bold text-text-primary">3.</span>
+<p>Selesaikan pembayaran denda sebesar <strong class="font-mono text-status-danger-text">Rp 2.000</strong> langsung kepada petugas di loket/kasir sirkulasi fisik (tidak dapat diselesaikan mandiri di kiosk/aplikasi).</p>
+</div>
+</div>
+<div class="pt-space-xs border-t border-border-structural flex justify-end gap-space-sm">
+<button class="h-10 px-space-lg bg-text-primary hover:bg-black text-on-primary font-label-lg text-label-lg transition-colors" onclick="document.getElementById('guideModal').classList.add('hidden')">
+          Mengerti
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive State Handler -->
+<script>
+    (function initNotificationDesk() {
+      // Set Active state on the shell header
+      const notifNav = document.querySelector('nav a[data-path="notifikasi"]');
+      if (notifNav) {
+        notifNav.className = "px-space-md py-space-sm font-label-lg text-label-lg bg-primary text-on-primary flex items-center gap-1.5";
+        if (!notifNav.querySelector('.notif-badge')) {
+          const badge = document.createElement('span');
+          badge.className = "notif-badge ml-1 px-1.5 py-0.2 bg-status-danger-text text-white text-[10px] font-mono leading-none rounded-none";
+          badge.innerText = "2";
+          notifNav.appendChild(badge);
+        }
+      }
+
+      // Mark all read button interaction
+      const markAllBtn = document.getElementById('markAllBtn');
+      if (markAllBtn) {
+        markAllBtn.addEventListener('click', () => {
+          const unreadDots = document.querySelectorAll('span[title="Belum Dibaca"]');
+          unreadDots.forEach(dot => {
+            dot.className = "font-mono text-label-sm text-text-secondary";
+            dot.removeAttribute('title');
+            dot.innerText = "Dibaca";
+          });
+
+          // Update header badge if present
+          const topBadge = document.querySelector('.notif-badge');
+          if (topBadge) topBadge.remove();
+
+          markAllBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-status-success-text">check</span><span>Sudah Dibaca Semua</span>';
+          markAllBtn.classList.add('opacity-75', 'pointer-events-none');
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-panel border-t border-border-structural py-space-xl mt-space-xl"><div class="max-w-[1200px] mx-auto px-space-md flex flex-col md:flex-row justify-between items-start md:items-center gap-space-lg"><div class="flex flex-col gap-space-xs"><span class="font-title-md text-title-md text-primary tracking-tight uppercase">Libro Space Kiosk OS v2.4</span><span class="font-body-sm text-body-sm text-text-secondary">Sistem Otomasi Perpustakaan &amp; Layanan Sirkulasi Mandiri Terpadu.</span></div><div class="flex flex-wrap items-center gap-space-lg text-text-secondary font-body-sm text-body-sm"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">support_agent</span><span>Hotline: (021) 500-LIBRO</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">schedule</span><span>Operasional: 08:00 - 20:00 WIB</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">dns</span><span class="font-mono">NODE-JKT-04</span></div></div></div><div class="max-w-[1200px] mx-auto px-space-md pt-space-md mt-space-md border-t border-border-structural flex flex-col sm:flex-row justify-between items-center gap-space-sm font-label-sm text-label-sm text-text-secondary"><p>© 2025 Libro Space Perpustakaan Mandiri. Hak Cipta Dilindungi.</p><p class="font-mono uppercase">Status Sistem: NORMAL / ONLINE</p></div></footer>
+
+</body></html>

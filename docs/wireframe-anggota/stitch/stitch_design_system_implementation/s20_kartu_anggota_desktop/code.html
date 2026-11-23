@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Libro Space Terminal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-fixed-variant":"#404755","status-warning-bg":"#FFF3E0","status-success-bg":"#E8F5E9","primary-container":"#303f9f","outline":"#767683","surface-container-low":"#f1f3ff","outline-variant":"#c6c5d4","error-container":"#ffdad6","on-surface":"#161b27","text-secondary":"#5F6675","border-structural":"#E0E3E8","primary":"#142588","surface":"#faf9ff","secondary-fixed-dim":"#c0c6d8","status-danger-bg":"#FFEBEE","on-tertiary":"#ffffff","surface-container":"#e9edfe","tertiary":"#003267","inverse-surface":"#2b303d","surface-canvas":"#F7F8FA","status-info-bg":"#E3F2FD","surface-bright":"#faf9ff","on-primary":"#ffffff","on-surface-variant":"#454652","on-secondary":"#ffffff","on-primary-container":"#aab4ff","surface-container-highest":"#dee2f3","on-tertiary-container":"#91b9ff","surface-tint":"#4755b6","surface-container-high":"#e4e8f8","on-tertiary-fixed-variant":"#00468c","inverse-primary":"#bbc3ff","on-error":"#ffffff","surface-dim":"#d5d9ea","surface-container-lowest":"#ffffff","tertiary-fixed":"#d6e3ff","on-background":"#161b27","surface-variant":"#dee2f3","secondary-container":"#d9e0f1","on-primary-fixed-variant":"#2d3c9c","text-primary":"#1F2430","on-error-container":"#93000a","tertiary-container":"#004890","background":"#faf9ff","status-danger-text":"#C62828","secondary":"#575e6d","status-info-text":"#1565C0","on-tertiary-fixed":"#001b3d","on-secondary-container":"#5c6372","primary-fixed-dim":"#bbc3ff","error":"#ba1a1a","tertiary-fixed-dim":"#a9c7ff","status-success-text":"#2E7D32","primary-fixed":"#dfe0ff","on-secondary-fixed":"#151c28","on-primary-fixed":"#000d5f","status-warning-text":"#B26A00","surface-panel":"#FFFFFF","secondary-fixed":"#dce2f4","inverse-on-surface":"#edf0ff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin-desktop":"5rem","gutter":"1rem","space-md":"1rem","space-xl":"2rem","gutter-mobile":"0.5rem","space-lg":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","margin":"1rem"},fontFamily:{"title-md":["Space Grotesk"],"headline-md":["Space Grotesk"],"label-md":["Geist"],"body-md":["Geist"],"headline-xl":["Space Grotesk"],"label-lg":["Geist"],"headline-xl-mobile":["Space Grotesk"],"body-lg":["Geist"],"headline-lg":["Space Grotesk"],"body-sm":["Geist"],"label-sm":["Geist"]},fontSize:{"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl":["32px",{"lineHeight":"40px","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"headline-xl-mobile":["26px",{"lineHeight":"32px","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-panel border-b border-border-structural"><div class="h-16 max-w-[1200px] mx-auto px-space-md flex items-center justify-between"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">terminal</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-tight uppercase text-primary leading-none">Libro Space</span><span class="font-label-sm text-label-sm text-text-secondary tracking-widest uppercase">Sirkulasi Mandiri</span></div></div><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-primary text-on-primary font-label-lg"><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="beranda" href="#">Beranda</a><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="katalog-buku" href="#">Katalog Buku</a><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pinjaman" href="#">Pinjaman</a><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="notifikasi" href="#">Notifikasi</a><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="profil" href="#">Profil</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex flex-col text-right"><span class="font-label-lg text-label-lg text-text-primary leading-tight">Rina Maharani</span><span class="font-label-sm text-label-sm text-text-secondary font-mono leading-none">LS-2025-0142</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-160px)]"><div class="flex flex-col w-full">
+<!-- Desktop Layout Container with 80px horizontal gutters & 1200px max width -->
+<div class="w-full max-w-[1200px] mx-auto px-space-md py-space-xl">
+<!-- Top Meta Strip: Breadcrumbs & Return Anchor -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pb-space-lg mb-space-lg border-b border-border-structural">
+<div class="flex items-center gap-space-sm font-label-md text-label-md text-text-secondary">
+<span class="hover:text-primary cursor-pointer transition-colors">Beranda</span>
+<span>/</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Profil</span>
+<span>/</span>
+<span class="text-text-primary font-label-lg text-label-lg">Kartu Anggota Digital</span>
+</div>
+<a class="inline-flex items-center gap-space-xs font-label-lg text-label-lg text-primary hover:text-primary-container transition-colors py-space-xs px-space-sm bg-surface-container-low hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Kembali ke Profil</span>
+</a>
+</div>
+<!-- Editorial Header Section -->
+<div class="flex flex-col gap-space-xs mb-space-xl max-w-3xl">
+<div class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-primary uppercase tracking-widest">
+<span class="w-2 h-2 bg-primary"></span>
+<span>Modul Kredensial Sirkulasi Kiosk</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-text-primary uppercase tracking-tight">Kartu Anggota Digital</h1>
+<p class="font-body-lg text-body-lg text-text-secondary leading-relaxed">
+        Tunjukkan kartu identitas digital ini ke sensor pemindai kiosk sirkulasi mandiri atau kepada petugas perpustakaan untuk autentikasi otomatis.
+      </p>
+</div>
+<!-- Balanced 2-Column Industrial Grid (6 col / 6 col) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN: Physical Brutalist Digital Identity Card (6 Cols) -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<!-- Physical Credential Card Frame -->
+<div class="relative bg-surface-panel border-2 border-primary overflow-hidden shadow-none transition-all">
+<!-- Decorative Top Industrial Stripe -->
+<div class="h-2 w-full bg-primary flex">
+<div class="w-1/3 h-full bg-primary-container"></div>
+<div class="w-12 h-full bg-status-info-text"></div>
+</div>
+<!-- Card Header & Watermark Section -->
+<div class="p-space-lg bg-surface-container-low border-b border-border-structural relative">
+<div class="absolute right-4 -top-2 opacity-[0.06] pointer-events-none select-none">
+<span class="material-symbols-outlined text-[140px] text-primary">local_library</span>
+</div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 bg-primary text-on-primary flex items-center justify-center font-title-md text-title-md">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary tracking-tight uppercase block leading-none">Libro Space</span>
+<span class="font-label-sm text-label-sm text-text-secondary tracking-wider uppercase block mt-0.5">Kartu Identitas Sirkulasi Mandiri</span>
+</div>
+</div>
+<!-- RFID Micro-chip Indicator -->
+<div class="flex items-center gap-1.5 px-space-sm py-1 bg-surface-panel border border-border-structural">
+<span class="material-symbols-outlined text-[14px] text-primary">nfc</span>
+<span class="font-label-sm text-label-sm text-text-secondary font-mono tracking-tighter">RFID 915 MHz</span>
+</div>
+</div>
+</div>
+<!-- Card Body: Member Info & Visual Credentials -->
+<div class="p-space-lg flex flex-col gap-space-lg bg-surface-panel">
+<!-- User Visual & Primary Identifiers -->
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<!-- Avatar with brutalist frame -->
+<div class="relative">
+<div class="w-20 h-24 bg-primary text-on-primary flex flex-col items-center justify-center border-2 border-primary">
+<span class="font-headline-lg text-headline-lg tracking-widest font-mono">RM</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest opacity-80 mt-1">ID PHOTO</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-status-success-text border border-surface-panel"></div>
+</div>
+<div class="flex flex-col">
+<div class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-status-success-bg border border-status-success-text/30 w-max mb-1.5">
+<span class="w-1.5 h-1.5 bg-status-success-text"></span>
+<span class="font-label-sm text-label-sm text-status-success-text uppercase tracking-wider">Reguler Aktif</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-text-primary uppercase tracking-tight">Rina Maharani</h2>
+<span class="font-title-md text-title-md text-primary font-mono tracking-widest mt-0.5">LS-2025-0142</span>
+<span class="font-body-sm text-body-sm text-text-secondary mt-1">Fakultas Teknik &amp; Desain Arsitektur</span>
+</div>
+</div>
+<!-- Compact Metadata Grid -->
+<div class="hidden sm:flex flex-col text-right font-mono text-body-sm border-l border-border-structural pl-space-md py-1">
+<div class="text-text-secondary text-[10px] tracking-wider uppercase">Terdaftar:</div>
+<div class="font-label-md text-label-md text-text-primary mb-2">14 JAN 2025</div>
+<div class="text-text-secondary text-[10px] tracking-wider uppercase">Berlaku Hingga:</div>
+<div class="font-label-md text-label-md text-status-success-text font-bold">31 DES 2027</div>
+</div>
+</div>
+<!-- Optical Sensor Matrix: Barcode & Sharp QR Code Container -->
+<div class="border border-border-structural bg-surface-canvas p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<!-- QR Code Block for Kiosk Camera Scanners -->
+<div class="flex flex-col items-center">
+<div class="p-2 bg-surface-panel border border-border-structural">
+<!-- Sharp Vector Matrix SVG for optical Kiosk readability -->
+<svg class="w-28 h-28 text-text-primary" fill="currentColor" viewbox="0 0 100 100">
+<!-- Standard QR Positioning Corners & Brutal Pattern -->
+<rect fill="currentColor" height="30" width="30" x="0" y="0"></rect>
+<rect fill="#FFFFFF" height="22" width="22" x="4" y="4"></rect>
+<rect fill="currentColor" height="12" width="12" x="9" y="9"></rect>
+<rect fill="currentColor" height="30" width="30" x="70" y="0"></rect>
+<rect fill="#FFFFFF" height="22" width="22" x="74" y="4"></rect>
+<rect fill="currentColor" height="12" width="12" x="79" y="9"></rect>
+<rect fill="currentColor" height="30" width="30" x="0" y="70"></rect>
+<rect fill="#FFFFFF" height="22" width="22" x="4" y="74"></rect>
+<rect fill="currentColor" height="12" width="12" x="9" y="79"></rect>
+<!-- Internal Data Cells -->
+<rect height="6" width="6" x="36" y="8"></rect>
+<rect height="10" width="8" x="46" y="4"></rect>
+<rect height="14" width="6" x="58" y="12"></rect>
+<rect height="6" width="14" x="8" y="38"></rect>
+<rect height="12" width="8" x="18" y="48"></rect>
+<rect height="6" width="10" x="4" y="58"></rect>
+<rect height="28" width="28" x="36" y="36"></rect>
+<rect fill="#FFFFFF" height="16" width="16" x="42" y="42"></rect>
+<rect fill="currentColor" height="6" width="6" x="47" y="47"></rect>
+<rect height="8" width="12" x="72" y="38"></rect>
+<rect height="18" width="8" x="88" y="44"></rect>
+<rect height="6" width="10" x="74" y="58"></rect>
+<rect height="18" width="8" x="36" y="72"></rect>
+<rect height="8" width="14" x="48" y="82"></rect>
+<rect height="8" width="8" x="56" y="70"></rect>
+<rect height="10" width="10" x="70" y="74"></rect>
+<rect height="6" width="12" x="84" y="72"></rect>
+<rect height="8" width="18" x="76" y="88"></rect>
+</svg>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary tracking-widest uppercase mt-1">QR KIOSK SENSOR</span>
+</div>
+<!-- Barcode Code 128 Laser Scan Target -->
+<div class="flex-1 w-full flex flex-col items-center justify-center p-space-sm bg-surface-panel border border-border-structural">
+<div class="text-[10px] font-mono text-text-secondary uppercase tracking-widest mb-1">Standard Code 128 Circulation Barcode</div>
+<!-- Pure SVG Code 128 Emulation Bars -->
+<svg class="w-full h-16 text-text-primary px-2" preserveaspectratio="none" viewbox="0 0 280 64">
+<g fill="currentColor">
+<!-- Standard industrial barcode sequence -->
+<rect height="64" width="3" x="0" y="0"></rect>
+<rect height="64" width="2" x="5" y="0"></rect>
+<rect height="64" width="6" x="10" y="0"></rect>
+<rect height="64" width="2" x="19" y="0"></rect>
+<rect height="64" width="4" x="24" y="0"></rect>
+<rect height="64" width="7" x="32" y="0"></rect>
+<rect height="64" width="2" x="42" y="0"></rect>
+<rect height="64" width="5" x="47" y="0"></rect>
+<rect height="64" width="2" x="56" y="0"></rect>
+<rect height="64" width="8" x="62" y="0"></rect>
+<rect height="64" width="3" x="73" y="0"></rect>
+<rect height="64" width="6" x="80" y="0"></rect>
+<rect height="64" width="2" x="90" y="0"></rect>
+<rect height="64" width="4" x="96" y="0"></rect>
+<rect height="64" width="7" x="104" y="0"></rect>
+<rect height="64" width="3" x="114" y="0"></rect>
+<rect height="64" width="5" x="120" y="0"></rect>
+<rect height="64" width="2" x="129" y="0"></rect>
+<rect height="64" width="8" x="135" y="0"></rect>
+<rect height="64" width="3" x="146" y="0"></rect>
+<rect height="64" width="6" x="153" y="0"></rect>
+<rect height="64" width="2" x="162" y="0"></rect>
+<rect height="64" width="4" x="168" y="0"></rect>
+<rect height="64" width="7" x="176" y="0"></rect>
+<rect height="64" width="3" x="187" y="0"></rect>
+<rect height="64" width="5" x="194" y="0"></rect>
+<rect height="64" width="2" x="203" y="0"></rect>
+<rect height="64" width="8" x="209" y="0"></rect>
+<rect height="64" width="4" x="220" y="0"></rect>
+<rect height="64" width="2" x="228" y="0"></rect>
+<rect height="64" width="7" x="234" y="0"></rect>
+<rect height="64" width="3" x="244" y="0"></rect>
+<rect height="64" width="5" x="250" y="0"></rect>
+<rect height="64" width="2" x="259" y="0"></rect>
+<rect height="64" width="4" x="265" y="0"></rect>
+<rect height="64" width="5" x="273" y="0"></rect>
+</g>
+</svg>
+<div class="font-mono text-title-md text-title-md tracking-[0.3em] font-bold text-text-primary mt-1">
+                  *LS-2025-0142*
+                </div>
+</div>
+</div>
+<!-- Card Bottom Bar: Technical Specs -->
+<div class="pt-space-sm border-t border-border-structural flex items-center justify-between font-mono text-label-sm text-text-secondary">
+<span>SECURITY HASH: 8F2A-019B-CC52</span>
+<span>TERMINAL READY</span>
+</div>
+</div>
+</div>
+<!-- Security & Real-Time Dynamic Token Module -->
+<div class="bg-surface-panel border border-border-structural p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">enhanced_encryption</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-text-primary">Enkripsi Dinamis SHA-256</span>
+<span class="w-2 h-2 rounded-full bg-status-success-text animate-pulse"></span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                Refresh Barcode Token: <span class="font-mono font-bold text-primary" id="countdown">29:54</span> menit
+              </p>
+</div>
+</div>
+<button class="w-full sm:w-auto px-space-md py-2.5 bg-surface-panel hover:bg-surface-canvas border border-border-structural font-label-lg text-label-lg text-text-primary flex items-center justify-center gap-space-xs transition-colors active:bg-surface-container" id="refresh-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Segarkan Kode</span>
+</button>
+</div>
+</div>
+<!-- RIGHT COLUMN: Protocols, Guidelines & Peripheral Actions (6 Cols) -->
+<div class="lg:col-span-6 flex flex-col gap-space-lg">
+<!-- Primary Utility Action Blocks -->
+<div class="bg-surface-panel border border-border-structural p-space-lg">
+<div class="flex items-center gap-space-xs mb-space-md">
+<span class="material-symbols-outlined text-primary text-[20px]">ios_share</span>
+<h3 class="font-title-md text-title-md text-text-primary uppercase tracking-tight">Aksi &amp; Ekspor Kredensial</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Action 1: Print / Download PDF -->
+<button class="flex flex-col items-start p-space-md bg-surface-canvas hover:bg-surface-container border border-border-structural text-left transition-colors group" type="button">
+<div class="w-9 h-9 bg-surface-panel border border-border-structural flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+</div>
+<span class="font-label-lg text-label-lg text-text-primary">Cetak / Unduh PDF</span>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5">Format kartu identitas standar cetak ISO/IEC 7810.</span>
+</button>
+<!-- Action 2: Digital Wallet Sync -->
+<button class="flex flex-col items-start p-space-md bg-surface-canvas hover:bg-surface-container border border-border-structural text-left transition-colors group" type="button">
+<div class="w-9 h-9 bg-surface-panel border border-border-structural flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">wallet</span>
+</div>
+<span class="font-label-lg text-label-lg text-text-primary">Apple / Google Wallet</span>
+<span class="font-body-sm text-body-sm text-text-secondary mt-0.5">Sinkronisasi pass digital untuk akses NFC offline.</span>
+</button>
+</div>
+</div>
+<!-- Comprehensive Usage Protocol in Library (Brutalist Step Cards) -->
+<div class="bg-surface-panel border border-border-structural p-space-lg">
+<div class="flex items-center justify-between mb-space-md pb-space-sm border-b border-border-structural">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+<h3 class="font-title-md text-title-md text-text-primary uppercase tracking-tight">Panduan Penggunaan Kartu</h3>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary font-mono">SOP-CIR-03</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Step 1: Self-Service Kiosks -->
+<div class="flex items-start gap-space-md p-space-md bg-surface-canvas border border-border-structural">
+<div class="w-8 h-8 bg-primary text-on-primary font-mono font-bold flex items-center justify-center shrink-0">
+                01
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-text-primary">Peminjaman Mandiri di Kiosk</span>
+<span class="material-symbols-outlined text-[16px] text-primary">contactless</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 leading-relaxed">
+                  Pindai barcode atau kode QR pada sensor optik kiosk saat meminjam atau memperpanjang masa peminjaman eksemplar buku di stasiun sirkulasi mandiri.
+                </p>
+</div>
+</div>
+<!-- Step 2: Officer Desk Service -->
+<div class="flex items-start gap-space-md p-space-md bg-surface-canvas border border-border-structural">
+<div class="w-8 h-8 bg-primary text-on-primary font-mono font-bold flex items-center justify-center shrink-0">
+                02
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-text-primary">Layanan Meja Petugas</span>
+<span class="material-symbols-outlined text-[16px] text-primary">support_agent</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 leading-relaxed">
+                  Tunjukkan kartu ini kepada staf pustakawan untuk verifikasi keanggotaan fisik, pengesahan bebas pinjam, atau penyelesaian administrasi denda keterlambatan.
+                </p>
+</div>
+</div>
+<!-- Step 3: Automated Gate Access -->
+<div class="flex items-start gap-space-md p-space-md bg-surface-canvas border border-border-structural">
+<div class="w-8 h-8 bg-primary text-on-primary font-mono font-bold flex items-center justify-center shrink-0">
+                03
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-text-primary">Akses Gerbang Otomatis (Gate Turnstile)</span>
+<span class="material-symbols-outlined text-[16px] text-primary">sensor_door</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 leading-relaxed">
+                  Arahkan barcode pada pemindai laser pintu putar otomatis (turnstile) untuk membuka akses masuk ke ruang koleksi tandon, ruang multimedia, dan ruang baca umum.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Terminal Status Card -->
+<div class="bg-surface-container-low border border-border-structural p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary">Validasi Keanggotaan Terpusat</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Sinkron otomatis dengan basis data perpustakaan nasional.</span>
+</div>
+</div>
+<span class="font-mono text-label-sm text-status-success-text bg-status-success-bg px-2 py-1 border border-status-success-text/20">
+            SYNC OK
+          </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple countdown timer for security barcode refresh token
+  (function() {
+    let timeLeft = 29 * 60 + 54;
+    const timerDisplay = document.getElementById('countdown');
+    const refreshBtn = document.getElementById('refresh-btn');
+
+    function updateTimer() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      if (timerDisplay) {
+        timerDisplay.textContent = 
+          String(minutes).padStart(2, '0') + ':' + 
+          String(seconds).padStart(2, '0');
+      }
+      if (timeLeft > 0) {
+        timeLeft--;
+      } else {
+        timeLeft = 30 * 60; // Auto-reset at 0
+      }
+    }
+
+    setInterval(updateTimer, 1000);
+
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', function() {
+        timeLeft = 30 * 60;
+        updateTimer();
+        const icon = refreshBtn.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.classList.add('rotate-180');
+          setTimeout(() => icon.classList.remove('rotate-180'), 300);
+        }
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-panel border-t border-border-structural py-space-xl mt-space-xl"><div class="max-w-[1200px] mx-auto px-space-md flex flex-col md:flex-row justify-between items-start md:items-center gap-space-lg"><div class="flex flex-col gap-space-xs"><span class="font-title-md text-title-md text-primary tracking-tight uppercase">Libro Space Kiosk OS v2.4</span><span class="font-body-sm text-body-sm text-text-secondary">Sistem Otomasi Perpustakaan &amp; Layanan Sirkulasi Mandiri Terpadu.</span></div><div class="flex flex-wrap items-center gap-space-lg text-text-secondary font-body-sm text-body-sm"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">support_agent</span><span>Hotline: (021) 500-LIBRO</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">schedule</span><span>Operasional: 08:00 - 20:00 WIB</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">dns</span><span class="font-mono">NODE-JKT-04</span></div></div></div><div class="max-w-[1200px] mx-auto px-space-md pt-space-md mt-space-md border-t border-border-structural flex flex-col sm:flex-row justify-between items-center gap-space-sm font-label-sm text-label-sm text-text-secondary"><p>© 2025 Libro Space Perpustakaan Mandiri. Hak Cipta Dilindungi.</p><p class="font-mono uppercase">Status Sistem: NORMAL / ONLINE</p></div></footer></body></html>
