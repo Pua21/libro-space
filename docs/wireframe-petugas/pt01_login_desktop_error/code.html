@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PT01_login_desktop - Error</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-[#F7F9FB] min-h-screen text-slate-800 flex flex-col justify-between antialiased">
+  <!-- Top Bar / Annotation Header -->
+  <header class="w-full bg-white border-b border-slate-200/80 px-8 py-3.5 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-sm shadow-indigo-200">
+        LS
+      </div>
+      <div>
+        <span class="font-bold text-slate-900 tracking-tight">Libro Space</span>
+        <span class="text-xs text-slate-400 ml-2 border-l border-slate-200 pl-2">Sistem Informasi Manajemen</span>
+      </div>
+    </div>
+    <div class="flex items-center space-x-3">
+      <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-100 text-slate-600 border border-slate-200">Use case: U01</span>
+      <span class="text-xs font-semibold px-2.5 py-1 rounded bg-rose-50 text-rose-700 border border-rose-200">PT01_login_desktop (Error)</span>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 flex items-center justify-center p-6">
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-xl shadow-slate-200/60 border border-slate-100 p-8 sm:p-10">
+      
+      <!-- Brand & Title -->
+      <div class="text-center mb-6">
+        <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl mx-auto flex items-center justify-center mb-4 border border-indigo-100 shadow-sm">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </div>
+        <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Login Petugas</h1>
+        <p class="text-sm text-slate-500 mt-1.5">Masuk ke portal operasional harian perpustakaan</p>
+      </div>
+
+      <!-- Error Alert Message -->
+      <div class="mb-6 p-4 rounded-xl bg-rose-50 border border-rose-200 flex items-start space-x-3">
+        <div class="text-rose-600 mt-0.5 flex-shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-rose-900 uppercase tracking-wide">Terjadi Kesalahan</h4>
+          <p class="text-sm font-medium text-rose-700 mt-0.5">Username atau password salah</p>
+        </div>
+      </div>
+
+      <!-- Login Form with Error State -->
+      <form class="space-y-5" onsubmit="event.preventDefault();">
+        <!-- Username Field (Error State) -->
+        <div>
+          <label for="username" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Username</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-rose-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+            </div>
+            <input 
+              type="text" 
+              id="username" 
+              name="username" 
+              placeholder="Masukkan username petugas" 
+              class="w-full pl-10 pr-4 py-3 bg-white border border-rose-300 rounded-xl text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition"
+              value="petugas.salah"
+            />
+          </div>
+        </div>
+
+        <!-- Password Field (Error State) -->
+        <div>
+          <label for="password" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Password</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-rose-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+              </svg>
+            </div>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              placeholder="Masukkan kata sandi" 
+              class="w-full pl-10 pr-10 py-3 bg-white border border-rose-300 rounded-xl text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition"
+              value="wrongpassword"
+            />
+            <button type="button" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button 
+          type="submit" 
+          class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-medium rounded-xl text-sm shadow-md shadow-indigo-200 transition duration-150 flex items-center justify-center space-x-2"
+        >
+          <span>Masuk</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </button>
+
+        <!-- Open Decision Link: Forgot Password -->
+        <div class="pt-4 border-t border-slate-100 flex flex-col items-center text-center space-y-1.5">
+          <button type="button" disabled class="text-xs text-slate-400 font-medium cursor-not-allowed">
+            Lupa password?
+          </button>
+          <div class="inline-flex items-center px-2.5 py-1 rounded bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-medium">
+            KEPUTUSAN TERBUKA: reset mandiri atau hubungi Admin
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer Information -->
+  <footer class="w-full py-4 text-center text-xs text-slate-400">
+    &copy; 2025 Libro Space Perpustakaan &bull; Portal Khusus Petugas
+  </footer>
+</body>
+</html>
