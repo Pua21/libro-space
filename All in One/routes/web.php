@@ -14,6 +14,7 @@ use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PetugasPortalController;
+use App\Http\Controllers\AnggotaPortalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +48,9 @@ Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');
 // Petugas Operational Portal Routes (Libro Space)
 Route::get('/petugas', [PetugasPortalController::class, 'index'])->name('petugas.portal');
 Route::get('/web-petugas', [PetugasPortalController::class, 'index'])->name('web-petugas');
+
+// Anggota Portal Routes (Libro Space)
+Route::get('/anggota-portal', [AnggotaPortalController::class, 'index'])->name('anggota.portal');
+Route::get('/portal-anggota', [AnggotaPortalController::class, 'index']);
+Route::get('/web-anggota', [AnggotaPortalController::class, 'index'])->name('web-anggota');
+Route::get('/anggota/portal', [AnggotaPortalController::class, 'index']);

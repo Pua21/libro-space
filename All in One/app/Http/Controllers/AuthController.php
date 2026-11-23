@@ -104,7 +104,13 @@ class AuthController extends Controller
             }
 
             $welcomeMsg = "Selamat datang kembali, {$user->name}!";
-            $redirectUrl = ($user->role === 'petugas' || $role === 'petugas') ? route('petugas.portal') : route('dashboard');
+            if ($user->role === 'petugas' || $role === 'petugas') {
+                $redirectUrl = route('petugas.portal');
+            } elseif ($user->role === 'anggota' || $role === 'anggota') {
+                $redirectUrl = route('anggota.portal');
+            } else {
+                $redirectUrl = route('dashboard');
+            }
 
             if ($request->wantsJson()) {
                 return response()->json([
@@ -117,6 +123,11 @@ class AuthController extends Controller
 
             if ($user->role === 'petugas' || $role === 'petugas') {
                 return redirect()->route('petugas.portal')
+                    ->with('toast_success', $welcomeMsg);
+            }
+
+            if ($user->role === 'anggota' || $role === 'anggota') {
+                return redirect()->route('anggota.portal')
                     ->with('toast_success', $welcomeMsg);
             }
 

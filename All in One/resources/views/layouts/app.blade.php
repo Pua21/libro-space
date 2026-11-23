@@ -176,6 +176,13 @@
                     <span class="flex items-center gap-2">Portal Petugas <span class="text-[10px] bg-indigo-100 text-[#554fed] px-1.5 py-0.5 rounded-full font-bold">Live</span></span>
                 </a>
 
+                <!-- Portal Anggota (Live) -->
+                <a href="{{ route('anggota.portal') }}" 
+                   class="flex items-center gap-3.5 px-4 py-3 rounded-2xl text-[13.5px] font-medium transition-all text-[#64748b] hover:text-[#554fed] hover:bg-[#eff1fe]">
+                    <i class="bi bi-box-arrow-up-right text-lg text-emerald-500"></i>
+                    <span class="flex items-center gap-2">Portal Anggota <span class="text-[10px] bg-emerald-100 text-emerald-600 px-1.5 py-0.5 rounded-full font-bold">Live</span></span>
+                </a>
+
                 <!-- Data Peminjaman -->
                 <a href="{{ route('peminjaman.index') }}" 
                    class="flex items-center gap-3.5 px-4 py-3 rounded-2xl text-[13.5px] font-medium transition-all {{ request()->routeIs('peminjaman.*') ? 'nav-item-active font-semibold' : 'text-[#64748b] hover:text-[#1e293b] hover:bg-[#f8fafc]' }}">

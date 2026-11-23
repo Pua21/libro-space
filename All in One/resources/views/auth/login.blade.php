@@ -383,6 +383,8 @@
                 setTimeout(() => {
                     if (role === 'petugas') {
                         window.location.href = "{{ route('petugas.portal') }}";
+                    } else if (role === 'anggota') {
+                        window.location.href = "{{ route('anggota.portal') }}";
                     } else {
                         window.location.href = "{{ route('dashboard') }}";
                     }
