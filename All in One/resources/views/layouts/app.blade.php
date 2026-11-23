@@ -169,6 +169,13 @@
                     <span>Data Petugas</span>
                 </a>
 
+                <!-- Portal Petugas (Sirkulasi Live) -->
+                <a href="{{ route('petugas.portal') }}" 
+                   class="flex items-center gap-3.5 px-4 py-3 rounded-2xl text-[13.5px] font-medium transition-all text-[#64748b] hover:text-[#554fed] hover:bg-[#eff1fe]">
+                    <i class="bi bi-box-arrow-up-right text-lg text-[#554fed]"></i>
+                    <span class="flex items-center gap-2">Portal Petugas <span class="text-[10px] bg-indigo-100 text-[#554fed] px-1.5 py-0.5 rounded-full font-bold">Live</span></span>
+                </a>
+
                 <!-- Data Peminjaman -->
                 <a href="{{ route('peminjaman.index') }}" 
                    class="flex items-center gap-3.5 px-4 py-3 rounded-2xl text-[13.5px] font-medium transition-all {{ request()->routeIs('peminjaman.*') ? 'nav-item-active font-semibold' : 'text-[#64748b] hover:text-[#1e293b] hover:bg-[#f8fafc]' }}">

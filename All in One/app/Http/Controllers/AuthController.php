@@ -104,14 +104,20 @@ class AuthController extends Controller
             }
 
             $welcomeMsg = "Selamat datang kembali, {$user->name}!";
+            $redirectUrl = ($user->role === 'petugas' || $role === 'petugas') ? route('petugas.portal') : route('dashboard');
 
             if ($request->wantsJson()) {
                 return response()->json([
                     'success' => true,
                     'message' => $welcomeMsg,
                     'role' => $user->role,
-                    'redirect_url' => route('dashboard')
+                    'redirect_url' => $redirectUrl
                 ]);
+            }
+
+            if ($user->role === 'petugas' || $role === 'petugas') {
+                return redirect()->route('petugas.portal')
+                    ->with('toast_success', $welcomeMsg);
             }
 
             return redirect()->route('dashboard')

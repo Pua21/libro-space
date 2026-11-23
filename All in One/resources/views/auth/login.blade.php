@@ -381,7 +381,11 @@
             setTimeout(() => {
                 showToast(`Berhasil masuk sebagai ${role.toUpperCase()}! Mengalihkan...`, 'success');
                 setTimeout(() => {
-                    window.location.href = "{{ route('dashboard') }}";
+                    if (role === 'petugas') {
+                        window.location.href = "{{ route('petugas.portal') }}";
+                    } else {
+                        window.location.href = "{{ route('dashboard') }}";
+                    }
                 }, 800);
             }, 600);
         }

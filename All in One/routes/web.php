@@ -13,6 +13,7 @@ use App\Http\Controllers\LogAktivitasController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PetugasPortalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,7 @@ Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index
 Route::get('/log-aktivitas', [LogAktivitasController::class, 'index'])->name('log.index');
 Route::get('/pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index');
 Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');
+
+// Petugas Operational Portal Routes (Libro Space)
+Route::get('/petugas', [PetugasPortalController::class, 'index'])->name('petugas.portal');
+Route::get('/web-petugas', [PetugasPortalController::class, 'index'])->name('web-petugas');
