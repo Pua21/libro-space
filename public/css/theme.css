@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    font: 16px/1.5 system-ui, sans-serif;
+    color: #1f2937;
+    background: #f8fafc;
+}
+
+.shell-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    color: white;
+    background: #312e81;
+}
+
+.shell {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+}
+
+.shell-nav,
+main {
+    padding: 1.5rem;
+}
+
+.shell-nav {
+    display: grid;
+    align-content: start;
+    gap: .75rem;
+}
+
+@media (max-width: 640px) {
+    .shell {
+        grid-template-columns: 1fr;
+    }
+} 
