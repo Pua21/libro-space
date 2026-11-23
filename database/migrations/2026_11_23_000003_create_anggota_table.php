@@ -11,13 +11,13 @@ return new class extends Migration
         Schema::create('anggota', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->unique()->constrained('users')->cascadeOnDelete();
-            $table->string('no_anggota', 30)->nullable()->unique();
+            $table->string('no_anggota', 30)->unique();
             $table->enum('tipe_anggota', ['mahasiswa', 'dosen', 'staf', 'umum']);
             $table->string('jurusan_unit', 100)->nullable();
             $table->string('no_telepon', 20);
             $table->text('alamat')->nullable();
             $table->date('tgl_registrasi');
-            $table->date('masa_berlaku')->nullable();
+            $table->date('masa_berlaku');
             $table->string('barcode', 100)->nullable();
             $table->timestamps();
         });

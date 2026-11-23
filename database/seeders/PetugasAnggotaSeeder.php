@@ -44,17 +44,6 @@ class PetugasAnggotaSeeder extends Seeder
                 'tgl_registrasi' => $now->toDateString(),
                 'masa_berlaku' => $now->copy()->addYear()->toDateString(),
             ]);
-
-            $this->seedProfile('anggota', [
-                'email' => 'anggota.menunggu@example.test',
-                'username' => 'anggota_menunggu_demo',
-                'name' => 'Calon Anggota Demo',
-                'status' => 'menunggu_persetujuan',
-            ], [
-                'tipe_anggota' => 'mahasiswa',
-                'no_telepon' => '000000000002',
-                'tgl_registrasi' => $now->toDateString(),
-            ]);
         });
     }
 

@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('username', 50)->nullable()->unique();
             $table->enum('role', ['admin', 'petugas', 'anggota'])->nullable();
-            $table->enum('status', ['menunggu_persetujuan', 'aktif', 'nonaktif', 'suspend'])
+            $table->enum('status', ['aktif', 'nonaktif', 'suspend'])
                 ->default('nonaktif');
             $table->string('avatar')->nullable();
             $table->timestamp('last_login_at')->nullable();
