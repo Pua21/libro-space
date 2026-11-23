@@ -12,6 +12,7 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LogAktivitasController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,16 @@ use App\Http\Controllers\ProfilController;
 */
 
 Route::get('/', function () {
-    return redirect()->route('dashboard');
+    return redirect()->route('login');
 });
 
+// Authentication Routes
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout']); // Fallback GET logout
+
+// Admin & Staff Dashboard Routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/data-buku', [BukuController::class, 'index'])->name('buku.index');
 Route::get('/data-master', [MasterController::class, 'index'])->name('master.index');

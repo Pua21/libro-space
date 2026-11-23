@@ -296,9 +296,9 @@
                 <button onclick="document.getElementById('logoutModal').classList.add('hidden')" class="px-5 py-2.5 rounded-full border border-gray-200 text-xs font-semibold text-gray-600 hover:bg-gray-50 transition-all">
                     Batal
                 </button>
-                <button onclick="document.getElementById('logoutModal').classList.add('hidden'); showToast('Berhasil keluar dari sesi!', 'info');" class="bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold px-6 py-2.5 rounded-full shadow-md shadow-rose-500/20 transition-all">
+                <a href="{{ route('login') }}" onclick="document.getElementById('logoutModal').classList.add('hidden');" class="bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold px-6 py-2.5 rounded-full shadow-md shadow-rose-500/20 transition-all inline-flex items-center justify-center">
                     Ya, Keluar
-                </button>
+                </a>
             </div>
         </div>
     </div>
