@@ -34,6 +34,17 @@ class User extends Authenticatable
         'last_login_at' => 'datetime',
     ];
 
+    // Alias 'nama' attribute to support ERD v2.0
+    public function getNamaAttribute()
+    {
+        return $this->attributes['name'] ?? null;
+    }
+
+    public function setNamaAttribute($value)
+    {
+        $this->attributes['name'] = $value;
+    }
+
     // Relations
     public function petugas()
     {

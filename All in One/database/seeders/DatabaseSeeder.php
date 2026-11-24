@@ -45,6 +45,8 @@ class DatabaseSeeder extends Seeder
             ['nama_pengarang' => 'Leila S. Chudori', 'biografi' => 'Wartawan dan sastrawan penulis Laut Bercerita'],
             ['nama_pengarang' => 'Yuval Noah Harari', 'biografi' => 'Sejarawan dan filsuf Israel penulis Sapiens & Homo Deus'],
             ['nama_pengarang' => 'James Clear', 'biografi' => 'Penulis dan pembicara spesialisasi habit formation Atomic Habits'],
+            ['nama_pengarang' => 'Eka Kurniawan', 'biografi' => 'Sastrawan terkemuka Indonesia penulis Cantik Itu Luka dan Lelaki Harimau'],
+            ['nama_pengarang' => 'Ahmad Fuadi', 'biografi' => 'Novelis dan jurnalis penulis trilogi Negeri 5 Menara alumni Pondok Gontor'],
         ];
         $pengarangMap = [];
         foreach ($pengarangList as $p) {
@@ -414,6 +416,42 @@ class DatabaseSeeder extends Seeder
                 'stok_rusak' => 0,
                 'status' => 'tersedia',
             ],
+            [
+                'kode_buku' => 'BK-007',
+                'isbn' => '978-602-03-1258-3',
+                'judul' => 'Cantik Itu Luka',
+                'kategori_id' => $kategoriMap['Novel'],
+                'pengarang_id' => $pengarangMap['Eka Kurniawan'],
+                'penerbit_id' => $penerbitMap['Gramedia Pustaka Utama'],
+                'rak_id' => $rakMap['Rak A2'],
+                'tahun_terbit' => 2002,
+                'sinopsis' => 'Di kota pesisir Halimunda, kisah beberapa generasi keluarga Dewi Ayu bertaut dengan sejarah Indonesia dan cerita rakyat setempat.',
+                'cover_image' => 'assets/cantik.webp',
+                'harga_asli' => 125000,
+                'total_stok' => 3,
+                'stok_tersedia' => 2,
+                'stok_dipinjam' => 1,
+                'stok_rusak' => 0,
+                'status' => 'tersedia',
+            ],
+            [
+                'kode_buku' => 'BK-008',
+                'isbn' => '978-979-22-4861-6',
+                'judul' => 'Negeri 5 Menara',
+                'kategori_id' => $kategoriMap['Novel'],
+                'pengarang_id' => $pengarangMap['Ahmad Fuadi'],
+                'penerbit_id' => $penerbitMap['Gramedia Pustaka Utama'],
+                'rak_id' => $rakMap['Rak A3'],
+                'tahun_terbit' => 2009,
+                'sinopsis' => 'Perjalanan Alif di pesantren bersama lima sahabat yang belajar mengejar cita-cita melalui disiplin, persahabatan, dan tekad Man Jadda Wajada.',
+                'cover_image' => 'assets/negeri.webp',
+                'harga_asli' => 95000,
+                'total_stok' => 3,
+                'stok_tersedia' => 2,
+                'stok_dipinjam' => 1,
+                'stok_rusak' => 0,
+                'status' => 'tersedia',
+            ],
         ];
 
         $bukuMap = [];
@@ -655,5 +693,8 @@ class DatabaseSeeder extends Seeder
         foreach ($logData as $l) {
             LogAktivitas::create($l);
         }
+
+        // 10. SEED DEMO PETUGAS & ANGGOTA (Libro Space Wireframes & ERD v2.0)
+        $this->call(PetugasAnggotaSeeder::class);
     }
 }
