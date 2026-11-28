@@ -25,14 +25,17 @@
             try {
                 const staffName = "{{ Auth::user()->name ?? (session('authenticated_user.nama') ?? '') }}";
                 const staffEmail = "{{ Auth::user()->email ?? (session('authenticated_user.email') ?? '') }}";
-                if (staffName && window.LibroDemo) {
-                    const currentState = window.LibroDemo.read();
-                    if (currentState && currentState.staff && (!currentState.staff.name || currentState.staff.name === 'Petugas Demo')) {
-                        window.LibroDemo.update((data) => {
-                            data.staff.name = staffName;
+                const rawAvatar = "{{ Auth::user()->avatar ?? (session('authenticated_user.avatar') ?? '') }}";
+                const staffAvatar = rawAvatar ? (rawAvatar.startsWith('http') || rawAvatar.startsWith('data:') ? rawAvatar : "{{ asset('') }}" + rawAvatar) : '';
+
+                if (window.LibroDemo) {
+                    window.LibroDemo.update((data) => {
+                        if (data && data.staff) {
+                            if (staffName) data.staff.name = staffName;
                             if (staffEmail) data.staff.email = staffEmail;
-                        });
-                    }
+                            if (staffAvatar && !staffAvatar.includes('avatar-')) data.staff.avatar = staffAvatar;
+                        }
+                    });
                 }
             } catch (e) {
                 console.error(e);

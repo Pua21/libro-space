@@ -129,7 +129,13 @@
                          data-aksi="{{ $log['aksi'] }}"
                          data-text="{{ strtolower($log['user'] . ' ' . $log['deskripsi'] . ' ' . $log['target'] . ' ' . $log['modul']) }}">
                         <div class="flex items-start gap-3">
-                            <img src="{{ asset($log['avatar']) }}" alt="{{ $log['user'] }}" class="w-9 h-9 rounded-full object-cover border border-gray-100 mt-0.5">
+                            @include('partials.avatar', [
+                                'name' => $log['user'],
+                                'avatar' => $log['avatar'] ?? null,
+                                'size' => 'w-9 h-9',
+                                'textSize' => 'text-xs',
+                                'classExtra' => 'mt-0.5'
+                            ])
                             <div>
                                 <div class="flex flex-wrap items-center gap-2 mb-1">
                                     <!-- Aksi badge -->
@@ -267,7 +273,12 @@
                 <div class="flex items-center justify-between p-2.5 rounded-2xl bg-[#f8fafc] border border-gray-100 hover:border-indigo-100 transition-colors">
                     <div class="flex items-center gap-2.5">
                         <div class="relative">
-                            <img src="{{ asset($user['avatar']) }}" alt="{{ $user['nama'] }}" class="w-8 h-8 rounded-full object-cover">
+                            @include('partials.avatar', [
+                                'name' => $user['nama'],
+                                'avatar' => $user['avatar'] ?? null,
+                                'size' => 'w-8 h-8',
+                                'textSize' => 'text-[11px]'
+                            ])
                             <span class="absolute -top-1 -left-1 w-4 h-4 rounded-full bg-[#554fed] text-white text-[9px] font-bold flex items-center justify-center">
                                 {{ $user['rank'] }}
                             </span>
@@ -472,7 +483,9 @@ function loadMoreLogs() {
                 <div class="log-item-card p-3.5 rounded-2xl bg-[#f8fafc] border border-gray-100 hover:border-indigo-100 transition-all flex flex-wrap items-center justify-between gap-3"
                      data-user="Ahmad Fauzi" data-modul="Data Master" data-aksi="Tambah" data-text="ahmad fauzi menambahkan kategori baru sastra kontemporer">
                     <div class="flex items-start gap-3">
-                        <img src="{{ asset('images/avatar-dimas.png') }}" class="w-9 h-9 rounded-full object-cover border border-gray-100 mt-0.5">
+                        <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center justify-center shrink-0 border border-emerald-200 mt-0.5">
+                            AF
+                        </div>
                         <div>
                             <div class="flex flex-wrap items-center gap-2 mb-1">
                                 <span class="inline-flex items-center gap-1 text-[10px] font-bold text-[#10b981] bg-[#ecfdf5] border border-[#d1fae5] px-2 py-0.5 rounded-full">

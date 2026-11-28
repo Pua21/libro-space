@@ -49,6 +49,7 @@ Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');
 // Petugas Operational Portal Routes (Libro Space)
 Route::get('/petugas', [PetugasPortalController::class, 'index'])->name('petugas.portal');
 Route::get('/web-petugas', [PetugasPortalController::class, 'index'])->name('web-petugas');
+Route::post('/petugas/update-avatar', [PetugasPortalController::class, 'updateAvatar'])->name('petugas.update-avatar');
 
 // Anggota Portal Routes (Libro Space)
 Route::get('/anggota-portal', [AnggotaPortalController::class, 'index'])->name('anggota.portal');

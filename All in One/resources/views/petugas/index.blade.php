@@ -168,9 +168,12 @@
                         data-avatar="{{ asset($petugas['avatar']) }}">
                         <!-- Petugas & Role -->
                         <td class="py-4 pl-2 flex items-center gap-3">
-                            <img src="{{ asset($petugas['avatar']) }}" 
-                                 alt="{{ $petugas['nama'] }}" 
-                                 class="w-10 h-10 rounded-full object-cover border border-gray-100 petugas-avatar-img">
+                            @include('partials.avatar', [
+                                'name' => $petugas['nama'],
+                                'avatar' => $petugas['avatar'] ?? null,
+                                'size' => 'w-10 h-10',
+                                'textSize' => 'text-xs'
+                            ])
                             <div>
                                 <p class="font-bold text-[#1e293b] text-xs leading-snug petugas-nama-text">{{ $petugas['nama'] }}</p>
                                 <span class="inline-block mt-0.5 px-2 py-0.5 rounded-full text-[10px] font-semibold text-[#554fed] bg-[#eef2ff] petugas-role-text">
@@ -248,7 +251,12 @@
         <!-- Selected User Box -->
         <div class="flex items-center justify-between p-3 rounded-2xl bg-[#f8fafc] border border-gray-100 mb-4 transition-all duration-200" id="selectedPetugasBox">
             <div class="flex items-center gap-3">
-                <img id="resetAvatar" src="{{ asset('images/avatar-budi.png') }}" alt="Petugas" class="w-9 h-9 rounded-full object-cover">
+                <div class="relative w-9 h-9 shrink-0">
+                    <img id="resetAvatar" src="{{ asset('images/avatar-budi.png') }}" alt="Petugas" class="w-9 h-9 rounded-full object-cover hidden" onerror="this.classList.add('hidden'); document.getElementById('resetAvatarInitial').classList.remove('hidden');">
+                    <div id="resetAvatarInitial" class="w-9 h-9 rounded-full bg-indigo-100 text-[#554fed] font-bold text-xs flex items-center justify-center border border-indigo-200 shrink-0">
+                        BS
+                    </div>
+                </div>
                 <div>
                     <p id="resetNama" class="text-xs font-bold text-[#1e293b] leading-tight">Budi Santoso, S.Kom</p>
                     <p id="resetUsername" class="text-[11px] text-[#64748b] font-mono">budi.s</p>
@@ -427,7 +435,23 @@
         const avatar = row.getAttribute('data-avatar');
         activePetugasEmail = email;
 
-        document.getElementById('resetAvatar').src = avatar;
+        const words = (nama || '').trim().split(/\s+/).slice(0, 2);
+        const inisial = words.map(w => w[0] || '').join('').toUpperCase() || 'P';
+        const photoEl = document.getElementById('resetAvatar');
+        const initialEl = document.getElementById('resetAvatarInitial');
+
+        if (initialEl) initialEl.textContent = inisial;
+
+        const isRealPhoto = avatar && !avatar.includes('avatar-') && (avatar.startsWith('data:') || avatar.includes('storage') || avatar.includes('upload'));
+        if (isRealPhoto && photoEl) {
+            photoEl.src = avatar;
+            photoEl.classList.remove('hidden');
+            if (initialEl) initialEl.classList.add('hidden');
+        } else if (photoEl) {
+            photoEl.classList.add('hidden');
+            if (initialEl) initialEl.classList.remove('hidden');
+        }
+
         document.getElementById('resetNama').textContent = nama;
         document.getElementById('resetUsername').textContent = username;
         document.getElementById('resetEmailNotifyDesc').textContent = `Kredensial baru akan otomatis dikirimkan ke ${email}`;
@@ -499,9 +523,24 @@
         tr.setAttribute('data-status', 'Aktif');
         tr.setAttribute('data-avatar', avatar);
 
+        const initials = nama.trim().split(/\s+/).slice(0, 2).map(w => w[0] || '').join('').toUpperCase() || 'P';
+        const palette = [
+            'bg-indigo-100 text-indigo-600 border-indigo-200',
+            'bg-emerald-100 text-emerald-700 border-emerald-200',
+            'bg-sky-100 text-sky-600 border-sky-200',
+            'bg-purple-100 text-purple-600 border-purple-200',
+            'bg-rose-100 text-rose-600 border-rose-200',
+            'bg-amber-100 text-amber-800 border-amber-200'
+        ];
+        let hash = 0;
+        for (let i = 0; i < nama.length; i++) hash = nama.charCodeAt(i) + ((hash << 5) - hash);
+        const colorClass = palette[Math.abs(hash) % palette.length];
+
         tr.innerHTML = `
             <td class="py-4 pl-2 flex items-center gap-3">
-                <img src="${avatar}" alt="${nama}" class="w-10 h-10 rounded-full object-cover border border-gray-100 petugas-avatar-img">
+                <div class="w-10 h-10 rounded-full ${colorClass} border font-bold text-xs flex items-center justify-center shrink-0">
+                    ${initials}
+                </div>
                 <div>
                     <p class="font-bold text-[#1e293b] text-xs leading-snug petugas-nama-text">${nama}</p>
                     <span class="inline-block mt-0.5 px-2 py-0.5 rounded-full text-[10px] font-semibold text-[#554fed] bg-[#eef2ff] petugas-role-text">

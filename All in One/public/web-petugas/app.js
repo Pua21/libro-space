@@ -62,7 +62,10 @@ function shell(content) {
     const menu = Object.entries(pages).map(([key, [symbol, label]]) =>
         `${key === 'peminjaman' ? '<div class="nav-group-title">Sirkulasi</div>' : key === 'riwayat' ? '<div class="nav-group-title">Administrasi</div>' : ''}
         <a href="#${key}" ${page === key ? 'aria-current="page"' : ''}>${icon(symbol)}${label}</a>`).join('');
-    return `<div class="shell">
+            const staffAvatar = state.staff.avatar
+                ? `<span class="avatar" style="overflow:hidden;padding:0;"><img src="${esc(state.staff.avatar)}" alt="${esc(state.staff.name)}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" onerror="this.parentElement.textContent='${esc(D.initials(state.staff.name))}'"></span>`
+                : `<span class="avatar">${esc(D.initials(state.staff.name))}</span>`;
+            return `<div class="shell">
         <aside class="sidebar site-chrome" id="sidebar"><a class="brand" href="#dashboard"><span class="brand-mark">${icon('local_library')}</span><span><span class="brand-label">Libro Space</span><span class="brand-role">Portal Petugas</span></span></a>
             <nav aria-label="Menu petugas">${menu}</nav>
             <div class="sidebar-footer"><div><span class="status-dot"></span>Mode demo lokal</div></div>
@@ -75,7 +78,7 @@ function shell(content) {
                     <label class="search-box">${icon('search')}<input id="quick-search" name="query" type="search" placeholder="Cari judul, kode buku, atau anggota" aria-label="Pencarian cepat" autocomplete="off" aria-controls="quick-results"></label>
                     <div id="quick-results" class="top-search-results" hidden></div>
                 </form>
-            </div><a class="profile-link" href="#profil"><div><strong>${esc(state.staff.name)}</strong><small>Petugas Sirkulasi</small></div><span class="avatar">${esc(D.initials(state.staff.name))}</span></a></header>
+            </div><a class="profile-link" href="#profil"><div><strong>${esc(state.staff.name)}</strong><small>Petugas Sirkulasi</small></div>${staffAvatar}</a></header>
             <main id="konten" tabindex="-1">${content}</main>
             <footer class="footer site-chrome"><span>© Libro Space · Portal Petugas</span><span>Data simulasi perpustakaan</span></footer>
         </div></div>`;
@@ -222,10 +225,36 @@ function report() {
 }
 
 function profile() {
+    const staff = state.staff;
+    const avatarContent = staff.avatar
+        ? `<img src="${esc(staff.avatar)}" alt="${esc(staff.name)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.parentElement.textContent='${esc(D.initials(staff.name))}'">`
+        : esc(D.initials(staff.name));
+
     return title('Profil petugas', 'Informasi petugas meja sirkulasi.') + `<section class="panel pad stack" style="max-width:630px">
-        <div class="flow"><span class="avatar">${esc(D.initials(state.staff.name))}</span><div><h2>${esc(state.staff.name)}</h2><p class="muted">${esc(state.staff.unit)}</p></div></div>
-        <dl class="detail-list">${detail('NIP', state.staff.nip)}${detail('Email', state.staff.email)}${detail('Telepon', state.staff.phone)}${detail('Hak akses', 'Petugas')}</dl>
-        <div>${btn('Edit kontak','edit-staff','','','edit')}</div></section>`;
+        <div class="flow" style="align-items:center;gap:16px;">
+            <div style="position:relative;display:inline-block;">
+                <span class="avatar" id="staffPageAvatar" style="width:64px;height:64px;font-size:22px;border-radius:50%;overflow:hidden;border:2px solid var(--border,#e2e8f0);box-shadow:0 4px 10px rgba(0,0,0,0.06);display:grid;place-items:center;background:var(--primary-soft,#eef2ff);color:var(--primary,#534dec);">${avatarContent}</span>
+                <button type="button" class="button compact" data-action="change-staff-avatar" style="position:absolute;bottom:-4px;right:-4px;padding:0;width:28px;height:28px;min-height:28px;border-radius:50%;background:#ffffff;border:1px solid #cbd5e1;box-shadow:0 2px 6px rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#475569;" title="Ganti Foto Profil">
+                    ${icon('photo_camera')}
+                </button>
+                <input type="file" id="staffAvatarInput" accept="image/*" style="display:none">
+            </div>
+            <div>
+                <h2>${esc(staff.name)}</h2>
+                <p class="muted">${esc(staff.unit)}</p>
+            </div>
+        </div>
+        <dl class="detail-list">
+            ${detail('NIP', staff.nip)}
+            ${detail('Email', staff.email)}
+            ${detail('Telepon', staff.phone)}
+            ${detail('Hak akses', 'Petugas')}
+        </dl>
+        <div class="flow">
+            ${btn('Edit kontak','edit-staff','','','edit')}
+            ${btn('Ganti Foto Profil','change-staff-avatar','','outline','photo_camera')}
+        </div>
+    </section>`;
 }
 
 const lists = { buku: bookRows, anggota: memberRows, pengembalian: returnRows, denda: fineRows, riwayat: historyRows };
@@ -454,6 +483,10 @@ function handleForm(form) {
             fineReceipt(findFine(id));
             return;
         case 'save-staff':
+            const staffFileInput = form.querySelector('#staffDialogAvatarInput');
+            if (staffFileInput && staffFileInput.files?.[0]) {
+                handleStaffAvatarChange({ target: staffFileInput });
+            }
             D.update((data) => { Object.assign(data.staff, values); });
             break;
         default:
@@ -513,8 +546,90 @@ const actions = {
     'print-report': () => { document.body.classList.add('print-report'); window.print(); document.body.classList.remove('print-report'); },
     'print-dialog': () => window.print(),
     'jump-filter': (id, element) => { filters[id] = { query: element.dataset.query, value: '' }; if (page === id) render(); },
-    'edit-staff': () => openDialog('Edit kontak petugas', `<form data-form="save-staff" class="stack">${input('Email','email',state.staff.email,'required type="email" maxlength="100"')}${input('Telepon','phone',state.staff.phone,'required type="tel" maxlength="20"')}${formActions('Simpan kontak')}</form>`),
+    'edit-staff': () => openDialog('Edit kontak petugas', `<form data-form="save-staff" class="stack">${input('Email','email',state.staff.email,'required type="email" maxlength="100"')}${input('Telepon','phone',state.staff.phone,'required type="tel" maxlength="20"')}<label class="field">Ganti Foto Profil (Opsional)<input type="file" name="avatar_file" id="staffDialogAvatarInput" accept="image/*"><small class="muted" style="font-size:11px;">Format JPG, PNG, atau WebP (maks. 5MB).</small></label>${formActions('Simpan kontak')}</form>`),
+    'change-staff-avatar': () => {
+        let input = document.getElementById('staffAvatarInput');
+        if (!input) {
+            input = document.createElement('input');
+            input.type = 'file';
+            input.id = 'staffAvatarInput';
+            input.accept = 'image/*';
+            input.style.display = 'none';
+            document.body.appendChild(input);
+            input.addEventListener('change', handleStaffAvatarChange);
+        }
+        input.click();
+    },
 };
+
+async function handleStaffAvatarChange(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+        showToast('File yang dipilih harus berupa gambar (JPG, PNG, WebP).', true);
+        return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+        showToast('Ukuran gambar maksimal 5 MB.', true);
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+        const base64Data = e.target.result;
+        
+        // Update local state staff
+        D.update((data) => {
+            if (data.staff) data.staff.avatar = base64Data;
+        });
+        state = D.read();
+        render();
+        showToast('Memperbarui foto profil petugas...');
+
+        // Kirim ke backend Laravel
+        try {
+            const formData = new FormData();
+            formData.append('avatar', file);
+            formData.append('avatar_base64', base64Data);
+
+            const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content;
+            const res = await fetch('/petugas/update-avatar', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken || '',
+                    'Accept': 'application/json',
+                },
+                body: formData,
+            });
+
+            if (res.ok) {
+                const resData = await res.json();
+                if (resData.success && resData.avatar_url) {
+                    D.update((data) => {
+                        if (data.staff) data.staff.avatar = resData.avatar_url;
+                    });
+                    state = D.read();
+                    render();
+                    showToast('Foto profil berhasil disimpan ke server!');
+                }
+            } else {
+                showToast('Foto profil tersimpan secara lokal.');
+            }
+        } catch (err) {
+            console.warn('Backend update avatar notice:', err);
+            showToast('Foto profil berhasil diperbarui.');
+        }
+    };
+    reader.readAsDataURL(file);
+}
+
+document.addEventListener('change', (event) => {
+    if (event.target.id === 'staffAvatarInput') {
+        handleStaffAvatarChange(event);
+    }
+});
 
 document.addEventListener('click', (event) => {
     if (event.target.closest('.sidebar a') && document.querySelector('.sidebar.open')) menuToggle();
