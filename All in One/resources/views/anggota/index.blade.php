@@ -127,9 +127,12 @@
                             data-berlaku="{{ $anggota['masa_berlaku'] }}">
                             <!-- Anggota -->
                             <td class="py-4 pl-2 flex items-center gap-3">
-                                <img src="{{ asset($anggota['avatar']) }}" 
-                                     alt="{{ $anggota['nama'] }}" 
-                                     class="w-10 h-10 rounded-full object-cover border border-gray-100 anggota-avatar-thumb">
+                                @include('partials.avatar', [
+                                    'name' => $anggota['nama'],
+                                    'avatar' => $anggota['avatar'] ?? null,
+                                    'size' => 'w-10 h-10',
+                                    'textSize' => 'text-xs'
+                                ])
                                 <div>
                                     <p class="font-bold text-[#1e293b] text-xs leading-snug anggota-nama-text">{{ $anggota['nama'] }}</p>
                                     <p class="text-[11px] text-[#64748b] font-normal">{{ $anggota['email'] }}</p>
@@ -226,10 +229,21 @@
 
                 <!-- Card Body -->
                 <div class="flex items-center gap-3.5 my-3">
-                    <img id="cardPreviewPhoto" 
-                         src="{{ asset($selectedAnggota['avatar']) }}" 
-                         alt="{{ $selectedAnggota['nama'] }}" 
-                         class="w-14 h-14 rounded-full object-cover ring-2 ring-white/60 shadow">
+                    <div class="relative w-14 h-14 shrink-0">
+                        <img id="cardPreviewPhoto" 
+                             src="{{ asset($selectedAnggota['avatar']) }}" 
+                             alt="{{ $selectedAnggota['nama'] }}" 
+                             class="w-14 h-14 rounded-full object-cover ring-2 ring-white/60 shadow hidden"
+                             onerror="this.classList.add('hidden'); document.getElementById('cardPreviewInitial').classList.remove('hidden');">
+                        <div id="cardPreviewInitial" class="w-14 h-14 rounded-full bg-white text-[#554fed] font-extrabold text-lg flex items-center justify-center ring-2 ring-white/60 shadow">
+                            @php
+                                $words = preg_split("/\s+/", trim($selectedAnggota['nama']));
+                                $ini = '';
+                                foreach (array_slice($words, 0, 2) as $w) { $ini .= mb_strtoupper(mb_substr($w, 0, 1)); }
+                                echo $ini ?: 'U';
+                            @endphp
+                        </div>
+                    </div>
                     <div>
                         <h4 id="cardPreviewName" class="font-bold text-sm tracking-tight leading-snug">{{ $selectedAnggota['nama'] }}</h4>
                         <p id="cardPreviewMajor" class="text-[11px] text-white/80 font-medium">{{ $selectedAnggota['jurusan'] }}</p>
@@ -411,7 +425,23 @@
         const registrasi = row.getAttribute('data-registrasi');
         const berlaku = row.getAttribute('data-berlaku');
 
-        document.getElementById('cardPreviewPhoto').src = avatar;
+        const words = (nama || '').trim().split(/\s+/).slice(0, 2);
+        const inisial = words.map(w => w[0] || '').join('').toUpperCase() || 'U';
+        const photoEl = document.getElementById('cardPreviewPhoto');
+        const initialEl = document.getElementById('cardPreviewInitial');
+
+        if (initialEl) initialEl.textContent = inisial;
+
+        const isRealPhoto = avatar && !avatar.includes('avatar-') && (avatar.startsWith('data:') || avatar.includes('storage') || avatar.includes('upload'));
+        if (isRealPhoto && photoEl) {
+            photoEl.src = avatar;
+            photoEl.classList.remove('hidden');
+            if (initialEl) initialEl.classList.add('hidden');
+        } else if (photoEl) {
+            photoEl.classList.add('hidden');
+            if (initialEl) initialEl.classList.remove('hidden');
+        }
+
         document.getElementById('cardPreviewName').textContent = nama;
         document.getElementById('cardPreviewMajor').textContent = jurusan;
         document.getElementById('cardPreviewId').textContent = id;
@@ -480,9 +510,24 @@
         tr.setAttribute('data-registrasi', 'Hari Ini');
         tr.setAttribute('data-berlaku', '31 Des 2026');
 
+        const initials = nama.trim().split(/\s+/).slice(0, 2).map(w => w[0] || '').join('').toUpperCase() || 'U';
+        const palette = [
+            'bg-indigo-100 text-indigo-600 border-indigo-200',
+            'bg-emerald-100 text-emerald-700 border-emerald-200',
+            'bg-sky-100 text-sky-600 border-sky-200',
+            'bg-purple-100 text-purple-600 border-purple-200',
+            'bg-rose-100 text-rose-600 border-rose-200',
+            'bg-amber-100 text-amber-800 border-amber-200'
+        ];
+        let hash = 0;
+        for (let i = 0; i < nama.length; i++) hash = nama.charCodeAt(i) + ((hash << 5) - hash);
+        const colorClass = palette[Math.abs(hash) % palette.length];
+
         tr.innerHTML = `
             <td class="py-4 pl-2 flex items-center gap-3">
-                <img src="${avatar}" alt="${nama}" class="w-10 h-10 rounded-full object-cover border border-gray-100 anggota-avatar-thumb">
+                <div class="w-10 h-10 rounded-full ${colorClass} border font-bold text-xs flex items-center justify-center shrink-0">
+                    ${initials}
+                </div>
                 <div>
                     <p class="font-bold text-[#1e293b] text-xs leading-snug anggota-nama-text">${nama}</p>
                     <p class="text-[11px] text-[#64748b] font-normal">${email}</p>

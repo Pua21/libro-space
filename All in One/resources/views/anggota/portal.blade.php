@@ -25,18 +25,18 @@
             try {
                 const memberName = "{{ Auth::user()->name ?? (session('authenticated_user.nama') ?? '') }}";
                 const memberEmail = "{{ Auth::user()->email ?? (session('authenticated_user.email') ?? '') }}";
-                if (memberName && window.LibroDemo) {
-                    const currentState = window.LibroDemo.read();
-                    const demoMember = currentState?.members?.find(m => m.id === window.LibroDemo.memberId);
-                    if (demoMember && demoMember.name === 'Rina Maharani') {
-                        window.LibroDemo.update((data) => {
-                            const target = data.members.find(m => m.id === window.LibroDemo.memberId);
-                            if (target) {
-                                target.name = memberName;
-                                if (memberEmail) target.email = memberEmail;
-                            }
-                        });
-                    }
+                const rawAvatar = "{{ Auth::user()->avatar ?? (session('authenticated_user.avatar') ?? '') }}";
+                const memberAvatar = rawAvatar ? (rawAvatar.startsWith('http') || rawAvatar.startsWith('data:') ? rawAvatar : "{{ asset('') }}" + rawAvatar) : '';
+                
+                if (window.LibroDemo) {
+                    window.LibroDemo.update((data) => {
+                        const target = data.members.find(m => m.id === window.LibroDemo.memberId);
+                        if (target) {
+                            if (memberName) target.name = memberName;
+                            if (memberEmail) target.email = memberEmail;
+                            if (memberAvatar && !memberAvatar.includes('avatar-')) target.avatar = memberAvatar;
+                        }
+                    });
                 }
             } catch (e) {
                 console.error(e);

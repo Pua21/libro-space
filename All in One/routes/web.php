@@ -55,3 +55,4 @@ Route::get('/anggota-portal', [AnggotaPortalController::class, 'index'])->name('
 Route::get('/portal-anggota', [AnggotaPortalController::class, 'index']);
 Route::get('/web-anggota', [AnggotaPortalController::class, 'index'])->name('web-anggota');
 Route::get('/anggota/portal', [AnggotaPortalController::class, 'index']);
+Route::post('/anggota/update-avatar', [AnggotaPortalController::class, 'updateAvatar'])->name('anggota.update-avatar');

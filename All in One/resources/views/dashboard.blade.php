@@ -280,9 +280,13 @@
                     <!-- Anggota -->
                     <td class="py-3.5 px-3">
                         <div class="flex items-center gap-3">
-                            <img src="{{ asset($row['avatar']) }}" 
-                                 alt="{{ $row['anggota'] }}" 
-                                 class="w-9 h-9 rounded-full object-cover ring-2 ring-gray-100">
+                            @include('partials.avatar', [
+                                'name' => $row['anggota'],
+                                'avatar' => $row['avatar'] ?? null,
+                                'size' => 'w-9 h-9',
+                                'textSize' => 'text-xs',
+                                'classExtra' => 'ring-2 ring-gray-100'
+                            ])
                             <div>
                                 <p class="font-bold text-[#1e293b] leading-tight loan-member-name">{{ $row['anggota'] }}</p>
                                 <p class="text-[11px] text-[#94a3b8] mt-0.5">{{ $row['nim'] }}</p>

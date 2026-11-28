@@ -51,9 +51,13 @@ function menu(isMobile) {
 
 function shell(content) {
     const member = currentMember();
+    const navAvatar = member.avatar
+        ? `<span class="avatar" style="overflow:hidden;padding:0;"><img src="${esc(member.avatar)}" alt="${esc(member.name)}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" onerror="this.parentElement.textContent='${esc(D.initials(member.name))}'"></span>`
+        : `<span class="avatar">${esc(D.initials(member.name))}</span>`;
+
     return `<header class="header site-chrome"><div class="header-inner">
         <a class="brand" href="#beranda"><span class="brand-mark">${icon('local_library')}</span><span><b>Libro Space</b><small>Perpustakaan Mandiri</small></span></a>
-        ${menu(false)}<a class="nav-profile" href="#profil" aria-label="Profil anggota"><div><strong>${esc(member.name)}</strong><small class="mono">${esc(member.id)}</small></div><span class="avatar">${esc(D.initials(member.name))}</span></a>
+        ${menu(false)}<a class="nav-profile" href="#profil" aria-label="Profil anggota"><div><strong>${esc(member.name)}</strong><small class="mono">${esc(member.id)}</small></div>${navAvatar}</a>
         </div></header><main id="konten" tabindex="-1">${content}</main>
         <footer class="footer site-chrome"><div><span>© Libro Space · Portal Anggota</span><span>Mode demo · Jam layanan 08.00–16.30 WIB</span></div></footer>${menu(true)}`;
 }
@@ -248,11 +252,41 @@ function notifications() {
 
 function profile() {
     const member = currentMember();
+    const avatarContent = member.avatar
+        ? `<img src="${esc(member.avatar)}" alt="${esc(member.name)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.parentElement.textContent='${esc(D.initials(member.name))}'">`
+        : esc(D.initials(member.name));
+
     return heading('Profil Saya','Periksa data keanggotaan dan perbarui kontak.') + `<section class="panel pad stack" style="max-width:700px">
-        <div class="spread"><div class="flow"><span class="avatar">${esc(D.initials(member.name))}</span><div><h2>${esc(member.name)}</h2><p class="mono muted">${esc(member.id)}</p></div></div>${badge(member.status === 'aktif' ? 'Aktif' : member.status, member.status === 'aktif' ? 'success' : 'warning')}</div>
-        <dl class="detail-list">${detail('Jenis anggota',member.type)}${detail('Jurusan / unit', member.unit || '—')}${detail('Email',member.email)}${detail('WhatsApp',member.phone)}
-        ${detail('Alamat',member.address || '—')}${detail('Berlaku hingga',formatDate(member.expiresOn))}</dl><div class="flow">
-        ${button('Edit profil','edit-profile','','primary','edit')}${link('Kartu anggota','kartu','','qr_code_2')}</div></section>`;
+        <div class="spread">
+            <div class="flow" style="align-items:center;gap:16px;">
+                <div style="position:relative;display:inline-block;">
+                    <span class="avatar" id="profilePageAvatar" style="width:64px;height:64px;font-size:22px;border-radius:50%;overflow:hidden;border:2px solid var(--border,#e2e8f0);box-shadow:0 4px 10px rgba(0,0,0,0.06);display:grid;place-items:center;background:var(--primary-soft,#eef2ff);color:var(--primary,#534dec);">${avatarContent}</span>
+                    <button type="button" class="button compact" data-action="change-avatar" style="position:absolute;bottom:-4px;right:-4px;padding:0;width:28px;height:28px;min-height:28px;border-radius:50%;background:#ffffff;border:1px solid #cbd5e1;box-shadow:0 2px 6px rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#475569;" title="Ganti Foto Profil">
+                        ${icon('photo_camera')}
+                    </button>
+                    <input type="file" id="memberAvatarInput" accept="image/*" style="display:none">
+                </div>
+                <div>
+                    <h2>${esc(member.name)}</h2>
+                    <p class="mono muted">${esc(member.id)}</p>
+                </div>
+            </div>
+            ${badge(member.status === 'aktif' ? 'Aktif' : member.status, member.status === 'aktif' ? 'success' : 'warning')}
+        </div>
+        <dl class="detail-list">
+            ${detail('Jenis anggota',member.type)}
+            ${detail('Jurusan / unit', member.unit || '—')}
+            ${detail('Email',member.email)}
+            ${detail('WhatsApp',member.phone)}
+            ${detail('Alamat',member.address || '—')}
+            ${detail('Berlaku hingga',formatDate(member.expiresOn))}
+        </dl>
+        <div class="flow">
+            ${button('Edit profil','edit-profile','','primary','edit')}
+            ${button('Ganti Foto Profil','change-avatar','','secondary','photo_camera')}
+            ${link('Kartu anggota','kartu','','qr_code_2')}
+        </div>
+    </section>`;
 }
 
 function membership() {
@@ -338,6 +372,10 @@ function profileDialog() {
         <label class="field">Email<input name="email" type="email" required maxlength="100" value="${esc(member.email)}"></label>
         <label class="field">Nomor WhatsApp<input name="phone" type="tel" required maxlength="20" value="${esc(member.phone)}"></label>
         <label class="field">Alamat<textarea name="address" maxlength="170">${esc(member.address)}</textarea></label>
+        <label class="field">Ganti Foto Profil (Opsional)
+            <input type="file" name="avatar_file" id="dialogAvatarInput" accept="image/*">
+            <small class="muted" style="font-size:11px;">Format JPG, PNG, atau WebP (maks. 5MB).</small>
+        </label>
         <div class="dialog-actions">${button('Batal','close')}<button class="button primary">Simpan profil</button></div></form>`);
 }
 
@@ -358,6 +396,19 @@ const actions = {
     'extend-loan': extendDialog,
     'reserve-dialog': reserveDialog,
     'edit-profile': profileDialog,
+    'change-avatar': () => {
+        let input = document.getElementById('memberAvatarInput');
+        if (!input) {
+            input = document.createElement('input');
+            input.type = 'file';
+            input.id = 'memberAvatarInput';
+            input.accept = 'image/*';
+            input.style.display = 'none';
+            document.body.appendChild(input);
+            input.addEventListener('change', handleAvatarFileChange);
+        }
+        input.click();
+    },
     'print-card': () => { document.body.classList.add('print-report'); window.print(); document.body.classList.remove('print-report'); },
     'fine-detail': (id) => {
         const fine = state.fines.find((entry) => entry.id === id && entry.memberId === D.memberId);
@@ -417,6 +468,75 @@ const actions = {
     },
 };
 
+async function handleAvatarFileChange(event) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+        showToast('File yang dipilih harus berupa gambar (JPG, PNG, WebP).', true);
+        return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+        showToast('Ukuran gambar maksimal 5 MB.', true);
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+        const base64Data = e.target.result;
+        
+        // Update data profil anggota di demo store
+        D.update((data) => {
+            const person = D.person(data, D.memberId);
+            if (person) person.avatar = base64Data;
+        });
+        render();
+        showToast('Memperbarui foto profil...');
+
+        // Kirim ke backend Laravel
+        try {
+            const formData = new FormData();
+            formData.append('avatar', file);
+            formData.append('avatar_base64', base64Data);
+
+            const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content;
+            const res = await fetch('/anggota/update-avatar', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken || '',
+                    'Accept': 'application/json',
+                },
+                body: formData,
+            });
+
+            if (res.ok) {
+                const data = await res.json();
+                if (data.success && data.avatar_url) {
+                    D.update((state) => {
+                        const person = D.person(state, D.memberId);
+                        if (person) person.avatar = data.avatar_url;
+                    });
+                    render();
+                    showToast('Foto profil berhasil disimpan ke server!');
+                }
+            } else {
+                showToast('Foto profil tersimpan secara lokal.');
+            }
+        } catch (err) {
+            console.warn('Backend update avatar notice:', err);
+            showToast('Foto profil berhasil diperbarui.');
+        }
+    };
+    reader.readAsDataURL(file);
+}
+
+document.addEventListener('change', (event) => {
+    if (event.target.id === 'memberAvatarInput') {
+        handleAvatarFileChange(event);
+    }
+});
+
 document.addEventListener('click', (event) => {
     const target = event.target.closest('[data-action]');
     if (!target) return;
@@ -435,6 +555,10 @@ document.addEventListener('submit', (event) => {
             location.hash = 'katalog';
         }
         if (formType === 'edit-profile') {
+            const avatarFileInput = form.querySelector('#dialogAvatarInput');
+            if (avatarFileInput && avatarFileInput.files?.[0]) {
+                handleAvatarFileChange({ target: avatarFileInput });
+            }
             D.update((data) => {
                 if (!values.name || !values.phone) throw new Error('Nama dan nomor WhatsApp wajib diisi.');
                 if (data.members.some((member) => member.id !== D.memberId && member.email.toLowerCase() === values.email.toLowerCase())) throw new Error('Email sudah digunakan oleh anggota lain.');

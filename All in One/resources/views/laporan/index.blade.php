@@ -40,18 +40,18 @@
 
 <!-- 5 REPORT TYPE CARDS -->
 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-6" id="reportTabsContainer">
-    <!-- 1. Laporan Buku -->
+    <!-- 1. Laporan Buku (Default Active) -->
     <div onclick="switchReportTab('buku')" 
          data-tab="buku"
-         class="report-tab-card bg-white rounded-3xl p-5 glass-card hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer border-2 border-transparent">
-        <div class="card-icon w-10 h-10 rounded-2xl bg-gray-50 text-gray-500 group-hover:bg-[#eff1fe] group-hover:text-[#554fed] flex items-center justify-center text-lg transition-colors mb-3">
-            <i class="bi bi-book"></i>
+         class="report-tab-card bg-white rounded-3xl p-5 glass-card transition-all flex flex-col justify-between relative cursor-pointer border-2 border-[#554fed] shadow-md shadow-indigo-500/10">
+        <div class="flex items-center justify-between mb-3">
+            <div class="card-icon w-10 h-10 rounded-2xl bg-[#554fed] text-white flex items-center justify-center text-lg">
+                <i class="bi bi-book"></i>
+            </div>
+            <span class="active-badge text-[10px] font-bold text-[#554fed] bg-[#eef2ff] px-2 py-0.5 rounded-full">Aktif</span>
         </div>
         <div>
-            <div class="flex items-center justify-between">
-                <h4 class="text-xs font-bold text-[#1e293b]">Laporan Buku</h4>
-                <span class="active-badge hidden text-[10px] font-bold text-[#554fed] bg-[#eef2ff] px-2 py-0.5 rounded-full">Aktif</span>
-            </div>
+            <h4 class="text-xs font-bold text-[#1e293b]">Laporan Buku</h4>
             <p class="text-[11px] text-[#64748b] mt-0.5">Koleksi & Eksemplar</p>
         </div>
     </div>
@@ -72,18 +72,18 @@
         </div>
     </div>
 
-    <!-- 3. Laporan Peminjaman (Default Active) -->
+    <!-- 3. Laporan Peminjaman -->
     <div onclick="switchReportTab('peminjaman')" 
          data-tab="peminjaman"
-         class="report-tab-card bg-white rounded-3xl p-5 glass-card transition-all flex flex-col justify-between relative cursor-pointer border-2 border-[#554fed] shadow-md shadow-indigo-500/10">
-        <div class="flex items-center justify-between mb-3">
-            <div class="card-icon w-10 h-10 rounded-2xl bg-[#554fed] text-white flex items-center justify-center text-lg">
-                <i class="bi bi-journal-text"></i>
-            </div>
-            <span class="active-badge text-[10px] font-bold text-[#554fed] bg-[#eef2ff] px-2 py-0.5 rounded-full">Aktif</span>
+         class="report-tab-card bg-white rounded-3xl p-5 glass-card hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer border-2 border-transparent">
+        <div class="card-icon w-10 h-10 rounded-2xl bg-gray-50 text-gray-500 group-hover:bg-[#eff1fe] group-hover:text-[#554fed] flex items-center justify-center text-lg transition-colors mb-3">
+            <i class="bi bi-journal-text"></i>
         </div>
         <div>
-            <h4 class="text-xs font-bold text-[#1e293b]">Laporan Peminjaman</h4>
+            <div class="flex items-center justify-between">
+                <h4 class="text-xs font-bold text-[#1e293b]">Laporan Peminjaman</h4>
+                <span class="active-badge hidden text-[10px] font-bold text-[#554fed] bg-[#eef2ff] px-2 py-0.5 rounded-full">Aktif</span>
+            </div>
             <p class="text-[11px] text-[#64748b] mt-0.5">Riwayat Sirkulasi & Jatuh Tempo</p>
         </div>
     </div>
@@ -462,12 +462,12 @@ const reportDatabase = {
     }
 };
 
-let currentTab = 'peminjaman';
+let currentTab = 'buku';
 let currentPeriod = 'bulan_ini';
 
-// Initial render
+// Initial render: default ke Laporan Buku agar berurutan dari kiri
 document.addEventListener('DOMContentLoaded', () => {
-    renderReportView('peminjaman');
+    renderReportView('buku');
 });
 
 // Switch Report Tab

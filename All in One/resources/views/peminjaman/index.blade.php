@@ -154,9 +154,12 @@
                         <!-- Anggota -->
                         <td class="py-4">
                             <div class="flex items-center gap-2.5">
-                                <img src="{{ asset($item['avatar']) }}" 
-                                     alt="{{ $item['anggota'] }}" 
-                                     class="w-8 h-8 rounded-full object-cover border border-gray-100">
+                                @include('partials.avatar', [
+                                    'name' => $item['anggota'],
+                                    'avatar' => $item['avatar'] ?? null,
+                                    'size' => 'w-8 h-8',
+                                    'textSize' => 'text-[11px]'
+                                ])
                                 <div>
                                     <p class="font-bold text-[#1e293b] leading-tight row-anggota-text">{{ $item['anggota'] }}</p>
                                     <p class="text-[10px] text-[#64748b] font-mono">{{ $item['no_anggota'] }}</p>
